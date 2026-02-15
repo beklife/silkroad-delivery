@@ -1,0 +1,184 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Montserrat", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+:root {
+  /* Sand/Clay Base - reduced to show carpet better */
+  /* --background: 35 25% 94%; */ /* Light warm beige - commented to show carpet */
+  --background: 35 25% 96%; /* Very light beige to let carpet shine through */
+  --foreground: 220 15% 15%; /* Charcoal text */
+
+  /* Pomegranate Red (Primary) */
+  --primary: 355 65% 42%; 
+  --primary-foreground: 35 30% 96%;
+
+  /* Saffron/Gold (Secondary/Accent) */
+  --secondary: 38 85% 50%;
+  --secondary-foreground: 220 15% 15%;
+
+  /* Spice/Darker Clay (Accent) */
+  --accent: 25 40% 50%;
+  --accent-foreground: 35 30% 96%;
+
+  /* Muted Textures */
+  --muted: 35 15% 85%;
+  --muted-foreground: 220 15% 25%;
+
+  /* Cards (Slightly lighter than background for depth) */
+  --card: 35 30% 97%;
+  --card-foreground: 220 15% 15%;
+
+  --border: 35 20% 80%;
+  --input: 35 20% 80%;
+  --ring: 355 65% 42%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  /* Dark mode - Dark Charcoal base */
+  --background: 220 15% 12%;
+  --foreground: 35 20% 90%;
+
+  --primary: 355 65% 45%;
+  --primary-foreground: 35 30% 96%;
+
+  --secondary: 38 85% 50%;
+  --secondary-foreground: 220 15% 15%;
+
+  --accent: 25 40% 55%;
+  --accent-foreground: 35 30% 96%;
+
+  --muted: 220 10% 20%;
+  --muted-foreground: 35 10% 70%;
+
+  --card: 220 15% 16%;
+  --card-foreground: 35 20% 90%;
+
+  --border: 220 10% 25%;
+  --input: 220 10% 25%;
+  --ring: 355 65% 45%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-medium tracking-wide uppercase;
+  }
+  p {
+    @apply text-base leading-relaxed;
+    color: hsl(220 15% 10%);
+    font-size: 1.25rem;
+  }
+  .text-muted-foreground {
+    color: hsl(220 15% 20%) !important;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.hamburger-toggle {
+  --toggle-block-width: 44px;
+  --toggle-line-width: 28px;
+  --toggle-line-height: 2px;
+  --toggle-line-offset: 8px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--toggle-block-width);
+  height: var(--toggle-block-width);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.bg-transparent .hamburger-toggle {
+  color: white;
+}
+
+.hamburger-toggle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: var(--toggle-line-width);
+  height: var(--toggle-line-height);
+  background-color: currentColor;
+  transform: translate(-50%, -50%);
+  transition: all 0.45s;
+}
+
+.hamburger-toggle span::before,
+.hamburger-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: currentColor;
+  transition: all 0.45s;
+}
+
+.hamburger-toggle span::before {
+  top: calc(var(--toggle-line-offset) * -1);
+}
+
+.hamburger-toggle span::after {
+  bottom: calc(var(--toggle-line-offset) * -1);
+}
+
+.hamburger-toggle.is-clicked span {
+  background-color: transparent;
+  transition: all 0.1s;
+}
+
+.hamburger-toggle.is-clicked span::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.hamburger-toggle.is-clicked span::after {
+  bottom: 0;
+  transform: rotate(225deg);
+}

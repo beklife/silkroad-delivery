@@ -1,0 +1,13 @@
+import type { Express } from "express";
+import { createServer, type Server } from "http";
+
+export async function registerRoutes(
+  httpServer: Server,
+  app: Express
+): Promise<Server> {
+  // put application routes here if needed
+  // prefix all routes with /api
+
+  return httpServer;
+}
+

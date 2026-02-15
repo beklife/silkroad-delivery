@@ -1,0 +1,28 @@
+# Redirect non-trailing-slash URLs to trailing-slash versions for SEO consistency
+/en               /en/                301
+/ru               /ru/                301
+/uz               /uz/                301
+/menu             /menu/              301
+/impressum        /impressum/         301
+/datenschutz      /datenschutz/       301
+/usbekisches-restaurant-frankfurt     /usbekisches-restaurant-frankfurt/     301
+/halal-restaurant-frankfurt           /halal-restaurant-frankfurt/           301
+/plov-frankfurt                        /plov-frankfurt/                        301
+/en/menu          /en/menu/           301
+/ru/menu          /ru/menu/           301
+/uz/menu          /uz/menu/           301
+/en/impressum     /impressum/         301
+/en/impressum/    /impressum/         301
+/ru/impressum     /impressum/         301
+/ru/impressum/    /impressum/         301
+/uz/impressum     /impressum/         301
+/uz/impressum/    /impressum/         301
+/en/datenschutz   /datenschutz/       301
+/en/datenschutz/  /datenschutz/       301
+/ru/datenschutz   /datenschutz/       301
+/ru/datenschutz/  /datenschutz/       301
+/uz/datenschutz   /datenschutz/       301
+/uz/datenschutz/  /datenschutz/       301
+
+# SPA fallback - serve index.html for all other routes
+/*                /index.html         200
