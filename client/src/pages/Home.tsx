@@ -16,11 +16,11 @@ import heroImage from "@assets/stock_images/hero.webp";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
 import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
 import samsaImage from "@assets/stock_images/menu/samsa.jpg";
-import teaImage from "@assets/stock_images/menu/schurpa.jpg";
+import dessertImage from "@assets/stock_images/menu/tschak tschak.jpg";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
 import plovImage from "@assets/stock_images/menu/plov.jpg";
-import shashlikImage from "@assets/stock_images/menu/tschuponcha.webp";
-import kazanKebabImage from "@assets/stock_images/menu/da pan ji.jpg";
+import daPanJiImage from "@assets/stock_images/menu/da pan ji.jpg";
+import lagmanImage from "@assets/stock_images/menu/lagman.webp";
 import heroLogoImage from "../../../attached_assets/stock_images/ChatGPT Image Feb 4, 2026, 07_43_14 PM.png";
 
 const langNames: Record<Language, string> = {
@@ -488,12 +488,12 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <MenuCard image={plovImage} title={t.menu.dishes.plov.name} desc={t.menu.dishes.plov.desc} price="17.90€" />
-            <MenuCard image={mantyImage} title={t.menu.dishes.manty.name} desc={t.menu.dishes.manty.desc} price="23.90€" />
-            <MenuCard image={samsaImage} title={t.menu.dishes.somsa.name} desc={t.menu.dishes.somsa.desc} price="11.90€" />
-            <MenuCard image={shashlikImage} title={t.menu.dishes.schaschlikvomlamm.name} desc={t.menu.dishes.schaschlikvomlamm.desc} price="26.90€" />
-            <MenuCard image={kazanKebabImage} title={t.menu.dishes.kazankebab.name} desc={t.menu.dishes.kazankebab.desc} price="26.90€" />
-            <MenuCard image={teaImage} title={t.menu.dishes.kannetee06jasmin.name} desc={t.menu.dishes.kannetee06jasmin.desc} price="6.50€" />
+            <MenuCard image={plovImage} title={lang === 'de' ? 'Plow (Rindfleisch)' : lang === 'ru' ? 'Плов (говядина)' : 'Plow (Beef)'} desc={lang === 'de' ? 'Das beliebteste Gericht aus Zentralasien.' : lang === 'ru' ? 'Самое популярное блюдо Центральной Азии.' : 'The most popular Central Asian dish.'} price="13,50€" />
+            <MenuCard image={mantyImage} title={lang === 'de' ? 'Manty (Rindfleisch)' : lang === 'ru' ? 'Манты (говядина)' : 'Manty (Beef)'} desc={lang === 'de' ? 'Gedämpfte Teigtaschen, Portion 5 Stück.' : lang === 'ru' ? 'Паровые манты, порция 5 шт.' : 'Steamed dumplings, portion of 5.'} price="12,50€" />
+            <MenuCard image={samsaImage} title="Samsa" desc={lang === 'de' ? 'Gebackene Teigtaschen, Preis pro Stück.' : lang === 'ru' ? 'Запечённые пирожки, цена за штуку.' : 'Baked pastry pockets, price per piece.'} price="4,50€" />
+            <MenuCard image={daPanJiImage} title="Da Pan Ji" desc={lang === 'de' ? 'Authentisches Xinjiang-Gericht mit Hähnchen.' : lang === 'ru' ? 'Аутентичное блюдо Синьцзяна с курицей.' : 'Authentic Xinjiang chicken dish.'} price="15,50€" />
+            <MenuCard image={lagmanImage} title="Lagman (Rindfleisch)" desc={lang === 'de' ? 'Handgemachte Nudeln mit Fleisch und Gemüse.' : lang === 'ru' ? 'Домашняя лапша с мясом и овощами.' : 'Handmade noodles with beef and vegetables.'} price="14,50€" />
+            <MenuCard image={dessertImage} title="Tschak Tschak" desc={lang === 'de' ? 'Teigstäbchen in Honig mit Nüssen und Beeren.' : lang === 'ru' ? 'Тесто в меду с орехами и ягодами.' : 'Honey pastry sticks with nuts and berries.'} price="6,50€" />
           </div>
           
           <div className="mt-12 text-center">
