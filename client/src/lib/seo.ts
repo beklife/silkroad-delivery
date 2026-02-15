@@ -22,12 +22,12 @@ function setCanonical(url: string) {
 
 function setHreflangTags(basePath: string) {
   // Update hreflang tags for multilingual support with path-based URLs
-  const languages = ['de', 'en', 'ru', 'uz'];
+  const languages = ['de', 'en', 'ru'];
 
   // Remove existing language prefix from basePath
   let cleanPath = basePath;
   const pathSegments = basePath.split('/').filter(Boolean);
-  if (['en', 'ru', 'uz'].includes(pathSegments[0])) {
+  if (['en', 'ru'].includes(pathSegments[0])) {
     cleanPath = '/' + pathSegments.slice(1).join('/');
   }
 
@@ -39,8 +39,8 @@ function setHreflangTags(basePath: string) {
   languages.forEach(lang => {
     const hreflang = lang;
     const href = lang === 'de'
-      ? `https://caravan-restaurant.de${cleanPath}`
-      : `https://caravan-restaurant.de/${lang}${cleanPath}`;
+      ? `https://silkroad-restaurant-koeln.de${cleanPath}`
+      : `https://silkroad-restaurant-koeln.de/${lang}${cleanPath}`;
 
     let link = document.querySelector<HTMLLinkElement>(`link[hreflang="${hreflang}"]`);
     if (link) {
@@ -51,7 +51,7 @@ function setHreflangTags(basePath: string) {
   // Update x-default hreflang
   const defaultLink = document.querySelector<HTMLLinkElement>('link[hreflang="x-default"]');
   if (defaultLink) {
-    defaultLink.setAttribute("href", `https://caravan-restaurant.de${cleanPath}`);
+    defaultLink.setAttribute("href", `https://silkroad-restaurant-koeln.de${cleanPath}`);
   }
 }
 
@@ -67,7 +67,7 @@ export function useSeoMeta({ title, description, canonical }: SeoMeta) {
     setCanonical(canonical);
 
     // Extract base path from canonical URL for hreflang tags
-    const basePath = canonical.replace('https://caravan-restaurant.de', '').split('?')[0];
+    const basePath = canonical.replace('https://silkroad-restaurant-koeln.de', '').split('?')[0];
     setHreflangTags(basePath);
   }, [title, description, canonical]);
 }

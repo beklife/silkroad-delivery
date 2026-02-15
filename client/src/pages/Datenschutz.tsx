@@ -65,7 +65,7 @@ export default function Datenschutz() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="font-heading text-2xl font-bold tracking-wider text-primary"
           >
-            CARAVAN
+            SILK ROAD
           </Link>
 
           <div className="hidden md:flex items-center gap-4">
@@ -135,7 +135,7 @@ export default function Datenschutz() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLangDropdownOpen(false); setLocation(getLocalizedPath('/', l)); }}
@@ -197,7 +197,7 @@ export default function Datenschutz() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLangDropdownOpen(false); setLocation(getLocalizedPath('/', l)); }}
@@ -327,12 +327,12 @@ export default function Datenschutz() {
               {lang === 'de' ? 'Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:' : lang === 'ru' ? 'Ответственная сторона за обработку данных на этом веб-сайте:' : lang === 'uz' ? 'Ushbu veb-saytda ma’lumotlarni qayta ishlash uchun mas’ul tomon:' : 'The responsible party for data processing on this website is:'}
             </p>
             <p className="mb-4">
-              CARAVAN Restaurant<br />
-              Wöllstädter Str. 11<br />
-              60385 Frankfurt am Main<br />
+              SILK ROAD Restaurant<br />
+              Karl-Berbuer-Platz 7<br />
+              50678 Köln<br />
               <br />
               {lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'}{" "}
-              <a href="tel:+496995909158" className="underline hover:text-primary transition-colors">
+              <a href="tel:+4922196026707" className="underline hover:text-primary transition-colors">
                 +49 69 95909158
               </a>
               <br />
@@ -388,13 +388,13 @@ export default function Datenschutz() {
       {/* Footer */}
       <footer className="bg-foreground text-background py-8 md:py-12 mt-8 md:mt-16 border-t-2 border-primary/30 relative z-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">CARAVAN</p>
-          <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
-          <a href="tel:+496995909158" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
-            069 95909158
+          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">SILK ROAD</p>
+          <p className="text-white/80 text-sm md:text-base mb-1">Karl-Berbuer-Platz 7, 50678 Köln</p>
+          <a href="tel:+4922196026707" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
+            0221 96026707
           </a>
           <div className="mt-4 md:mt-6">
-            <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Restaurant • Frankfurt</p>
+            <p className="text-xs text-white/80 mt-auto">© {currentYear} SILK ROAD Restaurant • Köln</p>
             <p className="text-xs text-white/60 mt-2">
               Made by ❤️{" "}
               <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">

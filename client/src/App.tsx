@@ -11,9 +11,6 @@ import Home from "@/pages/Home";
 import MenuPage from "@/pages/MenuPage";
 import Impressum from "@/pages/Impressum";
 import Datenschutz from "@/pages/Datenschutz";
-import UsbekischesRestaurant from "@/pages/UsbekischesRestaurant";
-import HalalRestaurant from "@/pages/HalalRestaurant";
-import PlovFrankfurt from "@/pages/PlovFrankfurt";
 
 function App() {
   return (
@@ -33,12 +30,6 @@ function App() {
                 <Route path="/impressum/" component={Impressum} />
                 <Route path="/datenschutz" component={Datenschutz} />
                 <Route path="/datenschutz/" component={Datenschutz} />
-                <Route path="/usbekisches-restaurant-frankfurt" component={UsbekischesRestaurant} />
-                <Route path="/usbekisches-restaurant-frankfurt/" component={UsbekischesRestaurant} />
-                <Route path="/halal-restaurant-frankfurt" component={HalalRestaurant} />
-                <Route path="/halal-restaurant-frankfurt/" component={HalalRestaurant} />
-                <Route path="/plov-frankfurt" component={PlovFrankfurt} />
-                <Route path="/plov-frankfurt/" component={PlovFrankfurt} />
 
                 {/* English routes */}
                 <Route path="/en" component={Home} />
@@ -51,12 +42,6 @@ function App() {
                 <Route path="/ru/" component={Home} />
                 <Route path="/ru/menu" component={MenuPage} />
                 <Route path="/ru/menu/" component={MenuPage} />
-
-                {/* Uzbek routes */}
-                <Route path="/uz" component={Home} />
-                <Route path="/uz/" component={Home} />
-                <Route path="/uz/menu" component={MenuPage} />
-                <Route path="/uz/menu/" component={MenuPage} />
 
                 {/* 404 */}
                 <Route component={NotFound} />

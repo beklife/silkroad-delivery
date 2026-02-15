@@ -16,7 +16,7 @@ function getLangFromPath(pathname: string): Language {
   const segments = cleanPath.split('/').filter(Boolean);
   const firstSegment = segments[0];
 
-  if (['en', 'ru', 'uz'].includes(firstSegment)) {
+  if (['en', 'ru'].includes(firstSegment)) {
     return firstSegment as Language;
   }
 
@@ -55,7 +55,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     // Remove existing language prefix
     let cleanPath = path;
     const pathSegments = path.split('/').filter(Boolean);
-    if (['en', 'ru', 'uz'].includes(pathSegments[0])) {
+    if (['en', 'ru'].includes(pathSegments[0])) {
       cleanPath = '/' + pathSegments.slice(1).join('/');
     }
 

@@ -50,23 +50,23 @@ export default function Home() {
 
   // SEO meta tags optimized for key search terms
   const seoTitles: Record<Language, string> = {
-    de: "CARAVAN Restaurant Frankfurt | Usbekisches Restaurant Bornheim | Authentische Zentralasiatische Küche",
-    en: "CARAVAN Restaurant Frankfurt | Uzbek Restaurant Bornheim | Authentic Central Asian Cuisine",
-    ru: "Ресторан CARAVAN Франкфурт | Узбекский Ресторан Борнхайм | Аутентичная Центральноазиатская Кухня",
-    uz: "CARAVAN Restoran Frankfurt | Bornheimdagi o‘zbek restorani | Asl Markaziy Osiyo oshxonasi"
+    de: "SILK ROAD Restaurant Köln | Authentische zentralasiatische Küche",
+    en: "SILK ROAD Restaurant Köln | Authentic Central Asian Cuisine",
+    ru: "Ресторан SILK ROAD Кёльн | Аутентичная кухня Центральной Азии",
+    uz: "SILK ROAD Restoran Köln | Bornheimdagi o‘zbek restorani | Asl Markaziy Osiyo oshxonasi"
   };
 
   const seoDescriptions: Record<Language, string> = {
-    de: "Restaurant CARAVAN Frankfurt Bornheim - Das beste usbekische Restaurant in Frankfurt. Authentische zentralasiatische Küche seit 2005. Usbekischer Plov, Manty, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
-    en: "CARAVAN Restaurant Frankfurt Bornheim - The best Uzbek restaurant in Frankfurt. Authentic Central Asian cuisine since 2005. Uzbek Plov, Manty, Samsa. 100% Halal. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158",
-    ru: "Ресторан CARAVAN Франкфурт Борнхайм - Лучший узбекский ресторан во Франкфурте. Аутентичная центральноазиатская кухня с 2005 года. Узбекский Плов, Манты, Самса. 100% Халяль. Wöllstädter Str. 11, 60385 Франкфурт. Тел: 069 95909158",
-    uz: "CARAVAN Restorani Frankfurt Bornheim - Frankfurtdagi eng yaxshi o'zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O'zbek osh, manti, somsa. 100% halol. Wöllstädter Str. 11, 60385 Frankfurt. Tel: 069 95909158"
+    de: "Restaurant SILK ROAD Köln-Südstadt - Authentische zentralasiatische Küche seit 2020. Traditioneller Plov, Manty, Samsa. 100% Halal. Karl-Berbuer-Platz 7, 50678 Köln. Tel: 0221 96026707",
+    en: "SILK ROAD Restaurant Cologne Suedstadt - Authentic Central Asian cuisine since 2020. Plov, Manty, Samsa and more. 100% Halal. Karl-Berbuer-Platz 7, 50678 Koeln. Tel: 0221 96026707",
+    ru: "Ресторан SILK ROAD Кёльн - Аутентичная кухня Центральной Азии. Аутентичная центральноазиатская кухня с 2020 года. Узбекский Плов, Манты, Самса. 100% Халяль. Karl-Berbuer-Platz 7, 50678 Кёльн. Тел: 0221 96026707",
+    uz: "SILK ROAD Restorani Köln Bornheim - Kölndagi eng yaxshi o'zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O'zbek osh, manti, somsa. 100% halol. Karl-Berbuer-Platz 7, 50678 Köln. Tel: 0221 96026707"
   };
 
   // Dynamic canonical URL based on language path
   const getCanonicalUrl = () => {
     const localPath = getLocalizedPath('/');
-    return `https://caravan-restaurant.de${localPath}`;
+    return `https://silkroad-restaurant-koeln.de${localPath}`;
   };
 
   useSeoMeta({
@@ -159,7 +159,7 @@ export default function Home() {
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className={`font-heading text-2xl font-bold tracking-wider ${isScrolled ? "text-primary" : "text-white"}`}
             >
-              CARAVAN
+              SILK ROAD
             </Link>
           </div>
 
@@ -256,7 +256,7 @@ export default function Home() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         data-testid={`button-lang-${l}`}
@@ -323,7 +323,7 @@ export default function Home() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -371,7 +371,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <img
             src={heroImage}
-            alt="Traditional Uzbek and Central Asian feast with colorful dishes including Uzbek Plov and Manty dumplings at CARAVAN Restaurant Frankfurt"
+            alt="Traditional Central Asian feast with colorful dishes at SILK ROAD Restaurant Köln"
             className="w-full h-full object-cover"
             fetchPriority="high"
             decoding="async"
@@ -387,13 +387,13 @@ export default function Home() {
           className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6"
         >
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
-            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2005 • Frankfurt</span>
+            <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2020 • Köln</span>
           </div>
-          <img src={heroLogoImage} alt="CARAVAN" className="w-64 h-auto" />
+          <img src={heroLogoImage} alt="SILK ROAD" className="w-64 h-auto" />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
-            <span className="[font-family:'Quando',_serif]">CARAVAN</span>{' '}
+            <span className="[font-family:'Quando',_serif]">SILK ROAD</span>{' '}
             <span className="block text-xl  font-heading mt-2">
-              {t.hero.title.replace(/^CARAVAN\s*[–—-]\s*/i, '')}
+              {t.hero.title.replace(/^SILK ROAD\s*[–—-]\s*/i, '')}
             </span>
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
@@ -437,7 +437,7 @@ export default function Home() {
               className="relative"
             >
               <div className="aspect-[4/5] overflow-hidden rounded-sm">
-                <img src={interiorImage} alt="Cozy interior of CARAVAN Uzbek Restaurant Frankfurt with traditional Central Asian carpets and warm atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                <img src={interiorImage} alt="Cozy interior of SILK ROAD Restaurant Köln with traditional Central Asian carpets and warm atmosphere" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
               </div>
               <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-secondary/20 -z-10 rounded-full blur-2xl"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 border-2 border-primary/30 z-20"></div>
@@ -511,11 +511,11 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-center text-4xl font-heading font-bold mb-12 text-white">{t.gallery.title}</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 h-[500px]">
-             <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: heroImage, name: "CARAVAN Restaurant Frankfurt" })}>
-                <img alt="Authentic Uzbek and Central Asian dishes at CARAVAN Restaurant Frankfurt - Uzbek Plov, Manty" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+             <div className="col-span-2 row-span-2 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: heroImage, name: "SILK ROAD Restaurant Köln" })}>
+                <img alt="Authentic Central Asian dishes at SILK ROAD Restaurant Köln" src={heroImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
-             <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: interiorImage, name: "CARAVAN Interior" })}>
-                <img alt="Warm and inviting interior of CARAVAN Restaurant in Bornheim, Frankfurt with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
+             <div className="col-span-2 row-span-1 relative overflow-hidden group rounded-sm cursor-pointer" onClick={() => setLightboxImage({ src: interiorImage, name: "SILK ROAD Interior" })}>
+                <img alt="Warm and inviting interior of SILK ROAD Restaurant in Köln with traditional decorations" src={interiorImage} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
              </div>
           </div>
         </div>
@@ -562,12 +562,12 @@ export default function Home() {
                    <MapPin className="w-6 h-6" /> {t.location.title}
                  </h3>
                  <address className="not-italic text-lg mb-6 block">
-                   Wöllstädter Str. 11<br />
-                   60385 Frankfurt am Main
+                   Karl-Berbuer-Platz 7<br />
+                   50678 Köln
                  </address>
 
                  <div className="space-y-2 text-sm text-neutral-400 font-mono">
-                   <p>U-Bahn: Seckbacher Landstraße, Bornheim</p>
+                   <p>Südstadt • Karl-Berbuer-Platz</p>
                  </div>
 
                  <div className="flex items-start gap-4 mt-6">
@@ -575,8 +575,8 @@ export default function Home() {
                      <Phone className="w-6 h-6" />
                    </div>
                    <div>
-                     <a href="tel:+496995909158" className="font-bold text-lg hover:text-primary">
-                       069 95909158
+                     <a href="tel:+4922196026707" className="font-bold text-lg hover:text-primary">
+                       0221 96026707
                      </a>
                    </div>
                  </div>
@@ -586,7 +586,7 @@ export default function Home() {
             <div className="h-full min-h-[400px] bg-muted relative rounded-sm overflow-hidden border border-border group">
                <iframe
                 title="Google Maps location of the restaurant"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.4614624215283!2d8.710742976530918!3d50.13379857153347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd09697e951d87%3A0xfec545fed4dbe79d!2sRestaurant%20Caravan!5e0!3m2!1sde!2sde!4v1769458302327!5m2!1sde!2sde"
+                src="https://www.google.com/maps?q=Karl-Berbuer-Platz+7,+50678+K%C3%B6ln&output=embed"
                 width="100%"
                 height="100%"
                 style={{border:0}}
@@ -627,7 +627,7 @@ export default function Home() {
                 </a>
                 <span className="mx-2 text-muted-foreground">|</span>
                 <a
-                  href="tel:+496995909158"
+                  href="tel:+4922196026707"
                   className="text-primary hover:underline font-medium"
                 >
                   +49 69 95909158
@@ -643,10 +643,10 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-12 text-center md:text-left">
             <div>
-              <h4 className="text-2xl font-heading font-bold mb-6 text-white tracking-widest">CARAVAN</h4>
+              <h4 className="text-2xl font-heading font-bold mb-6 text-white tracking-widest">SILK ROAD</h4>
               <p className="text-white/60 mb-4">{t.location.address}</p>
-              <a href="tel:+496995909158" className="text-white/60 hover:text-primary transition-colors">
-                069 95909158
+              <a href="tel:+4922196026707" className="text-white/60 hover:text-primary transition-colors">
+                0221 96026707
               </a>
             </div>
             
@@ -667,7 +667,7 @@ export default function Home() {
                 </a>
                 <a href="mailto:info.restaurantcaravan@gmail.com" aria-label="Email" className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"><Mail className="w-5 h-5" /></a>
               </div>
-              <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Frankfurt. {t.footer.rights}</p>
+              <p className="text-xs text-white/80 mt-auto">© {currentYear} SILK ROAD Köln. {t.footer.rights}</p>
               <p className="text-xs text-white/60 mt-2">
                 Made by ❤️{" "}
                 <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">

@@ -871,23 +871,23 @@ export default function MenuPage() {
 
   // SEO meta tags for menu page
   const seoTitles: Record<Language, string> = {
-    de: "Speisekarte - CARAVAN Restaurant Frankfurt | Usbekische Gerichte & Preise",
-    en: "Menu - CARAVAN Restaurant Frankfurt | Uzbek Dishes & Prices",
-    ru: "Меню - Ресторан CARAVAN Франкфурт | Узбекские блюда и цены",
-    uz: "Menyu - CARAVAN Restoran Frankfurt | O'zbek taomlari va narxlar"
+    de: "Speisekarte - SILK ROAD Restaurant Köln | Zentralasiatische Gerichte & Preise",
+    en: "Menu - SILK ROAD Restaurant Köln | Central Asian Dishes & Prices",
+    ru: "Меню - SILK ROAD Restaurant Кёльн | Блюда Центральной Азии и цены",
+    uz: "Menyu - SILK ROAD Restoran Köln | O'zbek taomlari va narxlar"
   };
 
   const seoDescriptions: Record<Language, string> = {
-    de: "Entdecken Sie unsere Speisekarte mit authentischen usbekischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Samsa, Schaschlik und mehr. Halal-Küche in Frankfurt Bornheim.",
-    en: "Discover our menu with authentic Uzbek specialties: Plov from €17.90, Manty €23.90, Samsa, Shashlik and more. Halal cuisine in Frankfurt Bornheim.",
-    ru: "Откройте для себя наше меню с аутентичными узбекскими блюдами: Плов от 17.90€, Манты 23.90€, Самса, Шашлык и многое другое. Халяль кухня во Франкфурте Борнхайм.",
-    uz: "Bizning menyumizni kashf eting: O'zbek osh 17.90€ dan, manti 23.90€, somsa, shashlik va boshqalar. Frankfurt Bornheimdagi halol oshxona."
+    de: "Entdecken Sie unsere Speisekarte mit authentischen zentralasiatischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Samsa, Schaschlik und mehr. Halal-Küche in Köln-Südstadt.",
+    en: "Discover our menu with authentic Central Asian specialties: Plov from €17.90, Manty €23.90, Samsa, Shashlik and more. Halal cuisine in Köln-Südstadt.",
+    ru: "Откройте для себя наше меню с аутентичными блюдами Центральной Азии: Плов от 17.90€, Манты 23.90€, Самса, Шашлык и многое другое. Халяль кухня во Кёльне Борнхайм.",
+    uz: "Bizning menyumizni kashf eting: O'zbek osh 17.90€ dan, manti 23.90€, somsa, shashlik va boshqalar. Köln-Südstadtdagi halol oshxona."
   };
 
   // Dynamic canonical URL based on language path
   const getCanonicalUrl = () => {
     const localPath = getLocalizedPath('/menu/');
-    return `https://caravan-restaurant.de${localPath}`;
+    return `https://silkroad-restaurant-koeln.de${localPath}`;
   };
 
   useSeoMeta({
@@ -944,7 +944,7 @@ export default function MenuPage() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="font-heading text-2xl font-bold tracking-wider text-primary"
           >
-            CARAVAN
+            SILK ROAD
           </Link>
 
           <div className="hidden md:flex items-center gap-4">
@@ -1020,7 +1020,7 @@ export default function MenuPage() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -1082,7 +1082,7 @@ export default function MenuPage() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLang(l); setLangDropdownOpen(false); }}
@@ -1211,32 +1211,32 @@ export default function MenuPage() {
               {lang === 'de' && (
                 <>
                   Reservierung empfohlen •{" "}
-                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
-                    069 95909158
+                  <a href="tel:+4922196026707" className="hover:text-primary transition-colors">
+                    0221 96026707
                   </a>
                 </>
               )}
               {lang === 'en' && (
                 <>
                   Reservation recommended •{" "}
-                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
-                    069 95909158
+                  <a href="tel:+4922196026707" className="hover:text-primary transition-colors">
+                    0221 96026707
                   </a>
                 </>
               )}
               {lang === 'ru' && (
                 <>
                   Рекомендуется бронирование •{" "}
-                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
-                    069 95909158
+                  <a href="tel:+4922196026707" className="hover:text-primary transition-colors">
+                    0221 96026707
                   </a>
                 </>
               )}
               {lang === 'uz' && (
                 <>
                   Bron qilish tavsiya etiladi •{" "}
-                  <a href="tel:+496995909158" className="hover:text-primary transition-colors">
-                    069 95909158
+                  <a href="tel:+4922196026707" className="hover:text-primary transition-colors">
+                    0221 96026707
                   </a>
                 </>
               )}
@@ -1253,14 +1253,14 @@ export default function MenuPage() {
             <span className="text-2xl md:text-3xl text-secondary">✦</span>
             <div className="h-[1px] w-8 md:w-16 bg-gradient-to-l from-transparent to-white/30"></div>
           </div>
-          <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] mb-2 text-white">CARAVAN</p>
-          <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
-          <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Bornheim • Frankfurt</p>
-          <a href="tel:+496995909158" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
-            069 95909158
+          <p className="font-heading text-2xl md:text-3xl tracking-[0.2em] md:tracking-[0.3em] mb-2 text-white">SILK ROAD</p>
+          <p className="text-white/80 text-sm md:text-base mb-1">Karl-Berbuer-Platz 7, 50678 Köln</p>
+          <p className="text-white/60 text-xs md:text-sm mb-3 md:mb-4">Südstadt • Köln</p>
+          <a href="tel:+4922196026707" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
+            0221 96026707
           </a>
           <div className="mt-4 md:mt-6">
-            <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Restaurant • Frankfurt</p>
+            <p className="text-xs text-white/80 mt-auto">© {currentYear} SILK ROAD Restaurant • Köln</p>
             <p className="text-xs text-white/60 mt-2">
               Made by ❤️{" "}
               <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">

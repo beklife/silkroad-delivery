@@ -10,17 +10,17 @@ export const translations = {
       reserve: "Reservierungsanfrage"
     },
     hero: {
-      title: "CARAVAN – erste Usbekische Küche in Deutschland.",
-      subtitle: "Authentische usbekische Küche, warme Gastfreundschaft und lebendige Teekultur in Frankfurt am Main.",
+      title: "SILK ROAD Restaurant Köln – authentische zentralasiatische Küche.",
+      subtitle: "Authentische Aromen der Seidenstraße, warme Gastfreundschaft und gelebte Teekultur in Köln-Südstadt.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
     },
     about: {
       title: "Unsere Geschichte",
-      content: "Willkommen im CARAVAN. Wir bringen die reichen Aromen und die herzliche Gastfreundschaft der Seidenstraße nach Frankfurt. Unsere Küche zelebriert die kulinarischen Traditionen Zentralasiens. Bei uns ist Essen mehr als nur Nahrung; es ist ein gemeinschaftliches Erlebnis, geteilt mit Freunden und Familie in einer Atmosphäre, die sich wie zu Hause anfühlt."
+      content: "Willkommen im SILK ROAD Restaurant Köln. Unsere Küche verbindet Traditionen aus Zentralasien mit echter Gastfreundschaft und dem Ritual des gemeinsamen Essens. Unsere Küche zelebriert die kulinarischen Traditionen Zentralasiens. Bei uns ist Essen mehr als nur Nahrung; es ist ein gemeinschaftliches Erlebnis, geteilt mit Freunden und Familie in einer Atmosphäre, die sich wie zu Hause anfühlt."
     },
     menu: {
-      journey: "REISE MIT CARAVAN",
+      journey: "GESCHMACK DER SEIDENSTRASSE",
       title: "Kulinarische Highlights",
       subtitle: "Eine Auswahl unserer beliebtesten Gerichte. Das Angebot kann saisonal variieren.",
       dishes: {
@@ -41,7 +41,7 @@ export const translations = {
         warenikiwegetarisch: { name: "Wareniki Vegetarisch", desc: "Kleine Maultaschen Mit Kartoffelfüllung. Frische Gemüsesalat dazu." },
         schaschlikvomlamm: { name: "Schaschlik vom Lamm", desc: "Saftige Lammfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
-        caravandessert: { name: "Caravan Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
+        caravandessert: { name: "Silk Road Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
         honigmedovikkuchen: { name: "Honig Medovik Kuchen", desc: "Honig Medovik Kuchen in zwei Sorten: Nuss / Schokolade" },
         honigmedovikschokolade: { name: "Honig Medovik Schokolade", desc: "Honig Medovik Torte in der Schokoladen-Variante." },
         kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Jasmin-Tee, traditionell serviert in einer Teekanne." }
@@ -49,20 +49,20 @@ export const translations = {
     },
     hours: {
       title: "Öffnungszeiten",
-      open: "Dienstag-Sonntag",
-      openTime: "17:00 - 23:00",
-      kitchen: "Küche geöffnet bis",
-      kitchenTime: "22:00 Uhr",
+      open: "Di-Sa",
+      openTime: "12:00 - 22:00",
+      kitchen: "Sonntag",
+      kitchenTime: "12:00 - 20:00",
       weekdays: "Dienstag – Freitag",
       weekend: "Samstag – Sonntag",
       monday: "Montag",
       closed: "Geschlossen",
-      note: "An Feiertagen können die Zeiten abweichen. Bitte rufen Sie an."
+      note: "Bei Veranstaltungen oder Feiertagen können die Zeiten abweichen. Bitte kurz anrufen."
     },
     location: {
       title: "Standort",
-      address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
-      district: "Bornheim / Frankfurt am Main",
+      address: "Karl-Berbuer-Platz 7, 50678 Köln",
+      district: "Südstadt / Köln",
       get_directions: "Route planen",
       call_us: "Anrufen"
     },
@@ -101,18 +101,18 @@ export const translations = {
       reserve: "Reservation Request"
     },
     hero: {
-      title: "CARAVAN – first Uzbek cuisine in Germany.",
-      subtitle: "Authentic Uzbek flavors, warm hospitality, and vibrant tea culture in Frankfurt am Main.",
-      notice: "This is the official CARAVAN website. We are still building it, so photos and texts are examples. Real photos are coming soon. You can still reserve a table or contact us.",
+      title: "SILK ROAD Restaurant Cologne - authentic Central Asian cuisine.",
+      subtitle: "Authentic Silk Road flavors, warm hospitality, and vibrant tea culture in Cologne's Suedstadt.",
+      notice: "This is the official SILK ROAD website. We are still building it, so photos and texts are examples. Real photos are coming soon. You can still reserve a table or contact us.",
       cta_reserve: "Book a Table",
       cta_menu: "View Highlights"
     },
     about: {
       title: "Our Story",
-      content: "Welcome to CARAVAN. We bring the rich flavors and warm hospitality of the ancient Silk Road to Frankfurt. Our kitchen celebrates the culinary traditions of Central Asia. Here, dining is more than just food; it is a communal experience shared with friends and family in an atmosphere that feels like home."
+      content: "Welcome to SILK ROAD Restaurant Cologne. We celebrate Central Asian cooking traditions with bold spices, generous plates, and tea-centered hospitality. Our kitchen celebrates the culinary traditions of Central Asia. Here, dining is more than just food; it is a communal experience shared with friends and family in an atmosphere that feels like home."
     },
     menu: {
-      journey: "JOURNEY WITH CARAVAN",
+      journey: "TASTE THE SILK ROAD",
       title: "Menu Highlights",
       subtitle: "A selection of our favorites. Offerings may vary seasonally.",
       dishes: {
@@ -133,7 +133,7 @@ export const translations = {
         warenikiwegetarisch: { name: "Wareniki Vegetarian", desc: "Little dumpling filled with potatoes. Served with a fresh vegetable salad." },
         schaschlikvomlamm: { name: "Shashlik from Lamb", desc: "Tenderly marinated lamb filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
         schaschlikvomhaehnchen: { name: "Shashlik from Chicken", desc: "Tenderly marinated chicken filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
-        caravandessert: { name: "Caravan Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
+        caravandessert: { name: "Silk Road Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
         honigmedovikkuchen: { name: "Honey Medovik Cake", desc: "Honey Medovik Cake in two varieties: Nut / Chocolate" },
         honigmedovikschokolade: { name: "Honey Medovik Chocolate", desc: "Honey Medovik cake in the chocolate variety." },
         kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic jasmine tea, traditionally served in a teapot." }
@@ -141,20 +141,20 @@ export const translations = {
     },
     hours: {
       title: "Opening Hours",
-      open: "Tuesday-Sunday",
-      openTime: "17:00 - 23:00",
-      kitchen: "Kitchen open until",
-      kitchenTime: "22:00",
+      open: "Tue-Sat",
+      openTime: "12:00 - 22:00",
+      kitchen: "Sunday",
+      kitchenTime: "12:00 - 20:00",
       weekdays: "Tuesday – Friday",
       weekend: "Saturday – Sunday",
       monday: "Monday",
       closed: "Closed",
-      note: "Hours may vary on holidays. Call to confirm."
+      note: "Hours may vary on holidays or event days. Please call to confirm."
     },
     location: {
       title: "Location",
-      address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
-      district: "Bornheim / Frankfurt am Main",
+      address: "Karl-Berbuer-Platz 7, 50678 Köln",
+      district: "Südstadt / Köln",
       get_directions: "Get Directions",
       call_us: "Call Us"
     },
@@ -193,18 +193,18 @@ export const translations = {
       reserve: "Запрос на бронирование"
     },
     hero: {
-      title: "CARAVAN — первая узбекская кухня в Германии.",
-      subtitle: "Аутентичные узбекские вкусы, теплое гостеприимство и культура чаепития во Франкфурте-на-Майне.",
-      notice: "Это официальный сайт CARAVAN. Мы еще дорабатываем сайт, поэтому фото и тексты пока примерные. Настоящие фото скоро будут. Вы уже можете бронировать столик или связаться с нами.",
+      title: "SILK ROAD Restaurant Кёльн - аутентичная кухня Центральной Азии.",
+      subtitle: "Аутентичные вкусы Шелкового пути, теплое гостеприимство и культура чаепития в Кёльне.",
+      notice: "Это официальный сайт SILK ROAD. Мы еще дорабатываем сайт, поэтому фото и тексты пока примерные. Настоящие фото скоро будут. Вы уже можете бронировать столик или связаться с нами.",
       cta_reserve: "Забронировать стол",
       cta_menu: "Смотреть меню"
     },
     about: {
       title: "Наша история",
-      content: "Добро пожаловать в CARAVAN. Мы привезли во Франкфурт богатые вкусы и теплое гостеприимство Шелкового пути. Наша кухня прославляет кулинарные традиции Центральной Азии. Еда для нас — это не просто пища, а повод собраться с друзьями и семьей в атмосфере домашнего уюта."
+      content: "Добро пожаловать в SILK ROAD. Мы привезли во Кёльн богатые вкусы и теплое гостеприимство Шелкового пути. Наша кухня прославляет кулинарные традиции Центральной Азии. Еда для нас — это не просто пища, а повод собраться с друзьями и семьей в атмосфере домашнего уюта."
     },
     menu: {
-      journey: "ПУТЕШЕСТВИЕ С CARAVAN",
+      journey: "ВКУС ШЕЛКОВОГО ПУТИ",
       title: "Хиты меню",
       subtitle: "Избранные блюда. Меню может меняться в зависимости от сезона.",
       dishes: {
@@ -233,20 +233,20 @@ export const translations = {
     },
     hours: {
       title: "Часы работы",
-      open: "Вторник-Воскресенье",
-      openTime: "17:00 - 23:00",
-      kitchen: "Кухня открыта до",
-      kitchenTime: "22:00",
+      open: "Вт-Сб",
+      openTime: "12:00 - 22:00",
+      kitchen: "Воскресенье",
+      kitchenTime: "12:00 - 20:00",
       weekdays: "Вторник – Пятница",
       weekend: "Суббота – Воскресенье",
       monday: "Понедельник",
       closed: "Закрыто",
-      note: "В праздничные дни часы могут меняться. Позвоните для уточнения."
+      note: "В праздники и в дни мероприятий часы могут меняться. Позвоните для уточнения."
     },
     location: {
       title: "Как нас найти",
-      address: "Wöllstädter Str. 11, 60385 Франкфурт-на-Майне",
-      district: "Хеддернхайм / Франкфурт-на-Майне",
+      address: "Karl-Berbuer-Platz 7, 50678 Кёльн",
+      district: "Зюдштадт / Кёльн",
       get_directions: "Проложить маршрут",
       call_us: "Позвонить"
     },
@@ -285,18 +285,18 @@ export const translations = {
       reserve: "Bron so‘rovi"
     },
     hero: {
-      title: "CARAVAN – Germaniyadagi birinchi o‘zbek oshxonasi.",
-      subtitle: "Frankfurt am Main shahrida asl o‘zbek ta’mlari, samimiy mehmondo‘stlik va choy madaniyati.",
-      notice: "Bu CARAVANning rasmiy veb-sayti. Hozir saytni yakunlayapmiz, shuning uchun foto va matnlar hozircha namunadir. Haqiqiy suratlar tez orada bo‘ladi. Baribir stol bron qilishingiz yoki biz bilan bog‘lanishingiz mumkin.",
+      title: "SILK ROAD – Germaniyadagi birinchi o‘zbek oshxonasi.",
+      subtitle: "Köln shahrida asl o‘zbek ta’mlari, samimiy mehmondo‘stlik va choy madaniyati.",
+      notice: "Bu SILK ROADning rasmiy veb-sayti. Hozir saytni yakunlayapmiz, shuning uchun foto va matnlar hozircha namunadir. Haqiqiy suratlar tez orada bo‘ladi. Baribir stol bron qilishingiz yoki biz bilan bog‘lanishingiz mumkin.",
       cta_reserve: "Stol bron qilish",
       cta_menu: "Menyu ko‘rish"
     },
     about: {
       title: "Bizning tariximiz",
-      content: "CARAVAN restoraniga xush kelibsiz. Biz Frankfurt shahriga Ipak yo‘lining boy ta’mlari va samimiy mehmondo‘stligini olib keldik. Oshxonamiz Markaziy Osiyoning oshpazlik an’analarini nishonlaydi. Bizda ovqatlanish shunchaki ovqat emas; bu do‘stlar va oila bilan uyga o‘xshagan muhitda baham ko‘riladigan jamoaviy tajribadir."
+      content: "SILK ROAD restoraniga xush kelibsiz. Biz Köln shahriga Ipak yo‘lining boy ta’mlari va samimiy mehmondo‘stligini olib keldik. Oshxonamiz Markaziy Osiyoning oshpazlik an’analarini nishonlaydi. Bizda ovqatlanish shunchaki ovqat emas; bu do‘stlar va oila bilan uyga o‘xshagan muhitda baham ko‘riladigan jamoaviy tajribadir."
     },
     menu: {
-      journey: "CARAVAN BILAN SAYOHAT",
+      journey: "SILK ROAD BILAN SAYOHAT",
       title: "Oshxonamizdagi diqqatga sazovor taomlar",
       subtitle: "Bizning eng mashhur taomlarimizdan tanlov. Taomlar mavsumga qarab o‘zgarishi mumkin.",
       dishes: {
@@ -326,7 +326,7 @@ export const translations = {
     hours: {
       title: "Ish vaqti",
       open: "Seshanba – Yakshanba",
-      openTime: "17:00 - 23:00",
+      openTime: "12:00 - 22:00",
       kitchen: "Oshxona",
       kitchenTime: "22:00 gacha",
       weekdays: "Seshanba – Juma",
@@ -337,8 +337,8 @@ export const translations = {
     },
     location: {
       title: "Manzil",
-      address: "Wöllstädter Str. 11, 60385 Frankfurt am Main",
-      district: "Bornheim / Frankfurt am Main",
+      address: "Karl-Berbuer-Platz 7, 50678 Köln",
+      district: "Südstadt / Köln",
       get_directions: "Yo‘nalish olish",
       call_us: "Qo‘ng‘iroq qilish"
     },

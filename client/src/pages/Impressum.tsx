@@ -65,7 +65,7 @@ export default function Impressum() {
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="font-heading text-2xl font-bold tracking-wider text-primary"
           >
-            CARAVAN
+            SILK ROAD
           </Link>
 
           <div className="hidden md:flex items-center gap-4">
@@ -135,7 +135,7 @@ export default function Impressum() {
                     transition={{ duration: 0.15 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[140px]"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLangDropdownOpen(false); setLocation(getLocalizedPath('/', l)); }}
@@ -197,7 +197,7 @@ export default function Impressum() {
                     exit={{ opacity: 0, y: -10 }}
                     className="absolute top-full right-0 mt-2 bg-card border border-border rounded-lg shadow-xl overflow-hidden z-50"
                   >
-                    {(["de", "en", "uz", "ru"] as Language[]).map((l) => (
+                    {( ["de", "en", "ru"] as Language[] ).map((l) => (
                       <button
                         key={l}
                         onClick={() => { setLangDropdownOpen(false); setLocation(getLocalizedPath('/', l)); }}
@@ -262,9 +262,9 @@ export default function Impressum() {
             </h2>
 
             <p className="mb-4">
-              <strong>CARAVAN Restaurant</strong><br />
-              Wöllstädter Str. 11<br />
-              60385 Frankfurt am Main<br />
+              <strong>SILK ROAD Restaurant</strong><br />
+              Karl-Berbuer-Platz 7<br />
+              50678 Köln<br />
               Deutschland
             </p>
 
@@ -273,7 +273,7 @@ export default function Impressum() {
             </h2>
             <p className="mb-4">
               <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'}</strong>{" "}
-              <a href="tel:+496995909158" className="underline hover:text-primary transition-colors">
+              <a href="tel:+4922196026707" className="underline hover:text-primary transition-colors">
                 +49 69 95909158
               </a>
               <br />
@@ -284,9 +284,9 @@ export default function Impressum() {
               {lang === 'de' ? 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV' : lang === 'ru' ? 'Ответственный за содержание согласно § 55 Abs. 2 RStV' : lang === 'uz' ? '§ 55 Abs. 2 RStV bo‘yicha mazmun uchun mas’ul shaxs' : 'Responsible for content according to § 55 Abs. 2 RStV'}
             </h2>
             <p className="mb-4">
-              CARAVAN Restaurant<br />
-              Wöllstädter Str. 11<br />
-              60385 Frankfurt am Main
+              SILK ROAD Restaurant<br />
+              Karl-Berbuer-Platz 7<br />
+              50678 Köln
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
@@ -321,13 +321,13 @@ export default function Impressum() {
       {/* Footer */}
       <footer className="bg-foreground text-background py-8 md:py-12 mt-8 md:mt-16 border-t-2 border-primary/30 relative z-10">
         <div className="container mx-auto px-4 text-center">
-          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">CARAVAN</p>
-          <p className="text-white/80 text-sm md:text-base mb-1">Wöllstädter Str. 11, 60385 Frankfurt am Main</p>
-          <a href="tel:+496995909158" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
-            069 95909158
+          <p className="font-heading text-2xl md:text-3xl tracking-wider mb-2 text-white">SILK ROAD</p>
+          <p className="text-white/80 text-sm md:text-base mb-1">Karl-Berbuer-Platz 7, 50678 Köln</p>
+          <a href="tel:+4922196026707" className="text-secondary font-bold tracking-wider text-sm md:text-base hover:text-primary transition-colors">
+            0221 96026707
           </a>
           <div className="mt-4 md:mt-6">
-            <p className="text-xs text-white/80 mt-auto">© {currentYear} CARAVAN Restaurant • Frankfurt</p>
+            <p className="text-xs text-white/80 mt-auto">© {currentYear} SILK ROAD Restaurant • Köln</p>
             <p className="text-xs text-white/60 mt-2">
               Made by ❤️{" "}
               <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
