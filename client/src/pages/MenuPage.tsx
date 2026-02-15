@@ -139,19 +139,6 @@ const silkRoadMenu = {
         ru: "Запечённая слоёная выпечка с начинкой на выбор.",
         uz: "Tanlovga ko‘ra ichlik bilan pishirilgan somsa."
       }
-    },
-    {
-      id: "lepeschka",
-      image: lepeshkaMenuImage,
-      price: "2,50€",
-      dietary: "vegetarian",
-      names: { de: "Lepeschka", en: "Lepeshka", ru: "Лепешка", uz: "Lepyoshka" },
-      descs: {
-        de: "Traditionelles Fladenbrot aus gemahlenem Getreide und Wasser. Allergene: A, B, E.",
-        en: "Traditional flatbread from grain and water.",
-        ru: "Традиционная лепешка из муки и воды.",
-        uz: "Un va suvdan tayyorlangan an’anaviy non."
-      }
     }
   ],
   mains: [
@@ -412,6 +399,19 @@ const silkRoadMenu = {
   ],
   sides: [
     {
+      id: "lepeschka",
+      image: lepeshkaMenuImage,
+      price: "2,50€",
+      dietary: "vegetarian",
+      names: { de: "Lepeschka", en: "Lepeshka", ru: "Лепешка", uz: "Lepyoshka" },
+      descs: {
+        de: "Traditionelles Fladenbrot aus gemahlenem Getreide und Wasser. Allergene: A, B, E.",
+        en: "Traditional flatbread from grain and water.",
+        ru: "Традиционная лепешка из муки и воды.",
+        uz: "Un va suvdan tayyorlangan an’anaviy non."
+      }
+    },
+    {
       id: "lazjan",
       image: null,
       price: "1,00€",
@@ -546,6 +546,7 @@ export default function MenuPage() {
   const t = translations[lang];
   const cats = silkRoadMenuCategories[lang];
   const activeMenu = silkRoadMenu;
+  const mainCombinedItems = [...activeMenu.mains, ...activeMenu.soups, ...activeMenu.appetizers];
   const currentYear = new Date().getFullYear();
 
   // SEO meta tags for menu page
@@ -840,12 +841,10 @@ export default function MenuPage() {
         </div>
 
         {/* Soups */}
-        {activeMenu.soups.length > 0 && <MenuSection title={cats.soups} items={activeMenu.soups} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
-        {activeMenu.appetizers.length > 0 && <MenuSection title={cats.appetizers} items={activeMenu.appetizers} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
-        {activeMenu.mains.length > 0 && <MenuSection title={cats.mains} items={activeMenu.mains} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {mainCombinedItems.length > 0 && <MenuSection title={cats.mains} items={mainCombinedItems} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
         {activeMenu.salads.length > 0 && <MenuSection title={cats.salads} items={activeMenu.salads} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {activeMenu.sides.length > 0 && <MenuSection title={cats.sides} items={activeMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />}
         {activeMenu.desserts.length > 0 && <MenuSection title={cats.desserts} items={activeMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
-        {activeMenu.sides.length > 0 && <MenuSection title={cats.sides} items={activeMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
         {activeMenu.drinks.length > 0 && <MenuSection title={cats.drinks} items={activeMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />}
         {activeMenu.colddrinks.length > 0 && <MenuSection title={cats.colddrinks} items={activeMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} />}
 
@@ -967,8 +966,6 @@ export default function MenuPage() {
 }
 
 function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder, hideDetails }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string }, setLightboxImage: (image: { src: string; name: string } | null) => void, hidePlaceholder?: boolean, hideDetails?: boolean }) {
-  // Check if this section has signature dishes (mains)
-  const isMainSection = items.length > 0 && (items[0].id === 'plowbeef' || items[0].id === 'plov');
   const reduceMotion = useReducedMotion();
 
   return (
@@ -997,8 +994,6 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
         <div className="space-y-6 md:space-y-8">
           {items.map((item, idx) => {
             const { name, desc } = getDishInfo(item);
-            const isSignature = isMainSection && (item.id === 'plowbeef' || item.id === 'mantybeef');
-
             return (
               <motion.div
                 key={item.id}
@@ -1025,11 +1020,6 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                       <div className="absolute inset-0 bg-black/0 group-hover/image:bg-black/20 transition-colors flex items-center justify-center">
                         <span className="text-white opacity-0 group-hover/image:opacity-100 transition-opacity text-2xl">🔍</span>
                       </div>
-                      {isSignature && (
-                        <div className="absolute top-1 right-1 md:top-2 md:right-2 bg-secondary text-secondary-foreground text-xs font-bold px-1.5 md:px-2 py-0.5 md:py-1 rounded-sm shadow-lg">
-                          ★
-                        </div>
-                      )}
                     </div>
                   ) : !hidePlaceholder ? (
                     <div className="w-20 h-20 md:w-32 md:h-32 rounded-sm flex-shrink-0 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center border border-border">
@@ -1046,7 +1036,6 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                         <div className="flex items-baseline justify-between gap-2 mb-1">
                           <h4 className="text-lg font-heading font-bold group-hover:text-primary transition-colors">
                             {name}
-                            {isSignature && <span className="text-secondary ml-1 text-sm">★</span>}
                           </h4>
                           <span className="text-lg font-bold text-primary whitespace-nowrap">
                             {item.price}
@@ -1058,7 +1047,6 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                       <div className="hidden md:flex items-baseline gap-2">
                         <h4 className="text-xl lg:text-2xl font-heading font-bold group-hover:text-primary transition-colors flex-shrink-0">
                           {name}
-                          {isSignature && <span className="text-secondary ml-2 text-sm">★</span>}
                         </h4>
                         <div className="flex-1 border-b-2 border-dotted border-border/50 mb-1 min-w-[20px]"></div>
                         <span className="text-xl lg:text-2xl font-bold text-primary whitespace-nowrap flex-shrink-0">
