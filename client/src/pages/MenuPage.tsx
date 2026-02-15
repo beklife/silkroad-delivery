@@ -548,6 +548,27 @@ export default function MenuPage() {
   const activeMenu = silkRoadMenu;
   const mainCombinedItems = [...activeMenu.mains, ...activeMenu.soups, ...activeMenu.appetizers];
   const currentYear = new Date().getFullYear();
+  const additiveLegend = [
+    { key: "1", label: "Farbstoff" },
+    { key: "2", label: "Konservierungsstoff" },
+    { key: "3", label: "Antioxidationsmittel" },
+    { key: "4", label: "Geschmacksverstärker" },
+    { key: "5", label: "Milcheiweiß" },
+    { key: "6", label: "Koffeinhaltig" },
+    { key: "7", label: "Süßungsmittel" },
+  ];
+  const allergenLegend = [
+    { key: "A", label: "Glutenhaltiges Getreide (Weizenmehl)" },
+    { key: "B", label: "Eier" },
+    { key: "C", label: "Erdnüsse" },
+    { key: "C1", label: "Walnuss" },
+    { key: "D", label: "Soja" },
+    { key: "E", label: "Milch" },
+    { key: "F", label: "Schalenfrüchte" },
+    { key: "G", label: "Sellerie" },
+    { key: "H", label: "Senf" },
+    { key: "J", label: "Sesamsamen" },
+  ];
 
   // SEO meta tags for menu page
   const seoTitles: Record<Language, string> = {
@@ -855,11 +876,40 @@ export default function MenuPage() {
             <span className="text-xl md:text-2xl text-primary">✦</span>
             <div className="h-[1px] w-8 md:w-12 bg-gradient-to-l from-transparent to-primary"></div>
           </div>
-          <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-2xl mx-auto px-2">
-            {lang === 'de' && 'Alle Preise inkl. MwSt. • Zusatzstoffe: 1-Farbstoff, 2-Konservierungsstoff, 3-Antioxidationsmittel, 4-Geschmacksverstärker, 5-Milcheiweiß, 6-Koffeinhaltig, 7-Süßungsmittel • Allergene: A-Glutenhaltiges Getreide (Weizenmehl), B-Eier, C-Erdnüsse, C1-Walnuss, D-Soja, E-Milch, F-Schalenfrüchte, G-Sellerie, H-Senf, J-Sesamsamen'}
-            {lang === 'en' && 'All prices include VAT • Allergen information available on request • All dishes are Halal'}
-            {lang === 'ru' && 'Все цены включают НДС • Информация об аллергенах по запросу • Все блюда халяльные'}
-          </p>
+          {lang === 'de' ? (
+            <div className="text-left max-w-4xl mx-auto space-y-4">
+              <p className="text-muted-foreground text-xs md:text-sm text-center">Alle Preise inkl. MwSt.</p>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="rounded-sm border border-border/60 bg-background/60 p-3 md:p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Zusatzstoffe</p>
+                  <div className="flex flex-wrap gap-2">
+                    {additiveLegend.map((item) => (
+                      <span key={item.key} className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-[11px] md:text-xs text-foreground">
+                        <span className="font-bold text-primary">{item.key}</span>
+                        <span>{item.label}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                <div className="rounded-sm border border-border/60 bg-background/60 p-3 md:p-4">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-primary mb-2">Allergene</p>
+                  <div className="flex flex-wrap gap-2">
+                    {allergenLegend.map((item) => (
+                      <span key={item.key} className="inline-flex items-center gap-1.5 rounded-full bg-secondary/15 px-2.5 py-1 text-[11px] md:text-xs text-foreground">
+                        <span className="font-bold text-secondary">{item.key}</span>
+                        <span>{item.label}</span>
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-2xl mx-auto px-2">
+              {lang === 'en' && 'All prices include VAT • Additives and allergens are marked by code and available per item'}
+              {lang === 'ru' && 'Все цены включают НДС • Добавки и аллергены указаны кодами для каждого блюда'}
+            </p>
+          )}
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-xs text-muted-foreground/70">
               {lang === 'de' && (
