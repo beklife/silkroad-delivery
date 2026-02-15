@@ -14,12 +14,12 @@ const BookingForm = lazy(() => import("@/components/BookingForm"));
 
 import heroImage from "@assets/stock_images/hero.webp";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
-import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
-import samsaImage from "@assets/stock_images/menu/samsa.jpg";
-import dessertImage from "@assets/stock_images/menu/tschak tschak.jpg";
+import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.webp";
+import samsaImage from "@assets/stock_images/menu/samsa.webp";
+import dessertImage from "@assets/stock_images/menu/tschak tschak.webp";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
-import plovImage from "@assets/stock_images/menu/plov.jpg";
-import daPanJiImage from "@assets/stock_images/menu/da pan ji.jpg";
+import plovImage from "@assets/stock_images/menu/plov.webp";
+import daPanJiImage from "@assets/stock_images/menu/da pan ji.webp";
 import lagmanImage from "@assets/stock_images/menu/lagman.webp";
 import heroLogoImage from "../../../attached_assets/stock_images/ChatGPT Image Feb 4, 2026, 07_43_14 PM.png";
 
