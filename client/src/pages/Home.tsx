@@ -15,12 +15,12 @@ const BookingForm = lazy(() => import("@/components/BookingForm"));
 import heroImage from "@assets/stock_images/hero.webp";
 import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
 import interiorImage from "@assets/stock_images/cozy_warm_restaurant_5c6c7aae.jpg";
-import samsaImage from "@assets/stock_images/menu/Somsa.webp";
-import teaImage from "@assets/stock_images/menu/tea_1.webp";
+import samsaImage from "@assets/stock_images/menu/samsa.jpg";
+import teaImage from "@assets/stock_images/menu/schurpa.jpg";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
-import plovImage from "@assets/stock_images/menu/palov.webp";
-import shashlikImage from "@assets/stock_images/menu/Schaschlik_vom_Lamm.webp";
-import kazanKebabImage from "@assets/stock_images/menu/Kazan_Kebab.webp";
+import plovImage from "@assets/stock_images/menu/plov.jpg";
+import shashlikImage from "@assets/stock_images/menu/tschuponcha.webp";
+import kazanKebabImage from "@assets/stock_images/menu/da pan ji.jpg";
 import heroLogoImage from "../../../attached_assets/stock_images/ChatGPT Image Feb 4, 2026, 07_43_14 PM.png";
 
 const langNames: Record<Language, string> = {

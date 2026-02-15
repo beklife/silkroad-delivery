@@ -9,31 +9,33 @@ import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, X } from "@
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
 
-import plovImage from "@assets/stock_images/menu/palov.webp";
-import mantyImage from "@assets/stock_images/manty_dumplings_cent_45246789.webp";
-import samsaImage from "@assets/stock_images/menu/Somsa.webp";
-import shashlikLammImage from "@assets/stock_images/menu/Schaschlik_vom_Lamm.webp";
-import shashlikHaehnchenImage from "@assets/stock_images/menu/Schaschlik_vom_Hahnchen.webp";
-import teaImage from "@assets/stock_images/menu/tea_1.webp";
-import saladImage from "@assets/stock_images/menu/salat.webp";
-import breadImage from "@assets/stock_images/menu/Uzbek-bread-obi-non-thumbnail-square-500x500.webp";
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
-import schorpaImage from "@assets/stock_images/menu/Schorpa.webp";
-import tscheburekiImage from "@assets/stock_images/menu/Tschebureki.webp";
-import karottensalatImage from "@assets/stock_images/menu/Karottensalat.webp";
-import atschuchuksalatImage from "@assets/stock_images/menu/Atschuchuksalat.webp";
-import kazanKebabImage from "@assets/stock_images/menu/Kazan_Kebab.webp";
-import kazanKebabHaehnchenImage from "@assets/stock_images/menu/Kazan_Kebab_Hahnchen.webp";
-import honimVegetarischImage from "@assets/stock_images/menu/Honim_Vegetarisch.webp";
-import honigMedovikKuchenImage from "@assets/stock_images/menu/Honig_Medovik_Kuchen.webp";
-import borschImage from "@assets/stock_images/menu/Borsch.webp";
-import chuchvaraImage from "@assets/stock_images/menu/Chuchvara.webp";
-import mastavAImage from "@assets/stock_images/menu/Mastava.webp";
-import pelmeniImage from "@assets/stock_images/menu/Pelmeni.webp";
-import warenikyImage from "@assets/stock_images/menu/Wareniki.webp";
-import caravanDessertImage from "@assets/stock_images/menu/Caravan Dessert.webp";
-import honigMedovikSchokoladeImage from "@assets/stock_images/menu/Honig Medovik schokolade.webp";
-import knackigerStartImage from "@assets/stock_images/menu/Knäckiger start.webp";
+import plowMenuImage from "@assets/stock_images/menu/plov.jpg";
+import mantyBeefMenuImage from "@assets/stock_images/menu/manti.webp";
+import mantyVegMenuImage from "@assets/stock_images/menu/manti2.jpg";
+import kurutobMenuImage from "@assets/stock_images/menu/kurutob.jpg";
+import tschuponchaMenuImage from "@assets/stock_images/menu/tschuponcha.webp";
+import daPanJiMenuImage from "@assets/stock_images/menu/da pan ji.jpg";
+import lagmanMenuImage from "@assets/stock_images/menu/lagman.webp";
+import samsaMenuImage from "@assets/stock_images/menu/samsa.jpg";
+import lepeshkaMenuImage from "@assets/stock_images/menu/lepeshka.webp";
+import schurpaMenuImage from "@assets/stock_images/menu/schurpa.jpg";
+import salatBahorMenuImage from "@assets/stock_images/menu/salat bahor.jpg";
+import glasnudelsalatMenuImage from "@assets/stock_images/menu/glasnudelsalat.jpg";
+import auberginensalatMenuImage from "@assets/stock_images/menu/auberginensalat.jpg";
+import rubinSalatMenuImage from "@assets/stock_images/menu/ruben salat.jpg";
+import russischerSalatMenuImage from "@assets/stock_images/menu/russicher salat.jpg";
+import gurkenRindMenuImage from "@assets/stock_images/menu/gurken mit rindfleisch.jpg";
+import karottenSalatMenuImage from "@assets/stock_images/menu/karottensalat.jpg";
+import schakarobMenuImage from "@assets/stock_images/menu/schakarob.jpg";
+import kremigerSalatMenuImage from "@assets/stock_images/menu/kremiger salat.webp";
+import haehnchenWalnussMenuImage from "@assets/stock_images/menu/Hähnchen mit Walnüssen, Ananas und Trauben.jpg";
+import gemueseTellerMenuImage from "@assets/stock_images/menu/gemüse teller.jpg";
+import eingelegtesGemueseMenuImage from "@assets/stock_images/menu/Teller mit eingelegtem Gemüse.png";
+import tschakTschakMenuImage from "@assets/stock_images/menu/tschak tschak.jpg";
+import schokoladentorteMenuImage from "@assets/stock_images/menu/Schokoladentorte.jpg";
+import cheesecakeMenuImage from "@assets/stock_images/menu/cheesecake.jpg";
+import tiramisuMenuImage from "@assets/stock_images/menu/tiramisu.jpg";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
@@ -49,813 +51,489 @@ const langFlags: Record<Language, string> = {
   uz: "🇺🇿"
 };
 
-const menuCategories = {
+const silkRoadMenuCategories = {
   de: {
     soups: "Suppen",
-    mains: "Hausspezialitäten",
-    grills: "Grillspezialitäten",
-    appetizers: "Heisse, Kalte Vorspeisen und Salate",
-    sides: "Beilagen",
-    drinks: "Heisse Getränke",
+    appetizers: "Vorspeisen",
+    mains: "Hauptgerichte",
+    salads: "Salate",
+    sides: "Soßen & Beilagen",
+    desserts: "Desserts",
+    drinks: "Heiße Getränke",
     colddrinks: "Kalte Getränke",
     beer: "Bier",
     wine: "Wein",
     spirits: "Spirituosen",
-    desserts: "Desserts"
+    grills: "Spezialitäten"
   },
   en: {
     soups: "Soups",
-    mains: "House Specialties",
-    grills: "Grill Specialties",
-    appetizers: "Hot, Cold Appetizers and Salads",
-    sides: "Sides",
+    appetizers: "Starters",
+    mains: "Main Dishes",
+    salads: "Salads",
+    sides: "Sauces & Sides",
+    desserts: "Desserts",
     drinks: "Hot Drinks",
     colddrinks: "Cold Drinks",
     beer: "Beer",
     wine: "Wine",
     spirits: "Spirits",
-    desserts: "Desserts"
+    grills: "Specials"
   },
   ru: {
     soups: "Супы",
-    mains: "Фирменные блюда",
-    grills: "Блюда на гриле",
-    appetizers: "Горячие, холодные закуски и салаты",
-    sides: "Гарниры",
+    appetizers: "Закуски",
+    mains: "Основные блюда",
+    salads: "Салаты",
+    sides: "Соусы и гарниры",
+    desserts: "Десерты",
     drinks: "Горячие напитки",
     colddrinks: "Холодные напитки",
     beer: "Пиво",
     wine: "Вино",
-    spirits: "Крепкие напитки",
-    desserts: "Десерты"
+    spirits: "Крепкий алкоголь",
+    grills: "Специальные блюда"
   },
   uz: {
     soups: "Sho‘rvalar",
-    mains: "Firma taomlari",
-    grills: "Gril taomlari",
-    appetizers: "Issiq va sovuq taomlar, salatlar",
-    sides: "Garnirlar",
+    appetizers: "Gazaklar",
+    mains: "Asosiy taomlar",
+    salads: "Salatlar",
+    sides: "Souslar va garnirlar",
+    desserts: "Shirinliklar",
     drinks: "Issiq ichimliklar",
     colddrinks: "Sovuq ichimliklar",
     beer: "Pivo",
     wine: "Vino",
-    spirits: "Kuchli ichimliklar",
-    desserts: "Shirinliklar"
+    spirits: "Spirtli ichimliklar",
+    grills: "Maxsus taomlar"
   }
 };
 
-const fullMenu = {
+const silkRoadMenu = {
   soups: [
-    { id: 'schorpa', image: schorpaImage, price: '12.90€', dietary: 'halal' },
-    { id: 'borsch', image: borschImage, price: '12.90€', dietary: 'halal' },
-    { id: 'chuchvara', image: chuchvaraImage, price: '13.90€', dietary: 'halal' },
-    { id: 'mastava', image: mastavAImage, price: '12.90€', dietary: 'halal' },
+    {
+      id: "schurpa",
+      image: schurpaMenuImage,
+      price: "9,00€",
+      dietary: "halal",
+      names: { de: "Schurpa", en: "Shurpa", ru: "Шурпа", uz: "Shurpa" },
+      descs: {
+        de: "Traditionelle Suppe aus Zentralasien mit Lammfleisch, Gemüse und Gewürzen. Wärmend und sättigend.",
+        en: "Traditional Central Asian soup with lamb, vegetables and spices.",
+        ru: "Традиционный суп Центральной Азии с бараниной, овощами и специями.",
+        uz: "Markaziy Osiyoga xos qo‘y go‘shti, sabzavot va ziravorli sho‘rva."
+      }
+    }
   ],
   appetizers: [
-    { id: 'somsa', image: samsaImage, price: '11.90€', dietary: 'halal' },
-    { id: 'tschebureki', image: tscheburekiImage, price: '11.90€', dietary: 'halal' },
     {
-      id: 'knackigerstart',
-      image: knackigerStartImage,
-      price: '10.90€',
-      dietary: 'vegetarian',
-      names: { de: 'Knäckiger Start', en: 'Crunchy Start', ru: 'Хрустящая закуска', uz: 'Qarsildoq boshlanish' },
+      id: "samsa",
+      image: samsaMenuImage,
+      price: "4,50€",
+      dietary: "halal",
+      names: { de: "Samsa (pro Stück)", en: "Samsa (per piece)", ru: "Самса (за штуку)", uz: "Somsa (dona)" },
       descs: {
-        de: 'Sauergürkensalat - Bestehend aus hauseingeleg ten sauren Gurken, Tomaten und Weißkohl.',
-        en: 'Assortment of home-made pickled cucumbers, tomatoes, and cabbage.',
-        ru: 'Салат из маринованных огурцов, помидоров и капусты.',
-        uz: 'Tuzlangan bodring, pomidor va karam salati.'
+        de: "Gebackene Teigtasche. Füllung nach Wahl: Rindfleisch, Hähnchen, Kürbis, Kartoffel oder Käse. Allergene: A, E, J.",
+        en: "Baked pastry pocket with your choice of filling.",
+        ru: "Запечённая слоёная выпечка с начинкой на выбор.",
+        uz: "Tanlovga ko‘ra ichlik bilan pishirilgan somsa."
       }
     },
-    { id: 'karottensalat', image: karottensalatImage, price: '9.90€', dietary: 'vegan' },
-    { id: 'atschuchuksalat', image: atschuchuksalatImage, price: '9.90€', dietary: 'vegan' },
+    {
+      id: "lepeschka",
+      image: lepeshkaMenuImage,
+      price: "2,50€",
+      dietary: "vegetarian",
+      names: { de: "Lepeschka", en: "Lepeshka", ru: "Лепешка", uz: "Lepyoshka" },
+      descs: {
+        de: "Traditionelles Fladenbrot aus gemahlenem Getreide und Wasser. Allergene: A, B, E.",
+        en: "Traditional flatbread from grain and water.",
+        ru: "Традиционная лепешка из муки и воды.",
+        uz: "Un va suvdan tayyorlangan an’anaviy non."
+      }
+    }
   ],
   mains: [
-    { id: 'kazankebab', image: kazanKebabImage, price: '26.90€', dietary: 'halal' },
-    { id: 'kazankebabhaehnchen', image: kazanKebabHaehnchenImage, price: '25.90€', dietary: 'halal' },
-    { id: 'plov', image: plovImage, price: '17.90€', dietary: 'halal' },
-    { id: 'pelmeni', image: pelmeniImage, price: '22.90€', dietary: 'halal' },
-    { id: 'manty', image: mantyImage, price: '23.90€', dietary: 'halal' },
-    { id: 'honimvegetariach', image: honimVegetarischImage, price: '21.90€', dietary: 'vegetarian' },
-    { id: 'warenikiwegetarisch', image: warenikyImage, price: '21.90€', dietary: 'vegetarian' },
+    {
+      id: "plowbeef",
+      image: plowMenuImage,
+      price: "13,50€",
+      dietary: "halal",
+      names: { de: "Plow (Rindfleisch)", en: "Plow (Beef)", ru: "Плов (говядина)", uz: "Osh (mol go‘shti)" },
+      descs: {
+        de: "Das beliebteste Gericht aus Zentralasien. In drei Stufen zubereitet: Braten, Schmoren und Dämpfen.",
+        en: "Central Asia's most iconic rice dish, prepared in three stages.",
+        ru: "Самое популярное блюдо Центральной Азии, готовится в три этапа.",
+        uz: "Markaziy Osiyoning mashhur taomi, uch bosqichda tayyorlanadi."
+      }
+    },
+    {
+      id: "mantybeef",
+      image: mantyBeefMenuImage,
+      price: "12,50€",
+      dietary: "halal",
+      names: { de: "Manty (Rindfleisch)", en: "Manty (Beef)", ru: "Манты (говядина)", uz: "Manti (mol go‘shti)" },
+      descs: {
+        de: "Gedämpfte Teigtaschen mit gewürfeltem Rindfleisch. Portion: 5 Stück.",
+        en: "Steamed dumplings with diced beef. Portion: 5 pieces.",
+        ru: "Паровые манты с нарезанной говядиной. Порция: 5 шт.",
+        uz: "Mayda to‘g‘ralgan mol go‘shtli bug‘da pishirilgan manti. 5 dona."
+      }
+    },
+    {
+      id: "mantyveg",
+      image: mantyVegMenuImage,
+      price: "11,50€",
+      dietary: "vegetarian",
+      names: { de: "Manty (Kartoffel oder Kürbis)", en: "Manty (Potato or Pumpkin)", ru: "Манты (картофель или тыква)", uz: "Manti (kartoshka yoki qovoq)" },
+      descs: {
+        de: "Gedämpfte Teigtaschen mit Kartoffel oder Kürbis. Portion: 5 Stück.",
+        en: "Steamed dumplings filled with potato or pumpkin. Portion: 5 pieces.",
+        ru: "Паровые манты с картофелем или тыквой. Порция: 5 шт.",
+        uz: "Kartoshka yoki qovoqli bug‘da pishirilgan manti. 5 dona."
+      }
+    },
+    {
+      id: "kurutob",
+      image: kurutobMenuImage,
+      price: "14,50€",
+      dietary: "halal",
+      names: { de: "Kurutob (Rindfleisch)", en: "Kurutob (Beef)", ru: "Курутоб (говядина)", uz: "Qurutob (mol go‘shti)" },
+      descs: {
+        de: "Tadschikisches Gericht mit geschichtetem Fatir, frischem Gemüse, Kräutern und Kurut-Sauce (getrockneter Joghurt). Allergene: A, E, J.",
+        en: "Tajik layered dish with fatir bread, vegetables, herbs and kurut sauce.",
+        ru: "Таджикское блюдо из слоев фатир-хлеба, овощей и соуса курут.",
+        uz: "Fatir, sabzavot va qurut sousi bilan tayyorlanadigan tojik taomi."
+      }
+    },
+    {
+      id: "tschuponcha",
+      image: tschuponchaMenuImage,
+      price: "16,50€",
+      dietary: "halal",
+      names: { de: "Tschuponcha (Lammrippen)", en: "Tschuponcha (Lamb Ribs)", ru: "Чупонча (бараньи ребрышки)", uz: "Cho‘poncha (qo‘y qovurg‘asi)" },
+      descs: {
+        de: "Lammrippen aus dem Kazan mit frittierten Kartoffeln. Allergene: A.",
+        en: "Lamb ribs from the kazan served with fried potatoes.",
+        ru: "Бараньи ребрышки из казана с жареным картофелем.",
+        uz: "Qozonda tayyorlangan qo‘y qovurg‘asi va qovurilgan kartoshka."
+      }
+    },
+    {
+      id: "dapanji",
+      image: daPanJiMenuImage,
+      price: "15,50€",
+      dietary: "halal",
+      names: { de: "Da Pan Ji (Hähnchenfleisch)", en: "Da Pan Ji (Chicken)", ru: "Да Пан Цзи (курица)", uz: "Da Pan Ji (tovuq)" },
+      descs: {
+        de: "Authentisches Gericht aus Xinjiang. Saftiges Hähnchen im Kazan. Allergene: B, D, G.",
+        en: "Authentic Xinjiang chicken dish cooked in a traditional kazan.",
+        ru: "Аутентичное блюдо Синьцзяна: сочная курица, приготовленная в казане.",
+        uz: "Shinjon oshxonasidan an’anaviy qozon tovuq taomi."
+      }
+    },
+    {
+      id: "lagman",
+      image: lagmanMenuImage,
+      price: "14,50€",
+      dietary: "halal",
+      names: { de: "Lagman (Rindfleisch)", en: "Lagman (Beef)", ru: "Лагман (говядина)", uz: "Lag‘mon (mol go‘shti)" },
+      descs: {
+        de: "Handgemachte Nudeln mit Fleisch und Gemüse aus dem Wok. Allergene: A, D, G.",
+        en: "Handmade noodles with meat and vegetables from the wok.",
+        ru: "Домашняя лапша с мясом и овощами из вокa.",
+        uz: "Qo‘lda tortilgan ugra, go‘sht va sabzavotlar bilan."
+      }
+    },
+    {
+      id: "ganfan",
+      image: daPanJiMenuImage,
+      price: "14,50€",
+      dietary: "halal",
+      names: { de: "Gan Fan (Rindfleisch)", en: "Gan Fan (Beef)", ru: "Ган Фан (говядина)", uz: "Gan Fan (mol go‘shti)" },
+      descs: {
+        de: "Uigurisches Reisgericht mit gebratenem Fleisch und Gemüse aus dem Wok. Allergene: D, G.",
+        en: "Uyghur rice dish with stir-fried meat and vegetables.",
+        ru: "Уйгурское рисовое блюдо с жареным мясом и овощами.",
+        uz: "Uyg‘ur uslubidagi guruchli taom, qovurilgan go‘sht va sabzavotlar bilan."
+      }
+    }
   ],
-  grills: [
-    { id: 'schaschlikvomlamm', image: shashlikLammImage, price: '26.90€', dietary: 'halal' },
-    { id: 'schaschlikvomhaehnchen', image: shashlikHaehnchenImage, price: '25.90€', dietary: 'halal' },
+  salads: [
+    {
+      id: "salatbahor",
+      image: salatBahorMenuImage,
+      price: "9,00€",
+      names: { de: "Salat Bahor", en: "Bahor Salad", ru: "Салат Бахор", uz: "Bahor salati" },
+      descs: {
+        de: "Geräuchertes Hähnchen, Gurken, Tomaten, rote Zwiebeln, Käse, Eier und Mayonnaise. Allergene: B.",
+        en: "Smoked chicken, cucumber, tomato, red onion, cheese, eggs, mayo.",
+        ru: "Копчёная курица, огурцы, помидоры, лук, сыр, яйца, майонез.",
+        uz: "Dudlangan tovuq, bodring, pomidor, piyoz, pishloq, tuxum, mayonez."
+      }
+    },
+    {
+      id: "glasnudelsalat",
+      image: glasnudelsalatMenuImage,
+      price: "8,50€",
+      names: { de: "Glasnudelsalat", en: "Glass Noodle Salad", ru: "Салат с фунчозой", uz: "Shisha ugra salati" },
+      descs: {
+        de: "Glasnudeln, Karotten, Gurken, gekochtes Rindfleisch in Sojasoße, Paprika, Knoblauch, Sesam. Allergene: D, G, J.",
+        en: "Glass noodles with beef, soy sauce, vegetables, garlic and sesame.",
+        ru: "Фунчоза с говядиной, соевым соусом, овощами и кунжутом.",
+        uz: "Shisha ugra, mol go‘shti, soya, sabzavotlar va kunjut."
+      }
+    },
+    {
+      id: "auberginensalat",
+      image: auberginensalatMenuImage,
+      price: "7,50€",
+      names: { de: "Auberginensalat", en: "Eggplant Salad", ru: "Салат с баклажанами", uz: "Baqlajon salati" },
+      descs: {
+        de: "Gebackene Auberginen, frische Tomaten, Kräuter und Hausdressing. Allergene: A, B, D.",
+        en: "Baked eggplant, tomato, herbs and house dressing.",
+        ru: "Запечённые баклажаны, томаты, зелень и фирменная заправка.",
+        uz: "Pishirilgan baqlajon, pomidor, ko‘kat va uy sousi."
+      }
+    },
+    {
+      id: "rubin",
+      image: rubinSalatMenuImage,
+      price: "8,50€",
+      names: { de: "Salat Rubin", en: "Rubin Salad", ru: "Салат Рубин", uz: "Rubin salati" },
+      descs: {
+        de: "Rote Bete, Nüsse, Hirtenkäse, Granatapfelkerne. Allergene: C1.",
+        en: "Beetroot, nuts, white cheese and pomegranate seeds.",
+        ru: "Свекла, орехи, сыр и зерна граната.",
+        uz: "Lavlagi, yong‘oq, pishloq va anor donalari."
+      }
+    },
+    {
+      id: "russischersalat",
+      image: russischerSalatMenuImage,
+      price: "7,50€",
+      names: { de: "Russischer Salat", en: "Russian Salad", ru: "Русский салат", uz: "Rus salati" },
+      descs: {
+        de: "Hähnchenfleisch, Salzgurken, Kartoffeln, Karotten, Erbsen, Eier, Mayonnaise. Allergene: B, F.",
+        en: "Chicken, pickles, potato, carrot, peas, eggs and mayo.",
+        ru: "Курица, солёные огурцы, картофель, морковь, горошек, яйца, майонез.",
+        uz: "Tovuq, tuzlangan bodring, kartoshka, sabzi, no‘xat, tuxum, mayonez."
+      }
+    },
+    {
+      id: "gurkenrind",
+      image: gurkenRindMenuImage,
+      price: "7,50€",
+      names: { de: "Gurken mit Rindfleisch", en: "Cucumber with Beef", ru: "Огурцы с говядиной", uz: "Bodring va mol go‘shti" },
+      descs: {
+        de: "Gurken, gekochtes Rindfleisch in Sojasoße, Paprika und Knoblauch. Allergene: D, F, J.",
+        en: "Cucumber with soy-marinated beef, pepper and garlic.",
+        ru: "Огурцы с говядиной в соевом соусе, перцем и чесноком.",
+        uz: "Soya sousli mol go‘shti, bodring, qalampir va sarimsoq."
+      }
+    },
+    {
+      id: "karottensalat",
+      image: karottenSalatMenuImage,
+      price: "7,50€",
+      dietary: "vegan",
+      names: { de: "Karottensalat", en: "Carrot Salad", ru: "Морковный салат", uz: "Sabzi salati" },
+      descs: {
+        de: "Gewürzte Karottenstreifen mit Essig.",
+        en: "Spiced carrot strips with vinegar dressing.",
+        ru: "Пряная морковь с уксусной заправкой.",
+        uz: "Ziravorli sabzi va sirka bilan."
+      }
+    },
+    {
+      id: "schakarob",
+      image: schakarobMenuImage,
+      price: "7,50€",
+      dietary: "vegan",
+      names: { de: "Schakarob", en: "Shakarob", ru: "Шакароб", uz: "Shakarob" },
+      descs: {
+        de: "Frische Tomaten mit Zwiebeln und Kräutern.",
+        en: "Fresh tomato salad with onions and herbs.",
+        ru: "Свежие помидоры с луком и зеленью.",
+        uz: "Pomidor, piyoz va ko‘katlardan tayyorlangan salat."
+      }
+    },
+    {
+      id: "kremigersalat",
+      image: kremigerSalatMenuImage,
+      price: "8,50€",
+      names: { de: "Cremiger Salat", en: "Creamy Salad", ru: "Сливочный салат", uz: "Qaymoqli salat" },
+      descs: {
+        de: "Tomaten, Gurken, Bohnen, Eier, rote Zwiebeln, Creme fraiche. Allergene: E.",
+        en: "Tomatoes, cucumbers, beans, eggs, red onion, creme fraiche.",
+        ru: "Томаты, огурцы, фасоль, яйца, красный лук, крем-фреш.",
+        uz: "Pomidor, bodring, loviya, tuxum, qizil piyoz, krem-fresh."
+      }
+    },
+    {
+      id: "haehnchenwalnuss",
+      image: haehnchenWalnussMenuImage,
+      price: "9,50€",
+      names: { de: "Hähnchen mit Walnüssen, Ananas und Trauben", en: "Chicken with Walnuts, Pineapple and Grapes", ru: "Курица с грецким орехом, ананасом и виноградом", uz: "Yong‘oq, ananas va uzumli tovuq" },
+      descs: {
+        de: "Hähnchen, Trauben, Ananas, Walnüsse, Käse und Mayonnaise. Allergene: F.",
+        en: "Chicken, grapes, pineapple, walnuts, cheese and mayonnaise.",
+        ru: "Курица, виноград, ананас, грецкий орех, сыр и майонез.",
+        uz: "Tovuq, uzum, ananas, yong‘oq, pishloq va mayonez."
+      }
+    },
+    {
+      id: "gemueseteller",
+      image: gemueseTellerMenuImage,
+      price: "8,50€",
+      dietary: "vegan",
+      names: { de: "Gemüse Teller (Frisch)", en: "Fresh Vegetable Plate", ru: "Овощная тарелка (свежая)", uz: "Yangi sabzavot likopchasi" },
+      descs: {
+        de: "Frische Tomaten, Gurken, Paprika, rote Zwiebeln, Radieschen, Dill und Koriander.",
+        en: "Fresh tomatoes, cucumbers, peppers, onion, radish, dill and coriander.",
+        ru: "Свежие томаты, огурцы, перец, лук, редис, укроп и кинза.",
+        uz: "Yangi pomidor, bodring, bulg‘or qalampiri, piyoz, rediska, ukrop va kashnich."
+      }
+    },
+    {
+      id: "eingelegtesgemuese",
+      image: eingelegtesGemueseMenuImage,
+      price: "8,50€",
+      dietary: "vegan",
+      names: { de: "Teller mit eingelegtem Gemüse", en: "Pickled Vegetable Plate", ru: "Тарелка с маринованными овощами", uz: "Tuzlangan sabzavotlar likopchasi" },
+      descs: {
+        de: "Eingelegte Tomaten, Gurken, Paprika, Peperoni, Sauerkraut, Oliven. Allergene: F, G, H.",
+        en: "Pickled tomatoes, cucumbers, peppers, sauerkraut and olives.",
+        ru: "Маринованные томаты, огурцы, перец, квашеная капуста и оливки.",
+        uz: "Tuzlangan pomidor, bodring, qalampir, karam va zaytun."
+      }
+    }
   ],
   sides: [
     {
-      id: 'pommes',
+      id: "lazjan",
       image: null,
-      price: '5.90€',
-      names: { de: 'Extra Portion Pommes', en: 'Extra Portion Fries', ru: 'Дополнительная порция картофеля фри', uz: 'Qo‘shimcha kartoshka fri' },
+      price: "1,00€",
+      names: { de: 'Chili Soße "Lazjan"', en: 'Chili Sauce "Lazjan"', ru: 'Соус чили "Лазжан"', uz: 'Lazjan chili sousi' },
       descs: {
-        de: 'Knusprige Pommes Frites.',
-        en: 'Crispy french fries.',
-        ru: 'Хрустящий картофель фри.',
-        uz: 'Qo‘shimcha kartoshka fri.'
+        de: "Kräftige scharfe Soße. Zusatzstoffe/Allergene: 1,2,3,4,5,7,B,D,E,F,H,J.",
+        en: "Spicy chili sauce.",
+        ru: "Острый соус чили.",
+        uz: "Achchiq chili sousi."
       }
     },
     {
-      id: 'reis',
+      id: "suzma",
       image: null,
-      price: '4.90€',
-      names: { de: 'Extra Portion Reis', en: 'Extra Portion Rice', ru: 'Дополнительная порция риса', uz: 'Qo‘shimcha guruch' },
-      descs: {
-        de: 'Gedämpfter Reis.',
-        en: 'Steamed rice.',
-        ru: 'Рис на пару.',
-        uz: 'Bug‘da pishirilgan guruch.'
-      }
+      price: "1,00€",
+      names: { de: 'Joghurt Soße "Suzma"', en: 'Yogurt Sauce "Suzma"', ru: 'Йогуртовый соус "Сузьма"', uz: 'Suzma yogurt sousi' },
+      descs: { de: "Milder Joghurt-Dip.", en: "Mild yogurt dip.", ru: "Нежный йогуртовый соус.", uz: "Yumshoq yogurt sousi." }
     },
     {
-      id: 'sosse',
+      id: "tomatenknoblauch",
       image: null,
-      price: '2.90€',
-      names: { de: 'Extra Portion Sosse', en: 'Extra Portion Sauce', ru: 'Дополнительная порция соуса', uz: 'Qo‘shimcha sous' },
-      descs: {
-        de: 'Yoghurt-, Scharf-, Tomatensoße, Schmand.',
-        en: 'Yogurt, Spicy, Tomato sauce, Sour cream.',
-        ru: 'Йогурт, острый, томатный соус, сметана.',
-        uz: 'Yogurt, achchiq, pomidor sousi, smetana.'
-      }
+      price: "1,00€",
+      names: { de: "Tomaten-Knoblauch Soße", en: "Tomato-Garlic Sauce", ru: "Томатно-чесночный соус", uz: "Pomidor-sarimsoq sousi" },
+      descs: { de: "Hausgemachte Tomaten-Knoblauch-Soße.", en: "House tomato-garlic sauce.", ru: "Домашний томатно-чесночный соус.", uz: "Uy uslubidagi pomidor-sarimsoq sousi." }
     },
     {
-      id: 'non',
+      id: "mayonnaise",
       image: null,
-      price: '3.90€',
-      names: { de: 'Extra Portion Brot (ganzes Fladenbrot)', en: 'Extra Portion Bread (whole flatbread)', ru: 'Дополнительная порция хлеба (целая лепёшка)', uz: 'Qo‘shimcha non (butun non)' },
-      descs: {
-        de: 'Traditionelles Fladenbrot.',
-        en: 'Traditional flatbread.',
-        ru: 'Традиционная лепёшка.',
-        uz: 'Milliy non.'
-      }
+      price: "1,00€",
+      names: { de: "Mayonnaise", en: "Mayonnaise", ru: "Майонез", uz: "Mayonez" },
+      descs: { de: "Klassische Mayonnaise.", en: "Classic mayonnaise.", ru: "Классический майонез.", uz: "Klassik mayonez." }
     },
     {
-      id: 'nonhalf',
+      id: "ketchup",
       image: null,
-      price: '1.90€',
-      names: { de: 'Extra Portion Brot (halbes Fladenbrot)', en: 'Extra Portion Bread (half flatbread)', ru: 'Дополнительная порция хлеба (половина лепёшки)', uz: 'Qo‘shimcha non (yarim non)' },
-      descs: {
-        de: 'Halbes traditionelles Fladenbrot.',
-        en: 'Half traditional flatbread.',
-        ru: 'Половина традиционной лепёшки.',
-        uz: 'Yarimta an’anaviy non.'
-      }
+      price: "1,00€",
+      names: { de: "Ketchup", en: "Ketchup", ru: "Кетчуп", uz: "Ketchup" },
+      descs: { de: "Tomatenketchup.", en: "Tomato ketchup.", ru: "Томатный кетчуп.", uz: "Pomidor ketchupi." }
     },
+    {
+      id: "joghurtknoblauch",
+      image: null,
+      price: "1,00€",
+      names: { de: "Joghurt-Knoblauch", en: "Yogurt-Garlic", ru: "Йогурт-чеснок", uz: "Yogurt-sarimsoq" },
+      descs: { de: "Frischer Joghurt mit Knoblauch.", en: "Fresh yogurt with garlic.", ru: "Свежий йогурт с чесноком.", uz: "Sarimsoqli yogurt sousi." }
+    }
   ],
   desserts: [
-    { id: 'caravandessert', image: caravanDessertImage, price: '7.90€', dietary: 'vegetarian' },
-    { id: 'honigmedovikkuchen', image: honigMedovikKuchenImage, price: '8.90€', dietary: 'vegetarian' },
-    { id: 'honigmedovikschokolade', image: honigMedovikSchokoladeImage, price: '8.90€', dietary: 'vegetarian' },
+    {
+      id: "tschaktschak",
+      image: tschakTschakMenuImage,
+      price: "6,50€",
+      names: { de: "Tschak Tschak", en: "Tchak Tchak", ru: "Чак-чак", uz: "Chak-chak" },
+      descs: {
+        de: "Teigstäbchen in Honig mit Nüssen und Beeren. Allergene: A, B, E.",
+        en: "Honey-coated pastry sticks with nuts and berries.",
+        ru: "Тесто в меду с орехами и ягодами.",
+        uz: "Asal, yong‘oq va mevalar bilan chak-chak."
+      }
+    },
+    {
+      id: "schokoladentorte",
+      image: schokoladentorteMenuImage,
+      price: "6,00€",
+      names: { de: "Schokoladentorte", en: "Chocolate Cake", ru: "Шоколадный торт", uz: "Shokoladli tort" },
+      descs: {
+        de: "Hausgemachte Schokoladentorte. Allergene: A, B, E.",
+        en: "Homemade chocolate cake.",
+        ru: "Домашний шоколадный торт.",
+        uz: "Uy uslubidagi shokoladli tort."
+      }
+    },
+    {
+      id: "cheesecake",
+      image: cheesecakeMenuImage,
+      price: "6,00€",
+      names: { de: "Cheesecake", en: "Cheesecake", ru: "Чизкейк", uz: "Cheesecake" },
+      descs: {
+        de: "Käsekuchen mit Beeren. Allergene: A, B, E.",
+        en: "Cheesecake served with berries.",
+        ru: "Чизкейк с ягодами.",
+        uz: "Rezavorlar bilan cheesecake."
+      }
+    },
+    {
+      id: "tiramisu",
+      image: tiramisuMenuImage,
+      price: "5,50€",
+      names: { de: "Tiramisu / Pistazienmousse", en: "Tiramisu / Pistachio Mousse", ru: "Тирамису / Фисташковый мусс", uz: "Tiramisu / Pista mussi" },
+      descs: {
+        de: "Serviert im Glas. Allergene: A, B, E.",
+        en: "Served in a glass.",
+        ru: "Подается в стакане.",
+        uz: "Stakanda tortiladi."
+      }
+    }
   ],
   drinks: [
-    {
-      id: 'kannetee06black',
-      image: null,
-      price: '5.50€',
-      names: { de: 'Kanne Tee (0.6L) - Schwarzer oder Grüner', en: 'Pot of Tea (0.6L) - Black or Green', ru: 'Чайник чая (0.6л) - Черный или Зеленый', uz: 'Choynakdagi choy (0.6L) - qora yoki yashil' },
-      descs: {
-        de: 'Schwarzer oder Grüner Tee.',
-        en: 'Black or Green tea.',
-        ru: 'Черный или зеленый чай.',
-        uz: 'Qora yoki yashil choy.'
-      }
-    },
-    {
-      id: 'kannetee06jasmin',
-      image: null,
-      price: '6.50€',
-      names: { de: 'Kanne Tee (0.6L) - Jasmin', en: 'Pot of Tea (0.6L) - Jasmine', ru: 'Чайник чая (0.6л) - Жасминовый', uz: 'Choynakdagi choy (0.6L) - yasminli' },
-      descs: {
-        de: 'Jasmin Tee.',
-        en: 'Jasmine tea.',
-        ru: 'Жасминовый чай.',
-        uz: 'Yasminli choy.'
-      }
-    },
-    {
-      id: 'tassejasmin',
-      image: null,
-      price: '3.50€',
-      names: { de: 'Tasse Jasmin Tee (0.3L)', en: 'Cup of Jasmine Tea (0.3L)', ru: 'Чашка жасминового чая (0.3л)', uz: 'Yasminli choy (piyola, 0.3L)' },
-      descs: {
-        de: 'Eine Tasse Jasmin Tee.',
-        en: 'A cup of jasmine tea.',
-        ru: 'Чашка жасминового чая.',
-        uz: 'Bir piyola yasminli choy.'
-      }
-    },
-    {
-      id: 'tassetee',
-      image: null,
-      price: '2.50€',
-      names: { de: 'Tasse Tee (0.3L)', en: 'Cup of Tea (0.3L)', ru: 'Чашка чая (0.3л)', uz: 'Piyola choy (0.3L)' },
-      descs: {
-        de: 'Beutel Grüner oder Schwarzer.',
-        en: 'Green or Black tea bag.',
-        ru: 'Зеленый или черный чай в пакетике.',
-        uz: 'Yashil yoki qora paketli choy.'
-      }
-    },
-    {
-      id: 'minzetee1',
-      image: null,
-      price: '3.00€',
-      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpizli choy (0.3L)' },
-      descs: {
-        de: 'Frische Minze mit Zitrone.',
-        en: 'Fresh mint with lemon.',
-        ru: 'Свежая мята с лимоном.',
-        uz: 'Yangi yalpiz va limon bilan.'
-      }
-    },
-    {
-      id: 'minzetee2',
-      image: null,
-      price: '4.50€',
-      names: { de: 'Minze Tee (0.3L)', en: 'Mint Tea (0.3L)', ru: 'Мятный чай (0.3л)', uz: 'Yalpizli choy (0.3L)' },
-      descs: {
-        de: 'Frische Minze mit Ingwer, Zitrone und Honig.',
-        en: 'Fresh mint with ginger, lemon and honey.',
-        ru: 'Свежая мята с имбирем, лимоном и медом.',
-        uz: 'Yangi yalpiz, zanjabil, limon va asal bilan.'
-      }
-    },
+    { id: "tee-schwarz", image: null, price: "4,00€", names: { de: "Schwarzer Tee (Kanne)", en: "Black Tea (Pot)", ru: "Черный чай (чайник)", uz: "Qora choy (choynak)" }, descs: { de: "Traditionell serviert.", en: "Traditionally served.", ru: "Традиционная подача.", uz: "An’anaviy usulda tortiladi." } },
+    { id: "tee-schwarz-minze", image: null, price: "5,00€", names: { de: "Schwarzer Tee mit Minze und Zitrone", en: "Black Tea with Mint and Lemon", ru: "Черный чай с мятой и лимоном", uz: "Yalpiz va limonli qora choy" }, descs: { de: "Frisch und aromatisch.", en: "Fresh and aromatic.", ru: "Свежий и ароматный.", uz: "Yangi va xushbo‘y." } },
+    { id: "tee-gruen", image: null, price: "4,00€", names: { de: "Grüner Tee", en: "Green Tea", ru: "Зеленый чай", uz: "Ko‘k choy" }, descs: { de: "Klassischer grüner Tee.", en: "Classic green tea.", ru: "Классический зеленый чай.", uz: "Klassik ko‘k choy." } },
+    { id: "kaffee-schwarz", image: null, price: "2,00€", names: { de: "Kaffee Schwarz", en: "Black Coffee", ru: "Черный кофе", uz: "Qora qahva" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } },
+    { id: "milchkaffee", image: null, price: "2,00€", names: { de: "Milchkaffee", en: "Coffee with Milk", ru: "Кофе с молоком", uz: "Sutli qahva" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } },
+    { id: "espresso", image: null, price: "2,00€", names: { de: "Espresso", en: "Espresso", ru: "Эспрессо", uz: "Espresso" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } }
   ],
   colddrinks: [
-    {
-      id: 'selteskohlensaeure',
-      image: null,
-      price: '2.20€ / 3.80€',
-      names: { de: 'Seltes Kohlensäure (0.2L / 0.4L)', en: 'Sparkling Water (0.2L / 0.4L)', ru: 'Газированная вода (0.2л / 0.4л)', uz: 'Gazlangan suv (0.2L / 0.4L)' },
-      descs: {
-        de: 'Sprudelwasser',
-        en: 'Sparkling water',
-        ru: 'Газированная вода',
-        uz: 'Gazlangan suv'
-      }
-    },
-    {
-      id: 'seltesnaturell',
-      image: null,
-      price: '2.20€ / 3.80€',
-      names: { de: 'Seltes Naturell (0.2L / 0.4L)', en: 'Still Water (0.2L / 0.4L)', ru: 'Негазированная вода (0.2л / 0.4л)', uz: 'Gazsiz suv (0.2L / 0.4L)' },
-      descs: {
-        de: 'Stilles Wasser',
-        en: 'Still water',
-        ru: 'Негазированная вода',
-        uz: 'Gazsiz suv'
-      }
-    },
-    {
-      id: 'seltesflasche',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Seltes Flasche (0.75L)', en: 'Water Bottle (0.75L)', ru: 'Бутылка воды (0.75л)', uz: 'Suv shishasi (0.75L)' },
-      descs: {
-        de: 'Große Wasserflasche',
-        en: 'Large water bottle',
-        ru: 'Большая бутылка воды',
-        uz: 'Katta suv shishasi'
-      }
-    },
-    {
-      id: 'cocacola',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Coca-Cola (0.2L / 0.4L)', en: 'Coca-Cola (0.2L / 0.4L)', ru: 'Кока-Кола (0.2л / 0.4л)', uz: 'Coca-Cola (0.2L / 0.4L)' },
-      descs: {
-        de: 'Coca-Cola',
-        en: 'Coca-Cola',
-        ru: 'Кока-Кола',
-        uz: 'Coca-Cola'
-      }
-    },
-    {
-      id: 'colalight',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Cola-Light (0.2L / 0.4L)', en: 'Cola Light (0.2L / 0.4L)', ru: 'Кола Лайт (0.2л / 0.4л)', uz: 'Cola Light (0.2L / 0.4L)' },
-      descs: {
-        de: 'Cola Light',
-        en: 'Cola Light',
-        ru: 'Кола Лайт',
-        uz: 'Cola Light'
-      }
-    },
-    {
-      id: 'colazero',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Cola-Zero (0.2L / 0.4L)', en: 'Cola Zero (0.2L / 0.4L)', ru: 'Кола Зеро (0.2л / 0.4л)', uz: 'Cola Zero (0.2L / 0.4L)' },
-      descs: {
-        de: 'Cola Zero',
-        en: 'Cola Zero',
-        ru: 'Кола Зеро',
-        uz: 'Cola Zero'
-      }
-    },
-    {
-      id: 'fanta',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Fanta (0.2L / 0.4L)', en: 'Fanta (0.2L / 0.4L)', ru: 'Фанта (0.2л / 0.4л)', uz: 'Fanta (0.2L / 0.4L)' },
-      descs: {
-        de: 'Fanta Orange',
-        en: 'Fanta Orange',
-        ru: 'Фанта Апельсин',
-        uz: 'Fanta Apelsin'
-      }
-    },
-    {
-      id: 'sprit',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Sprit (0.2L / 0.4L)', en: 'Sprite (0.2L / 0.4L)', ru: 'Спрайт (0.2л / 0.4л)', uz: 'Sprite (0.2L / 0.4L)' },
-      descs: {
-        de: 'Sprite',
-        en: 'Sprite',
-        ru: 'Спрайт',
-        uz: 'Sprite'
-      }
-    },
-    {
-      id: 'apfelsaftschorle',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Apfelsaftschorle (0.2L / 0.4L)', en: 'Apple Spritzer (0.2L / 0.4L)', ru: 'Яблочный сок со газом (0.2л / 0.4л)', uz: 'Olma sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Apfelsaft mit Sprudelwasser',
-        en: 'Apple juice with sparkling water',
-        ru: 'Яблочный сок с газированной водой',
-        uz: 'Olma sharbati gazlangan suv bilan'
-      }
-    },
-    {
-      id: 'bitterlemon',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Bitter Lemon (0.2L / 0.4L)', en: 'Bitter Lemon (0.2L / 0.4L)', ru: 'Биттер Лимон (0.2л / 0.4л)', uz: 'Bitter Lemon (0.2L / 0.4L)' },
-      descs: {
-        de: 'Bitter Lemon',
-        en: 'Bitter Lemon',
-        ru: 'Биттер Лимон',
-        uz: 'Bitter Lemon'
-      }
-    },
-    {
-      id: 'gingerale',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Ginger Ale (0.2L / 0.4L)', en: 'Ginger Ale (0.2L / 0.4L)', ru: 'Имбирный Эль (0.2л / 0.4л)', uz: 'Ginger Ale (0.2L / 0.4L)' },
-      descs: {
-        de: 'Ginger Ale',
-        en: 'Ginger Ale',
-        ru: 'Имбирный Эль',
-        uz: 'Ginger Ale'
-      }
-    },
-    {
-      id: 'orangensaft',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Orangensaft (0.2L / 0.4L)', en: 'Orange Juice (0.2L / 0.4L)', ru: 'Апельсиновый сок (0.2л / 0.4л)', uz: 'Apelsin sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Frischer Orangensaft',
-        en: 'Fresh orange juice',
-        ru: 'Свежий апельсиновый сок',
-        uz: 'Yangi apelsin sharbati'
-      }
-    },
-    {
-      id: 'apfelsaft',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Apfelsaft (0.2L / 0.4L)', en: 'Apple Juice (0.2L / 0.4L)', ru: 'Яблочный сок (0.2л / 0.4л)', uz: 'Olma sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Frischer Apfelsaft',
-        en: 'Fresh apple juice',
-        ru: 'Свежий яблочный сок',
-        uz: 'Yangi olma sharbati'
-      }
-    },
-    {
-      id: 'kirschsaft',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Kirschsaft (0.2L / 0.4L)', en: 'Cherry Juice (0.2L / 0.4L)', ru: 'Вишневый сок (0.2л / 0.4л)', uz: 'Olcha sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Kirschsaft',
-        en: 'Cherry juice',
-        ru: 'Вишневый сок',
-        uz: 'Olcha sharbati'
-      }
-    },
-    {
-      id: 'bananensaft',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Bananensaft (0.2L / 0.4L)', en: 'Banana Juice (0.2L / 0.4L)', ru: 'Банановый сок (0.2л / 0.4л)', uz: 'Banan sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Bananensaft',
-        en: 'Banana juice',
-        ru: 'Банановый сок',
-        uz: 'Banan sharbati'
-      }
-    },
-    {
-      id: 'pfirsichsaft',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Pfirsichsaft (0.2L / 0.4L)', en: 'Peach Juice (0.2L / 0.4L)', ru: 'Персиковый сок (0.2л / 0.4л)', uz: 'Shaftoli sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Pfirsichsaft',
-        en: 'Peach juice',
-        ru: 'Персиковый сок',
-        uz: 'Shaftoli sharbati'
-      }
-    },
-    {
-      id: 'maracujasaft',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Maracujasaft (0.2L / 0.4L)', en: 'Passion Fruit Juice (0.2L / 0.4L)', ru: 'Маракуйя сок (0.2л / 0.4л)', uz: 'Marakuya sharbati (0.2L / 0.4L)' },
-      descs: {
-        de: 'Maracujasaft',
-        en: 'Passion fruit juice',
-        ru: 'Сок маракуйи',
-        uz: 'Marakuya sharbati'
-      }
-    },
+    { id: "coca-cola", image: null, price: "2,50€", names: { de: "Coca-Cola (0.33L)", en: "Coca-Cola (0.33L)", ru: "Coca-Cola (0.33л)", uz: "Coca-Cola (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
+    { id: "fanta", image: null, price: "2,50€", names: { de: "Fanta (0.33L)", en: "Fanta (0.33L)", ru: "Fanta (0.33л)", uz: "Fanta (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
+    { id: "sprite", image: null, price: "2,50€", names: { de: "Sprite (0.33L)", en: "Sprite (0.33L)", ru: "Sprite (0.33л)", uz: "Sprite (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
+    { id: "mezzo-mix", image: null, price: "2,50€", names: { de: "Mezzo Mix (0.33L)", en: "Mezzo Mix (0.33L)", ru: "Mezzo Mix (0.33л)", uz: "Mezzo Mix (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
+    { id: "wasser", image: null, price: "2,50€", names: { de: "Wasser (0.33L)", en: "Water (0.33L)", ru: "Вода (0.33л)", uz: "Suv (0.33L)" }, descs: { de: "Still oder sprudelnd.", en: "Still or sparkling.", ru: "Негазированная или газированная.", uz: "Gazli yoki gazsiz." } },
+    { id: "apfelschorle", image: null, price: "2,50€", names: { de: "Apfelschorle (0.33L)", en: "Apple Spritzer (0.33L)", ru: "Яблочный шорле (0.33л)", uz: "Olma shorle (0.33L)" }, descs: { de: "Erfrischend.", en: "Refreshing.", ru: "Освежающий напиток.", uz: "Tetiktiruvchi ichimlik." } },
+    { id: "bionade", image: null, price: "2,50€", names: { de: "Bionade (versch. Sorten)", en: "Bionade (various)", ru: "Bionade (разные вкусы)", uz: "Bionade (turli xil)" }, descs: { de: "Je nach Verfügbarkeit.", en: "Subject to availability.", ru: "По наличию.", uz: "Mavjudligiga qarab." } },
+    { id: "vitamaltz", image: null, price: "2,50€", names: { de: "Vita Malz", en: "Vita Malz", ru: "Vita Malz", uz: "Vita Malz" }, descs: { de: "Malzgetränk.", en: "Malt beverage.", ru: "Солодовый напиток.", uz: "Solod ichimligi." } },
+    { id: "fassbrause", image: null, price: "2,50€", names: { de: "Fassbrause", en: "Fassbrause", ru: "Fassbrause", uz: "Fassbrause" }, descs: { de: "Alkoholfreies Erfrischungsgetränk.", en: "Non-alcoholic refreshment.", ru: "Безалкогольный освежающий напиток.", uz: "Alkogolsiz tetik ichimlik." } },
+    { id: "clubmate", image: null, price: "2,50€", names: { de: "Club-Mate", en: "Club-Mate", ru: "Club-Mate", uz: "Club-Mate" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } },
+    { id: "fritz", image: null, price: "2,50€", names: { de: "Fritz (versch. Sorten)", en: "Fritz (various)", ru: "Fritz (разные вкусы)", uz: "Fritz (turli xil)" }, descs: { de: "Je nach Verfügbarkeit.", en: "Subject to availability.", ru: "По наличию.", uz: "Mavjudligiga qarab." } }
   ],
-  beer: [
-    {
-      id: 'binding',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Binding (4.9% Vol.) Pils, vom Fass (0.2L / 0.4L)', en: 'Binding (4.9% Vol.) Pilsner, draft (0.2L / 0.4L)', ru: 'Binding (4.9% Vol.) Пилснер, разливное (0.2л / 0.4л)', uz: 'Binding (4.9% Vol.) Pils, quyma (0.2L / 0.4L)' },
-      descs: {
-        de: 'Frisches Pils vom Fass',
-        en: 'Fresh draft pilsner',
-        ru: 'Свежее разливное пиво',
-        uz: 'Yangi quyma pivo'
-      }
-    },
-    {
-      id: 'radler',
-      image: null,
-      price: '3.90€ / 5.90€',
-      names: { de: 'Radler (4.9% Vol.) (0.2L / 0.4L)', en: 'Radler (4.9% Vol.) (0.2L / 0.4L)', ru: 'Радлер (4.9% Vol.) (0.2л / 0.4л)', uz: 'Radler (4.9% Vol.) (0.2L / 0.4L)' },
-      descs: {
-        de: 'Bier mit Limonade gemischt',
-        en: 'Beer mixed with lemonade',
-        ru: 'Пиво с лимонадом',
-        uz: 'Limonad bilan pivo'
-      }
-    },
-    {
-      id: 'kostritzer',
-      image: null,
-      price: '4.90€',
-      names: { de: 'Köstritzer Schwarzbier 0.33L (4.8% Vol.)', en: 'Köstritzer Black Beer 0.33L (4.8% Vol.)', ru: 'Köstritzer Черное пиво 0.33л (4.8% Vol.)', uz: 'Köstritzer Qora pivo 0.33L (4.8% Vol.)' },
-      descs: {
-        de: 'Dunkles Bier aus Thüringen',
-        en: 'Dark beer from Thuringia',
-        ru: 'Темное пиво из Тюрингии',
-        uz: 'Tyuringiyadan qora pivo'
-      }
-    },
-    {
-      id: 'schofferhofer',
-      image: null,
-      price: '5.90€',
-      names: { de: 'Schöfferhofer Hefeweizen (0.5L)', en: 'Schöfferhofer Wheat Beer (0.5L)', ru: 'Schöfferhofer пшеничное (0.5л)', uz: 'Schöfferhofer bug‘doy pivosi (0.5L)' },
-      descs: {
-        de: 'Klassisches Hefeweizen',
-        en: 'Classic wheat beer',
-        ru: 'Классическое пшеничное пиво',
-        uz: 'Klassik bug‘doy pivosi'
-      }
-    },
-    {
-      id: 'clausthaler',
-      image: null,
-      price: '3.90€',
-      names: { de: 'Clausthaler Original (0.0% Vol.) (0.33L)', en: 'Clausthaler Original (0.0% Vol.) (0.33L)', ru: 'Clausthaler Оригинал (0.0% Vol.) (0.33л)', uz: 'Clausthaler Original (0.0% Vol.) (0.33L)' },
-      descs: {
-        de: 'Alkoholfreies Bier',
-        en: 'Non-alcoholic beer',
-        ru: 'Безалкогольное пиво',
-        uz: 'Alkogolsiz pivo'
-      }
-    },
-    {
-      id: 'schofferhoferna',
-      image: null,
-      price: '5.90€',
-      names: { de: 'Schöfferhofer Hefeweizen (0.0% Vol.) (0.5L)', en: 'Schöfferhofer Wheat Beer (0.0% Vol.) (0.5L)', ru: 'Schöfferhofer пшеничное (0.0% Vol.) (0.5л)', uz: 'Schöfferhofer bug‘doy (0.0% Vol.) (0.5L)' },
-      descs: {
-        de: 'Alkoholfreies Hefeweizen',
-        en: 'Non-alcoholic wheat beer',
-        ru: 'Безалкогольное пшеничное пиво',
-        uz: 'Alkogolsiz bug‘doy pivosi'
-      }
-    },
-    {
-      id: 'apfelwein',
-      image: null,
-      price: '3.90€ / 4.90€',
-      names: { de: 'Apfelwein pur, süss, sauer (0.25L / 0.5L)', en: 'Apple Wine pure, sweet, sour (0.25L / 0.5L)', ru: 'Яблочное вино чистое, сладкое, кислое (0.25л / 0.5л)', uz: 'Olma vinosi toza, shirin, nordon (0.25L / 0.5L)' },
-      descs: {
-        de: 'Hessische Spezialität',
-        en: 'Hessian specialty',
-        ru: 'Гессенская специальность',
-        uz: 'Gessen mahsuloti'
-      }
-    },
-  ],
-  wine: [
-    {
-      id: 'valmarone',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Valmarone Merlot (0.2L)', en: 'Valmarone Merlot (0.2L)', ru: 'Valmarone Мерло (0.2л)', uz: 'Valmarone Merlot (0.2L)' },
-      descs: {
-        de: 'Trocken, Kirscharomen, feine Kräuter',
-        en: 'Dry, cherry aromas, fine herbs',
-        ru: 'Сухое, вишневые ароматы, травы',
-        uz: 'Quruq, olcha aromati, o‘tlar'
-      }
-    },
-    {
-      id: 'thomasrathdornfelder',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Thomas Rath Dornfelder (0.2L)', en: 'Thomas Rath Dornfelder (0.2L)', ru: 'Thomas Rath Дорнфельдер (0.2л)', uz: 'Thomas Rath Dornfelder (0.2L)' },
-      descs: {
-        de: 'Trocken, Wild oder kräftige Käsesorten',
-        en: 'Dry, game or strong cheese varieties',
-        ru: 'Сухое, дичь или крепкие сыры',
-        uz: 'Quruq, yovvoyi go‘sht yoki kuchli pishloqlar bilan'
-      }
-    },
-    {
-      id: 'lospagos',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Los Pagos Cabernet (0.2L)', en: 'Los Pagos Cabernet (0.2L)', ru: 'Los Pagos Каберне (0.2л)', uz: 'Los Pagos Cabernet (0.2L)' },
-      descs: {
-        de: 'Halbtrocken, nach schwarzen Johannisbeeren, fruchtig',
-        en: 'Semi-dry, black currant, fruity',
-        ru: 'Полусухое, черная смородина, фруктовое',
-        uz: 'Yarim quruq, qora smorodina, mevali'
-      }
-    },
-    {
-      id: 'vinoespana',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Vino de España (0.2L)', en: 'Vino de España (0.2L)', ru: 'Vino de España (0.2л)', uz: 'Vino de España (0.2L)' },
-      descs: {
-        de: 'Lieblich, leicht, nach roten Beeren',
-        en: 'Sweet, light, red berries',
-        ru: 'Сладкое, легкое, красные ягоды',
-        uz: 'Shirin, yengil, qizil rezavorlar'
-      }
-    },
-    {
-      id: 'thomasrathspatburgunder',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Thomas Rath Spätburgunder (0.2L)', en: 'Thomas Rath Pinot Noir (0.2L)', ru: 'Thomas Rath Шпетбургундер (0.2л)', uz: 'Thomas Rath Spätburgunder (0.2L)' },
-      descs: {
-        de: 'Trocken Qualitätswein, gehaltvoll, aromatisch',
-        en: 'Dry quality wine, full-bodied, aromatic',
-        ru: 'Сухое качественное вино, насыщенное, ароматное',
-        uz: 'Quruq, sifatli vino: to‘liq, xushbo‘y'
-      }
-    },
-    {
-      id: 'josedezarzas',
-      image: null,
-      price: '27.90€',
-      names: { de: 'Jose de Zarzas Gran Reserva (0.75L)', en: 'Jose de Zarzas Gran Reserva (0.75L)', ru: 'Jose de Zarzas Гран Резерва (0.75л)', uz: 'Jose de Zarzas Gran Reserva (0.75L)' },
-      descs: {
-        de: 'Trocken, 2 Jahre im Eichefass gelagert, nach dunklen Beeren und Vanille, leichte Röstnoten',
-        en: 'Dry, 2 years oak-aged, dark berries and vanilla, light roasted notes',
-        ru: 'Сухое, 2 года в дубовой бочке, темные ягоды и ваниль, легкая обжарка',
-        uz: 'Quruq, 2 yil eman bochkasida, qora rezavorlar va vanil, yengil qovurilgan notalar'
-      }
-    },
-    {
-      id: 'marquesderiscalred',
-      image: null,
-      price: '67.90€',
-      names: { de: 'Marques de Riscal (0.75L)', en: 'Marques de Riscal (0.75L)', ru: 'Marques de Riscal (0.75л)', uz: 'Marques de Riscal (0.75L)' },
-      descs: {
-        de: 'Rioja / Am Gaumen fein und elegant, mit zarten und runden Tanninen, einem seidigen Mundgefühl und einer angenessenen Säure. Alles in allem ein sehr milder, gut definierter und zugänglicher Wein.',
-        en: 'Rioja / Fine and elegant on the palate, with gentle and round tannins, a silky mouthfeel and a pleasant acidity. Overall a very mild, well-defined and accessible wine.',
-        ru: 'Риоха / Тонкое и элегантное во рту, с нежными и округлыми танинами, шелковистым ощущением и приятной кислотностью. В целом очень мягкое, хорошо определенное и доступное вино.',
-        uz: 'Rioja / Og‘izda nozik va oqlangan; yumshoq va yumaloq taninlar, ipakdek his va yoqimli kislotalilik. Umuman olganda juda yumshoq, yaxshi aniqlangan va ochiq vino.'
-      }
-    },
-    {
-      id: 'thomasrathriesling',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Thomas Rath Riesling (0.2L)', en: 'Thomas Rath Riesling (0.2L)', ru: 'Thomas Rath Рислинг (0.2л)', uz: 'Thomas Rath Riesling (0.2L)' },
-      descs: {
-        de: 'Trocken, Aromen nach Apfel und Pfirsichen, frische Säure',
-        en: 'Dry, apple and peach aromas, fresh acidity',
-        ru: 'Сухое, ароматы яблок и персиков, свежая кислотность',
-        uz: 'Quruq, olma va shaftoli aromati, yangi kislotalik'
-      }
-    },
-    {
-      id: 'thomasrathgrauburgunder',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Thomas Rath Grauburgunder (0.2L)', en: 'Thomas Rath Pinot Gris (0.2L)', ru: 'Thomas Rath Граубургундер (0.2л)', uz: 'Thomas Rath Grauburgunder (0.2L)' },
-      descs: {
-        de: 'Trocken, nach Pfirsich und Zitrusfrüchten, weich',
-        en: 'Dry, peach and citrus, soft',
-        ru: 'Сухое, персик и цитрусовые, мягкое',
-        uz: 'Quruq, shaftoli va sitrus, yumshoq'
-      }
-    },
-    {
-      id: 'thomasrathoppenheimer',
-      image: null,
-      price: '7.50€',
-      names: { de: 'Thomas Rath Oppenheimer Krötenbrunnen (0.2L)', en: 'Thomas Rath Oppenheimer Krötenbrunnen (0.2L)', ru: 'Thomas Rath Опенхаймер Кретенбруннен (0.2л)', uz: 'Thomas Rath Oppenheimer Krötenbrunnen (0.2L)' },
-      descs: {
-        de: 'Lieblich, fruchtig nach Mirabellen',
-        en: 'Sweet, fruity with mirabelle plums',
-        ru: 'Сладкое, фруктовое с мирабелью',
-        uz: 'Shirin, mevali mirabelle olxo‘ri bilan'
-      }
-    },
-    {
-      id: 'caernestorosato',
-      image: null,
-      price: '7.50€',
-      names: { de: 'CA Ernesto Rosato (0.2L)', en: 'CA Ernesto Rosato (0.2L)', ru: 'CA Ernesto Розато (0.2л)', uz: 'CA Ernesto Rosato (0.2L)' },
-      descs: {
-        de: 'Trocken, frisch, nach roten Beeren',
-        en: 'Dry, fresh, red berries',
-        ru: 'Сухое, свежее, красные ягоды',
-        uz: 'Quruq, yangi, qizil rezavorlar'
-      }
-    },
-    {
-      id: 'achkarrengrauburgunder',
-      image: null,
-      price: '27.90€',
-      names: { de: 'Achkarren Grauburgunder (0.75L)', en: 'Achkarren Pinot Gris (0.75L)', ru: 'Achkarren Граубургундер (0.75л)', uz: 'Achkarren Grauburgunder (0.75L)' },
-      descs: {
-        de: 'Trocken, vollmundig nach frischen Äpfeln',
-        en: 'Dry, full-bodied with fresh apples',
-        ru: 'Сухое, полнотелое со свежими яблоками',
-        uz: 'Quruq, to‘liq, yangi olma aromati bilan'
-      }
-    },
-    {
-      id: 'marquesderiscalwhite',
-      image: null,
-      price: '57.90€',
-      names: { de: 'Marques de Riscal (0.75L)', en: 'Marques de Riscal (0.75L)', ru: 'Marques de Riscal (0.75л)', uz: 'Marques de Riscal (0.75L)' },
-      descs: {
-        de: 'Der Riscal Blanco ist ein frischer fruchtiger Wein, betont trocken am Gaumen und mit rassiger Säure ausgestattet.',
-        en: 'The Riscal Blanco is a fresh fruity wine, distinctly dry on the palate and equipped with racy acidity.',
-        ru: 'Riscal Blanco - свежее фруктовое вино, ярко выраженное сухое на вкус и с живой кислотностью.',
-        uz: 'Riscal Blanco — yangi mevali vino, og‘izda aniq quruq va jonli kislotalikka ega.'
-      }
-    },
-  ],
-  spirits: [
-    {
-      id: 'vodkaabsolut',
-      image: null,
-      price: '3.90€ / 20.00€ / 45.00€',
-      names: { de: 'Absolut Russischer Vodka (0.2cl / 0.2L / 0.5L)', en: 'Absolut Russian Vodka (0.2cl / 0.2L / 0.5L)', ru: 'Absolut Русская Водка (0.2cl / 0.2л / 0.5л)', uz: 'Absolut rus aroqi (0.2cl / 0.2L / 0.5L)' },
-      descs: {
-        de: 'Premium Vodka',
-        en: 'Premium vodka',
-        ru: 'Премиум водка',
-        uz: 'Premium aroq'
-      }
-    },
-    {
-      id: 'vodkastandart',
-      image: null,
-      price: '3.90€ / 20.00€ / 45.00€',
-      names: { de: 'Standart Vodka (0.2cl / 0.2L / 0.5L)', en: 'Standard Vodka (0.2cl / 0.2L / 0.5L)', ru: 'Стандарт Водка (0.2cl / 0.2л / 0.5л)', uz: 'Standart aroq (0.2cl / 0.2L / 0.5L)' },
-      descs: {
-        de: 'Standard Vodka',
-        en: 'Standard vodka',
-        ru: 'Стандартная водка',
-        uz: 'Standart aroq'
-      }
-    },
-    {
-      id: 'vodkaflasche',
-      image: null,
-      price: '65.00€',
-      names: { de: 'Vodka Flasche (0.75L)', en: 'Vodka Bottle (0.75L)', ru: 'Бутылка водки (0.75л)', uz: 'Aroq shishasi (0.75L)' },
-      descs: {
-        de: 'Vodka Flasche',
-        en: 'Vodka bottle',
-        ru: 'Бутылка водки',
-        uz: 'Aroq shishasi'
-      }
-    },
-    {
-      id: 'hennessy',
-      image: null,
-      price: '8.90€',
-      names: { de: 'Hennessy (0.2cl)', en: 'Hennessy (0.2cl)', ru: 'Hennessy (0.2cl)', uz: 'Hennessy (0.2cl)' },
-      descs: {
-        de: 'Cognac',
-        en: 'Cognac',
-        ru: 'Коньяк',
-        uz: 'Konyak'
-      }
-    },
-    {
-      id: 'chivasregal',
-      image: null,
-      price: '8.90€',
-      names: { de: 'Chivas Regal (0.2cl)', en: 'Chivas Regal (0.2cl)', ru: 'Chivas Regal (0.2cl)', uz: 'Chivas Regal (0.2cl)' },
-      descs: {
-        de: 'Scotch Whisky',
-        en: 'Scotch whisky',
-        ru: 'Скотч виски',
-        uz: 'Shotland viskisi'
-      }
-    },
-    {
-      id: 'jackdaniels',
-      image: null,
-      price: '8.90€',
-      names: { de: 'Jack Daniel\'s (0.2cl)', en: 'Jack Daniel\'s (0.2cl)', ru: 'Jack Daniel\'s (0.2cl)', uz: 'Jack Daniel\'s (0.2cl)' },
-      descs: {
-        de: 'Tennessee Whiskey',
-        en: 'Tennessee whiskey',
-        ru: 'Теннесси виски',
-        uz: 'Tennessi viskisi'
-      }
-    },
-    {
-      id: 'ramazzotti',
-      image: null,
-      price: '8.90€',
-      names: { de: 'Ramazzotti Amaro (0.2cl)', en: 'Ramazzotti Amaro (0.2cl)', ru: 'Ramazzotti Amaro (0.2cl)', uz: 'Ramazzotti Amaro (0.2cl)' },
-      descs: {
-        de: 'Italienischer Kräuterlikör',
-        en: 'Italian herbal liqueur',
-        ru: 'Итальянский травяной ликер',
-        uz: 'Italiya o‘tli likyori'
-      }
-    },
-    {
-      id: 'jagermeister',
-      image: null,
-      price: '8.90€',
-      names: { de: 'Jägermeister (0.2cl)', en: 'Jägermeister (0.2cl)', ru: 'Jägermeister (0.2cl)', uz: 'Jägermeister (0.2cl)' },
-      descs: {
-        de: 'Kräuterlikör',
-        en: 'Herbal liqueur',
-        ru: 'Травяной ликер',
-        uz: 'O‘tli likyor'
-      }
-    },
-    {
-      id: 'glasssekt',
-      image: null,
-      price: '5.90€',
-      names: { de: 'Glass Sekt / Prosecco (0.2L)', en: 'Glass Sparkling Wine / Prosecco (0.2L)', ru: 'Бокал игристого / Просекко (0.2л)', uz: 'Bokal ko‘pikli vino / Prosecco (0.2L)' },
-      descs: {
-        de: 'Sekt oder Prosecco',
-        en: 'Sparkling wine or Prosecco',
-        ru: 'Игристое вино или Просекко',
-        uz: 'Ko‘pikli vino yoki Prosecco'
-      }
-    },
-    {
-      id: 'flaschesekt',
-      image: null,
-      price: '21.90€',
-      names: { de: 'Flasche Sekt (0.75L) / Trocken', en: 'Bottle Sparkling Wine (0.75L) / Dry', ru: 'Бутылка игристого (0.75л) / Сухое', uz: 'Ko‘pikli vino shishasi (0.75L) / quruq' },
-      descs: {
-        de: 'Flasche Sekt, trocken',
-        en: 'Bottle sparkling wine, dry',
-        ru: 'Бутылка игристого, сухое',
-        uz: 'Ko‘pikli vino shishasi, quruq'
-      }
-    },
-  ]
+  grills: [],
+  beer: [],
+  wine: [],
+  spirits: []
 };
 
 export default function MenuPage() {
@@ -866,7 +544,8 @@ export default function MenuPage() {
   const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
   const { musicPlaying, toggleMusic } = useMusic();
   const t = translations[lang];
-  const cats = menuCategories[lang];
+  const cats = silkRoadMenuCategories[lang];
+  const activeMenu = silkRoadMenu;
   const currentYear = new Date().getFullYear();
 
   // SEO meta tags for menu page
@@ -874,14 +553,14 @@ export default function MenuPage() {
     de: "Speisekarte - SILK ROAD Restaurant Köln | Zentralasiatische Gerichte & Preise",
     en: "Menu - SILK ROAD Restaurant Köln | Central Asian Dishes & Prices",
     ru: "Меню - SILK ROAD Restaurant Кёльн | Блюда Центральной Азии и цены",
-    uz: "Menyu - SILK ROAD Restoran Köln | O'zbek taomlari va narxlar"
+    uz: "Menu - SILK ROAD Restaurant Köln"
   };
 
   const seoDescriptions: Record<Language, string> = {
-    de: "Entdecken Sie unsere Speisekarte mit authentischen zentralasiatischen Spezialitäten: Plov ab 17.90€, Manty 23.90€, Samsa, Schaschlik und mehr. Halal-Küche in Köln-Südstadt.",
-    en: "Discover our menu with authentic Central Asian specialties: Plov from €17.90, Manty €23.90, Samsa, Shashlik and more. Halal cuisine in Köln-Südstadt.",
-    ru: "Откройте для себя наше меню с аутентичными блюдами Центральной Азии: Плов от 17.90€, Манты 23.90€, Самса, Шашлык и многое другое. Халяль кухня во Кёльне Борнхайм.",
-    uz: "Bizning menyumizni kashf eting: O'zbek osh 17.90€ dan, manti 23.90€, somsa, shashlik va boshqalar. Köln-Südstadtdagi halol oshxona."
+    de: "Originale Gerichte der Seidenstraße: Plow, Manty, Kurutob, Lagman, Salate, Desserts und Getränke. SILK ROAD Restaurant Köln, Karl-Berbuer-Platz 7.",
+    en: "Original Silk Road dishes: plow, manty, kurutob, lagman, salads, desserts and drinks at SILK ROAD Restaurant Cologne.",
+    ru: "Оригинальные блюда Шелкового пути: плов, манты, курутоб, лагман, салаты, десерты и напитки в SILK ROAD Restaurant Köln.",
+    uz: "Silk Road menu."
   };
 
   // Dynamic canonical URL based on language path
@@ -935,7 +614,7 @@ export default function MenuPage() {
           <Link href={getLocalizedPath('/')}>
             <Button variant="ghost" className="gap-2">
               <ArrowLeft className="w-4 h-4" />
-              {lang === 'de' ? 'Zurück' : lang === 'ru' ? 'Назад' : lang === 'en' ? 'Back' : lang === 'uz' ? 'Ortga' : 'Back'}
+              {lang === 'de' ? 'Zurück' : lang === 'ru' ? 'Назад' : 'Back'}
             </Button>
           </Link>
 
@@ -1117,13 +796,13 @@ export default function MenuPage() {
             >
               <div className="flex flex-col p-6 gap-4">
                 <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#about`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : lang === 'uz' ? 'Biz haqida' : 'About Us'}
+                  {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : 'About Us'}
                 </button>
                 <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#contact`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
+                  {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : 'Contact'}
                 </button>
                 <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#reservation`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
+                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : 'Reservation Request'}
                 </button>
               </div>
             </motion.div>
@@ -1161,37 +840,14 @@ export default function MenuPage() {
         </div>
 
         {/* Soups */}
-        <MenuSection title={cats.soups} items={fullMenu.soups} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
-
-        {/* Appetizers */}
-        <MenuSection title={cats.appetizers} items={fullMenu.appetizers} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
-
-        {/* Main Dishes */}
-        <MenuSection title={cats.mains} items={fullMenu.mains} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
-
-        {/* Grills */}
-        <MenuSection title={cats.grills} items={fullMenu.grills} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
-
-        {/* Desserts */}
-        <MenuSection title={cats.desserts} items={fullMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
-
-        {/* Sides */}
-        <MenuSection title={cats.sides} items={fullMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />
-
-        {/* Hot Drinks */}
-        <MenuSection title={cats.drinks} items={fullMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
-
-        {/* Cold Drinks */}
-        <MenuSection title={cats.colddrinks} items={fullMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} />
-
-        {/* Beer */}
-        <MenuSection title={cats.beer} items={fullMenu.beer} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
-
-        {/* Wine */}
-        <MenuSection title={cats.wine} items={fullMenu.wine} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
-
-        {/* Spirits */}
-        <MenuSection title={cats.spirits} items={fullMenu.spirits} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />
+        {activeMenu.soups.length > 0 && <MenuSection title={cats.soups} items={activeMenu.soups} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {activeMenu.appetizers.length > 0 && <MenuSection title={cats.appetizers} items={activeMenu.appetizers} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {activeMenu.mains.length > 0 && <MenuSection title={cats.mains} items={activeMenu.mains} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {activeMenu.salads.length > 0 && <MenuSection title={cats.salads} items={activeMenu.salads} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {activeMenu.desserts.length > 0 && <MenuSection title={cats.desserts} items={activeMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {activeMenu.sides.length > 0 && <MenuSection title={cats.sides} items={activeMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
+        {activeMenu.drinks.length > 0 && <MenuSection title={cats.drinks} items={activeMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />}
+        {activeMenu.colddrinks.length > 0 && <MenuSection title={cats.colddrinks} items={activeMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} />}
 
         {/* Footer Note */}
         <div className="mt-12 md:mt-20 text-center bg-card/90 backdrop-blur-sm p-4 md:p-8 rounded-sm border border-border/50">
@@ -1201,10 +857,9 @@ export default function MenuPage() {
             <div className="h-[1px] w-8 md:w-12 bg-gradient-to-l from-transparent to-primary"></div>
           </div>
           <p className="text-muted-foreground text-xs md:text-sm leading-relaxed max-w-2xl mx-auto px-2">
-            {lang === 'de' && 'Alle Preise inkl. MwSt. • Allergene und Zusatzstoffe auf Anfrage • Alle Gerichte sind Halal'}
+            {lang === 'de' && 'Alle Preise inkl. MwSt. • Zusatzstoffe: 1-Farbstoff, 2-Konservierungsstoff, 3-Antioxidationsmittel, 4-Geschmacksverstärker, 5-Milcheiweiß, 6-Koffeinhaltig, 7-Süßungsmittel • Allergene: A-Glutenhaltiges Getreide (Weizenmehl), B-Eier, C-Erdnüsse, C1-Walnuss, D-Soja, E-Milch, F-Schalenfrüchte, G-Sellerie, H-Senf, J-Sesamsamen'}
             {lang === 'en' && 'All prices include VAT • Allergen information available on request • All dishes are Halal'}
             {lang === 'ru' && 'Все цены включают НДС • Информация об аллергенах по запросу • Все блюда халяльные'}
-            {lang === 'uz' && 'Barcha narxlar QQS bilan • Allergenlar bo‘yicha ma’lumot so‘rovga binoan • Barcha taomlar halol'}
           </p>
           <div className="mt-4 md:mt-6 text-center">
             <p className="text-xs text-muted-foreground/70">
@@ -1227,14 +882,6 @@ export default function MenuPage() {
               {lang === 'ru' && (
                 <>
                   Рекомендуется бронирование •{" "}
-                  <a href="tel:+4922196026707" className="hover:text-primary transition-colors">
-                    0221 96026707
-                  </a>
-                </>
-              )}
-              {lang === 'uz' && (
-                <>
-                  Bron qilish tavsiya etiladi •{" "}
                   <a href="tel:+4922196026707" className="hover:text-primary transition-colors">
                     0221 96026707
                   </a>
@@ -1321,7 +968,7 @@ export default function MenuPage() {
 
 function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder, hideDetails }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string }, setLightboxImage: (image: { src: string; name: string } | null) => void, hidePlaceholder?: boolean, hideDetails?: boolean }) {
   // Check if this section has signature dishes (mains)
-  const isMainSection = items.length > 0 && items[0].id === 'plov';
+  const isMainSection = items.length > 0 && (items[0].id === 'plowbeef' || items[0].id === 'plov');
   const reduceMotion = useReducedMotion();
 
   return (
@@ -1350,7 +997,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
         <div className="space-y-6 md:space-y-8">
           {items.map((item, idx) => {
             const { name, desc } = getDishInfo(item);
-            const isSignature = isMainSection && (item.id === 'plov' || item.id === 'shashlik');
+            const isSignature = isMainSection && (item.id === 'plowbeef' || item.id === 'mantybeef');
 
             return (
               <motion.div
@@ -1431,17 +1078,17 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                         <div className="flex gap-2 mt-2 md:mt-3">
                           {item.dietary === 'halal' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-primary/10 text-primary px-2 py-1 rounded-full">
-                              <span>✓</span> {lang === 'de' ? 'Halal' : lang === 'ru' ? 'Халяль' : lang === 'uz' ? 'Halol' : 'Halal'}
+                              <span>✓</span> {lang === 'de' ? 'Halal' : lang === 'ru' ? 'Халяль' : 'Halal'}
                             </span>
                           )}
                           {item.dietary === 'vegetarian' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-green-500/10 text-green-600 px-2 py-1 rounded-full">
-                              <span>🌱</span> {lang === 'de' ? 'Vegetarisch' : lang === 'ru' ? 'Вегетарианское' : lang === 'uz' ? 'Vegetarian' : 'Vegetarian'}
+                              <span>🌱</span> {lang === 'de' ? 'Vegetarisch' : lang === 'ru' ? 'Вегетарианское' : 'Vegetarian'}
                             </span>
                           )}
                           {item.dietary === 'vegan' && (
                             <span className="inline-flex items-center gap-1 text-xs bg-green-600/10 text-green-700 px-2 py-1 rounded-full">
-                              <span>🌿</span> {lang === 'de' ? 'Vegan' : lang === 'ru' ? 'Веганское' : lang === 'uz' ? 'Vegan' : 'Vegan'}
+                              <span>🌿</span> {lang === 'de' ? 'Vegan' : lang === 'ru' ? 'Веганское' : 'Vegan'}
                             </span>
                           )}
                         </div>
@@ -1460,14 +1107,6 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
         </div>
       </div>
 
-      {/* Signature Note */}
-      {isMainSection && (
-        <div className="mt-3 md:mt-4 text-center">
-          <p className="text-xs md:text-sm text-muted-foreground font-bold italic">
-            <span className="text-secondary text-xl">★</span> {lang === 'de' ? 'Empfehlung des Hauses' : lang === 'ru' ? 'Фирменное блюдо' : lang === 'uz' ? 'Oshpaz tavsiyasi' : "Chef's Signature"}
-          </p>
-        </div>
-      )}
     </motion.section>
   );
 }
