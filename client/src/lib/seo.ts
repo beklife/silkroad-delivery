@@ -40,7 +40,7 @@ function setHreflangTags(basePath: string) {
     const hreflang = lang;
     const href = lang === 'de'
       ? `https://silkroad-restaurant-koeln.de${cleanPath}`
-      : `https://silkroad-restaurant-koeln.de/${lang}${cleanPath}`;
+      : `https://silkroad-restaurant.pages.dev/${lang}${cleanPath}`;
 
     let link = document.querySelector<HTMLLinkElement>(`link[hreflang="${hreflang}"]`);
     if (link) {
