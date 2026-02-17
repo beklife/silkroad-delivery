@@ -46,9 +46,6 @@ async function buildAll() {
       "/menu",
       "/impressum",
       "/datenschutz",
-      "/usbekisches-restaurant-frankfurt",
-      "/halal-restaurant-frankfurt",
-      "/plov-frankfurt",
     ],
   });
 
