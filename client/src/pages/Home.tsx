@@ -385,7 +385,7 @@ export default function Home() {
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
             <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2020 • Köln</span>
           </div>
-          <img src={heroLogoImage} alt="SILK ROAD" className="w-56 md:w-60 h-auto" />
+          <img src={heroLogoImage} alt="SILK ROAD" className="w-44 md:w-48 h-auto" />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
             <span className="[font-family:'Quando',_serif]">SILK ROAD</span>{' '}
             <span className="block text-xl  font-heading mt-2">
