@@ -25,11 +25,6 @@ export default function GoogleReviewButton() {
       topText: "Понравилось?",
       mainText: "Оставить отзыв",
       googleReviews: "Google отзывы"
-    },
-    uz: {
-      topText: "Yoqdimi?",
-      mainText: "Fikr qoldiring",
-      googleReviews: "Google sharhlari"
     }
   };
 

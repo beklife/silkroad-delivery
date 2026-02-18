@@ -13,14 +13,12 @@ const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
   ru: "Русский",
-  uz: "O‘zbek"
 };
 
 const langFlags: Record<Language, string> = {
   de: "🇩🇪",
   en: "🇬🇧",
   ru: "🇷🇺",
-  uz: "🇺🇿"
 };
 
 export default function Impressum() {
@@ -232,16 +230,16 @@ export default function Impressum() {
             >
               <div className="flex flex-col p-6 gap-4">
                 <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#about`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' : lang === 'uz' ? 'Biz haqida' : 'About Us'}
+                  {lang === 'de' ? 'Über uns' : lang === 'ru' ? 'О нас' :  'About Us'}
                 </button>
                 <Link href={getLocalizedPath('/menu/')} className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => setMobileMenuOpen(false)}>
-                  {lang === 'de' ? 'Speisekarte' : lang === 'ru' ? 'Меню' : lang === 'uz' ? 'Menyu' : 'Menu'}
+                  {lang === 'de' ? 'Speisekarte' : lang === 'ru' ? 'Меню' :  'Menu'}
                 </Link>
                 <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#contact`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' : lang === 'uz' ? 'Aloqa' : 'Contact'}
+                  {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакт' :  'Contact'}
                 </button>
                 <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#reservation`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
-                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : lang === 'uz' ? 'Bron so‘rovi' : 'Reservation Request'}
+                  {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' :  'Reservation Request'}
                 </button>
               </div>
             </motion.div>
@@ -253,12 +251,12 @@ export default function Impressum() {
       <main className="container mx-auto px-4 md:px-6 py-8 md:py-16 relative z-10 max-w-4xl">
         <div className="bg-card/90 backdrop-blur-md p-6 md:p-12 rounded-sm border border-border shadow-xl">
           <h1 className="text-3xl md:text-4xl font-heading font-bold mb-8 text-primary">
-            {lang === 'de' ? 'Impressum' : lang === 'ru' ? 'Импрессум' : lang === 'uz' ? 'Huquqiy ma’lumot' : 'Imprint'}
+            {lang === 'de' ? 'Impressum' : lang === 'ru' ? 'Импрессум' :  'Imprint'}
           </h1>
 
           <div className="prose prose-neutral dark:prose-invert max-w-none">
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Angaben gemäß § 5 TMG' : lang === 'ru' ? 'Информация согласно § 5 TMG' : lang === 'uz' ? '§ 5 TMG ga muvofiq ma’lumot' : 'Information according to § 5 TMG'}
+              {lang === 'de' ? 'Angaben gemäß § 5 TMG' : lang === 'ru' ? 'Информация согласно § 5 TMG' :  'Information according to § 5 TMG'}
             </h2>
 
             <p className="mb-4">
@@ -269,10 +267,10 @@ export default function Impressum() {
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакты' : lang === 'uz' ? 'Aloqa' : 'Contact'}
+              {lang === 'de' ? 'Kontakt' : lang === 'ru' ? 'Контакты' :  'Contact'}
             </h2>
             <p className="mb-4">
-              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' : lang === 'uz' ? 'Telefon:' : 'Phone:'}</strong>{" "}
+              <strong>{lang === 'de' ? 'Telefon:' : lang === 'ru' ? 'Телефон:' :  'Phone:'}</strong>{" "}
               <a href="tel:+4922196026707" className="underline hover:text-primary transition-colors">
                 +49 69 95909158
               </a>
@@ -281,7 +279,7 @@ export default function Impressum() {
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV' : lang === 'ru' ? 'Ответственный за содержание согласно § 55 Abs. 2 RStV' : lang === 'uz' ? '§ 55 Abs. 2 RStV bo‘yicha mazmun uchun mas’ul shaxs' : 'Responsible for content according to § 55 Abs. 2 RStV'}
+              {lang === 'de' ? 'Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV' : lang === 'ru' ? 'Ответственный за содержание согласно § 55 Abs. 2 RStV' :  'Responsible for content according to § 55 Abs. 2 RStV'}
             </h2>
             <p className="mb-4">
               SILK ROAD Restaurant<br />
@@ -290,11 +288,11 @@ export default function Impressum() {
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
-              {lang === 'de' ? 'Haftungsausschluss' : lang === 'ru' ? 'Отказ от ответственности' : lang === 'uz' ? 'Mas’uliyatdan voz kechish' : 'Disclaimer'}
+              {lang === 'de' ? 'Haftungsausschluss' : lang === 'ru' ? 'Отказ от ответственности' :  'Disclaimer'}
             </h2>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Haftung für Inhalte' : lang === 'ru' ? 'Ответственность за содержание' : lang === 'uz' ? 'Mazmun uchun mas’uliyat' : 'Liability for content'}
+              {lang === 'de' ? 'Haftung für Inhalte' : lang === 'ru' ? 'Ответственность за содержание' :  'Liability for content'}
             </h3>
             <p className="mb-4">
               {lang === 'de'
@@ -305,7 +303,7 @@ export default function Impressum() {
             </p>
 
             <h3 className="text-xl font-semibold mt-6 mb-2">
-              {lang === 'de' ? 'Haftung für Links' : lang === 'ru' ? 'Ответственность за ссылки' : lang === 'uz' ? 'Havolalar uchun mas’uliyat' : 'Liability for links'}
+              {lang === 'de' ? 'Haftung für Links' : lang === 'ru' ? 'Ответственность за ссылки' :  'Liability for links'}
             </h3>
             <p className="mb-4">
               {lang === 'de'

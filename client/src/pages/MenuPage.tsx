@@ -40,15 +40,13 @@ import tiramisuMenuImage from "@assets/stock_images/menu/tiramisu.webp";
 const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
-  ru: "Русский",
-  uz: "O‘zbek"
+  ru: "Русский"
 };
 
 const langFlags: Record<Language, string> = {
   de: "🇩🇪",
   en: "🇬🇧",
-  ru: "🇷🇺",
-  uz: "🇺🇿"
+  ru: "🇷🇺"
 };
 
 const silkRoadMenuCategories = {
@@ -93,20 +91,6 @@ const silkRoadMenuCategories = {
     wine: "Вино",
     spirits: "Крепкий алкоголь",
     grills: "Специальные блюда"
-  },
-  uz: {
-    soups: "Sho‘rvalar",
-    appetizers: "Gazaklar",
-    mains: "Asosiy taomlar",
-    salads: "Salatlar",
-    sides: "Souslar va garnirlar",
-    desserts: "Shirinliklar",
-    drinks: "Issiq ichimliklar",
-    colddrinks: "Sovuq ichimliklar",
-    beer: "Pivo",
-    wine: "Vino",
-    spirits: "Spirtli ichimliklar",
-    grills: "Maxsus taomlar"
   }
 };
 
@@ -117,12 +101,11 @@ const silkRoadMenu = {
       image: schurpaMenuImage,
       price: "9,00€",
       dietary: "halal",
-      names: { de: "Schurpa", en: "Shurpa", ru: "Шурпа", uz: "Shurpa" },
+      names: { de: "Schurpa", en: "Shurpa", ru: "Шурпа" },
       descs: {
         de: "Traditionelle Suppe aus Zentralasien mit Lammfleisch, Gemüse und Gewürzen. Wärmend und sättigend.",
         en: "Traditional Central Asian soup with lamb, vegetables and spices.",
-        ru: "Традиционный суп Центральной Азии с бараниной, овощами и специями.",
-        uz: "Markaziy Osiyoga xos qo‘y go‘shti, sabzavot va ziravorli sho‘rva."
+        ru: "Традиционный суп Центральной Азии с бараниной, овощами и специями."
       }
     }
   ],
@@ -132,12 +115,11 @@ const silkRoadMenu = {
       image: samsaMenuImage,
       price: "4,50€",
       dietary: "halal",
-      names: { de: "Samsa (pro Stück)", en: "Samsa (per piece)", ru: "Самса (за штуку)", uz: "Somsa (dona)" },
+      names: { de: "Samsa (pro Stück)", en: "Samsa (per piece)", ru: "Самса (за штуку)" },
       descs: {
         de: "Gebackene Teigtasche. Füllung nach Wahl: Rindfleisch, Hähnchen, Kürbis, Kartoffel oder Käse. Allergene: A, E, J.",
         en: "Baked pastry pocket with your choice of filling.",
-        ru: "Запечённая слоёная выпечка с начинкой на выбор.",
-        uz: "Tanlovga ko‘ra ichlik bilan pishirilgan somsa."
+        ru: "Запечённая слоёная выпечка с начинкой на выбор."
       }
     }
   ],
@@ -147,12 +129,11 @@ const silkRoadMenu = {
       image: plowMenuImage,
       price: "13,50€",
       dietary: "halal",
-      names: { de: "Plow (Rindfleisch)", en: "Plow (Beef)", ru: "Плов (говядина)", uz: "Osh (mol go‘shti)" },
+      names: { de: "Plow (Rindfleisch)", en: "Plow (Beef)", ru: "Плов (говядина)" },
       descs: {
         de: "Das beliebteste Gericht aus Zentralasien. In drei Stufen zubereitet: Braten, Schmoren und Dämpfen.",
         en: "Central Asia's most iconic rice dish, prepared in three stages.",
-        ru: "Самое популярное блюдо Центральной Азии, готовится в три этапа.",
-        uz: "Markaziy Osiyoning mashhur taomi, uch bosqichda tayyorlanadi."
+        ru: "Самое популярное блюдо Центральной Азии, готовится в три этапа."
       }
     },
     {
@@ -160,12 +141,11 @@ const silkRoadMenu = {
       image: mantyBeefMenuImage,
       price: "12,50€",
       dietary: "halal",
-      names: { de: "Manty (Rindfleisch)", en: "Manty (Beef)", ru: "Манты (говядина)", uz: "Manti (mol go‘shti)" },
+      names: { de: "Manty (Rindfleisch)", en: "Manty (Beef)", ru: "Манты (говядина)" },
       descs: {
         de: "Gedämpfte Teigtaschen mit gewürfeltem Rindfleisch. Portion: 5 Stück.",
         en: "Steamed dumplings with diced beef. Portion: 5 pieces.",
-        ru: "Паровые манты с нарезанной говядиной. Порция: 5 шт.",
-        uz: "Mayda to‘g‘ralgan mol go‘shtli bug‘da pishirilgan manti. 5 dona."
+        ru: "Паровые манты с нарезанной говядиной. Порция: 5 шт."
       }
     },
     {
@@ -173,12 +153,11 @@ const silkRoadMenu = {
       image: mantyVegMenuImage,
       price: "11,50€",
       dietary: "vegetarian",
-      names: { de: "Manty (Kartoffel oder Kürbis)", en: "Manty (Potato or Pumpkin)", ru: "Манты (картофель или тыква)", uz: "Manti (kartoshka yoki qovoq)" },
+      names: { de: "Manty (Kartoffel oder Kürbis)", en: "Manty (Potato or Pumpkin)", ru: "Манты (картофель или тыква)" },
       descs: {
         de: "Gedämpfte Teigtaschen mit Kartoffel oder Kürbis. Portion: 5 Stück.",
         en: "Steamed dumplings filled with potato or pumpkin. Portion: 5 pieces.",
-        ru: "Паровые манты с картофелем или тыквой. Порция: 5 шт.",
-        uz: "Kartoshka yoki qovoqli bug‘da pishirilgan manti. 5 dona."
+        ru: "Паровые манты с картофелем или тыквой. Порция: 5 шт."
       }
     },
     {
@@ -186,12 +165,11 @@ const silkRoadMenu = {
       image: kurutobMenuImage,
       price: "14,50€",
       dietary: "halal",
-      names: { de: "Kurutob (Rindfleisch)", en: "Kurutob (Beef)", ru: "Курутоб (говядина)", uz: "Qurutob (mol go‘shti)" },
+      names: { de: "Kurutob (Rindfleisch)", en: "Kurutob (Beef)", ru: "Курутоб (говядина)" },
       descs: {
         de: "Tadschikisches Gericht mit geschichtetem Fatir, frischem Gemüse, Kräutern und Kurut-Sauce (getrockneter Joghurt). Allergene: A, E, J.",
         en: "Tajik layered dish with fatir bread, vegetables, herbs and kurut sauce.",
-        ru: "Таджикское блюдо из слоев фатир-хлеба, овощей и соуса курут.",
-        uz: "Fatir, sabzavot va qurut sousi bilan tayyorlanadigan tojik taomi."
+        ru: "Таджикское блюдо из слоев фатир-хлеба, овощей и соуса курут."
       }
     },
     {
@@ -199,12 +177,11 @@ const silkRoadMenu = {
       image: tschuponchaMenuImage,
       price: "16,50€",
       dietary: "halal",
-      names: { de: "Tschuponcha (Lammrippen)", en: "Tschuponcha (Lamb Ribs)", ru: "Чупонча (бараньи ребрышки)", uz: "Cho‘poncha (qo‘y qovurg‘asi)" },
+      names: { de: "Tschuponcha (Lammrippen)", en: "Tschuponcha (Lamb Ribs)", ru: "Чупонча (бараньи ребрышки)" },
       descs: {
         de: "Lammrippen aus dem Kazan mit frittierten Kartoffeln. Allergene: A.",
         en: "Lamb ribs from the kazan served with fried potatoes.",
-        ru: "Бараньи ребрышки из казана с жареным картофелем.",
-        uz: "Qozonda tayyorlangan qo‘y qovurg‘asi va qovurilgan kartoshka."
+        ru: "Бараньи ребрышки из казана с жареным картофелем."
       }
     },
     {
@@ -212,12 +189,11 @@ const silkRoadMenu = {
       image: daPanJiMenuImage,
       price: "15,50€",
       dietary: "halal",
-      names: { de: "Da Pan Ji (Hähnchenfleisch)", en: "Da Pan Ji (Chicken)", ru: "Да Пан Цзи (курица)", uz: "Da Pan Ji (tovuq)" },
+      names: { de: "Da Pan Ji (Hähnchenfleisch)", en: "Da Pan Ji (Chicken)", ru: "Да Пан Цзи (курица)" },
       descs: {
         de: "Authentisches Gericht aus Xinjiang. Saftiges Hähnchen im Kazan. Allergene: B, D, G.",
         en: "Authentic Xinjiang chicken dish cooked in a traditional kazan.",
-        ru: "Аутентичное блюдо Синьцзяна: сочная курица, приготовленная в казане.",
-        uz: "Shinjon oshxonasidan an’anaviy qozon tovuq taomi."
+        ru: "Аутентичное блюдо Синьцзяна: сочная курица, приготовленная в казане."
       }
     },
     {
@@ -225,12 +201,11 @@ const silkRoadMenu = {
       image: lagmanMenuImage,
       price: "14,50€",
       dietary: "halal",
-      names: { de: "Lagman (Rindfleisch)", en: "Lagman (Beef)", ru: "Лагман (говядина)", uz: "Lag‘mon (mol go‘shti)" },
+      names: { de: "Lagman (Rindfleisch)", en: "Lagman (Beef)", ru: "Лагман (говядина)" },
       descs: {
         de: "Handgemachte Nudeln mit Fleisch und Gemüse aus dem Wok. Allergene: A, D, G.",
         en: "Handmade noodles with meat and vegetables from the wok.",
-        ru: "Домашняя лапша с мясом и овощами из вокa.",
-        uz: "Qo‘lda tortilgan ugra, go‘sht va sabzavotlar bilan."
+        ru: "Домашняя лапша с мясом и овощами из вокa."
       }
     },
     {
@@ -238,12 +213,11 @@ const silkRoadMenu = {
       image: daPanJiMenuImage,
       price: "14,50€",
       dietary: "halal",
-      names: { de: "Gan Fan (Rindfleisch)", en: "Gan Fan (Beef)", ru: "Ган Фан (говядина)", uz: "Gan Fan (mol go‘shti)" },
+      names: { de: "Gan Fan (Rindfleisch)", en: "Gan Fan (Beef)", ru: "Ган Фан (говядина)" },
       descs: {
         de: "Uigurisches Reisgericht mit gebratenem Fleisch und Gemüse aus dem Wok. Allergene: D, G.",
         en: "Uyghur rice dish with stir-fried meat and vegetables.",
-        ru: "Уйгурское рисовое блюдо с жареным мясом и овощами.",
-        uz: "Uyg‘ur uslubidagi guruchli taom, qovurilgan go‘sht va sabzavotlar bilan."
+        ru: "Уйгурское рисовое блюдо с жареным мясом и овощами."
       }
     }
   ],
@@ -252,72 +226,66 @@ const silkRoadMenu = {
       id: "salatbahor",
       image: salatBahorMenuImage,
       price: "9,00€",
-      names: { de: "Salat Bahor", en: "Bahor Salad", ru: "Салат Бахор", uz: "Bahor salati" },
+      names: { de: "Salat Bahor", en: "Bahor Salad", ru: "Салат Бахор" },
       descs: {
         de: "Geräuchertes Hähnchen, Gurken, Tomaten, rote Zwiebeln, Käse, Eier und Mayonnaise. Allergene: B.",
         en: "Smoked chicken, cucumber, tomato, red onion, cheese, eggs, mayo.",
-        ru: "Копчёная курица, огурцы, помидоры, лук, сыр, яйца, майонез.",
-        uz: "Dudlangan tovuq, bodring, pomidor, piyoz, pishloq, tuxum, mayonez."
+        ru: "Копчёная курица, огурцы, помидоры, лук, сыр, яйца, майонез."
       }
     },
     {
       id: "glasnudelsalat",
       image: glasnudelsalatMenuImage,
       price: "8,50€",
-      names: { de: "Glasnudelsalat", en: "Glass Noodle Salad", ru: "Салат с фунчозой", uz: "Shisha ugra salati" },
+      names: { de: "Glasnudelsalat", en: "Glass Noodle Salad", ru: "Салат с фунчозой" },
       descs: {
         de: "Glasnudeln, Karotten, Gurken, gekochtes Rindfleisch in Sojasoße, Paprika, Knoblauch, Sesam. Allergene: D, G, J.",
         en: "Glass noodles with beef, soy sauce, vegetables, garlic and sesame.",
-        ru: "Фунчоза с говядиной, соевым соусом, овощами и кунжутом.",
-        uz: "Shisha ugra, mol go‘shti, soya, sabzavotlar va kunjut."
+        ru: "Фунчоза с говядиной, соевым соусом, овощами и кунжутом."
       }
     },
     {
       id: "auberginensalat",
       image: auberginensalatMenuImage,
       price: "7,50€",
-      names: { de: "Auberginensalat", en: "Eggplant Salad", ru: "Салат с баклажанами", uz: "Baqlajon salati" },
+      names: { de: "Auberginensalat", en: "Eggplant Salad", ru: "Салат с баклажанами" },
       descs: {
         de: "Gebackene Auberginen, frische Tomaten, Kräuter und Hausdressing. Allergene: A, B, D.",
         en: "Baked eggplant, tomato, herbs and house dressing.",
-        ru: "Запечённые баклажаны, томаты, зелень и фирменная заправка.",
-        uz: "Pishirilgan baqlajon, pomidor, ko‘kat va uy sousi."
+        ru: "Запечённые баклажаны, томаты, зелень и фирменная заправка."
       }
     },
     {
       id: "rubin",
       image: rubinSalatMenuImage,
       price: "8,50€",
-      names: { de: "Salat Rubin", en: "Rubin Salad", ru: "Салат Рубин", uz: "Rubin salati" },
+      names: { de: "Salat Rubin", en: "Rubin Salad", ru: "Салат Рубин" },
       descs: {
         de: "Rote Bete, Nüsse, Hirtenkäse, Granatapfelkerne. Allergene: C1.",
         en: "Beetroot, nuts, white cheese and pomegranate seeds.",
-        ru: "Свекла, орехи, сыр и зерна граната.",
-        uz: "Lavlagi, yong‘oq, pishloq va anor donalari."
+        ru: "Свекла, орехи, сыр и зерна граната."
       }
     },
     {
       id: "russischersalat",
       image: russischerSalatMenuImage,
       price: "7,50€",
-      names: { de: "Russischer Salat", en: "Russian Salad", ru: "Русский салат", uz: "Rus salati" },
+      names: { de: "Russischer Salat", en: "Russian Salad", ru: "Русский салат" },
       descs: {
         de: "Hähnchenfleisch, Salzgurken, Kartoffeln, Karotten, Erbsen, Eier, Mayonnaise. Allergene: B, F.",
         en: "Chicken, pickles, potato, carrot, peas, eggs and mayo.",
-        ru: "Курица, солёные огурцы, картофель, морковь, горошек, яйца, майонез.",
-        uz: "Tovuq, tuzlangan bodring, kartoshka, sabzi, no‘xat, tuxum, mayonez."
+        ru: "Курица, солёные огурцы, картофель, морковь, горошек, яйца, майонез."
       }
     },
     {
       id: "gurkenrind",
       image: gurkenRindMenuImage,
       price: "7,50€",
-      names: { de: "Gurken mit Rindfleisch", en: "Cucumber with Beef", ru: "Огурцы с говядиной", uz: "Bodring va mol go‘shti" },
+      names: { de: "Gurken mit Rindfleisch", en: "Cucumber with Beef", ru: "Огурцы с говядиной" },
       descs: {
         de: "Gurken, gekochtes Rindfleisch in Sojasoße, Paprika und Knoblauch. Allergene: D, F, J.",
         en: "Cucumber with soy-marinated beef, pepper and garlic.",
-        ru: "Огурцы с говядиной в соевом соусе, перцем и чесноком.",
-        uz: "Soya sousli mol go‘shti, bodring, qalampir va sarimsoq."
+        ru: "Огурцы с говядиной в соевом соусе, перцем и чесноком."
       }
     },
     {
@@ -325,12 +293,11 @@ const silkRoadMenu = {
       image: karottenSalatMenuImage,
       price: "7,50€",
       dietary: "vegan",
-      names: { de: "Karottensalat", en: "Carrot Salad", ru: "Морковный салат", uz: "Sabzi salati" },
+      names: { de: "Karottensalat", en: "Carrot Salad", ru: "Морковный салат" },
       descs: {
         de: "Gewürzte Karottenstreifen mit Essig.",
         en: "Spiced carrot strips with vinegar dressing.",
-        ru: "Пряная морковь с уксусной заправкой.",
-        uz: "Ziravorli sabzi va sirka bilan."
+        ru: "Пряная морковь с уксусной заправкой."
       }
     },
     {
@@ -338,36 +305,33 @@ const silkRoadMenu = {
       image: schakarobMenuImage,
       price: "7,50€",
       dietary: "vegan",
-      names: { de: "Schakarob", en: "Shakarob", ru: "Шакароб", uz: "Shakarob" },
+      names: { de: "Schakarob", en: "Shakarob", ru: "Шакароб" },
       descs: {
         de: "Frische Tomaten mit Zwiebeln und Kräutern.",
         en: "Fresh tomato salad with onions and herbs.",
-        ru: "Свежие помидоры с луком и зеленью.",
-        uz: "Pomidor, piyoz va ko‘katlardan tayyorlangan salat."
+        ru: "Свежие помидоры с луком и зеленью."
       }
     },
     {
       id: "kremigersalat",
       image: kremigerSalatMenuImage,
       price: "8,50€",
-      names: { de: "Cremiger Salat", en: "Creamy Salad", ru: "Сливочный салат", uz: "Qaymoqli salat" },
+      names: { de: "Cremiger Salat", en: "Creamy Salad", ru: "Сливочный салат" },
       descs: {
         de: "Tomaten, Gurken, Bohnen, Eier, rote Zwiebeln, Creme fraiche. Allergene: E.",
         en: "Tomatoes, cucumbers, beans, eggs, red onion, creme fraiche.",
-        ru: "Томаты, огурцы, фасоль, яйца, красный лук, крем-фреш.",
-        uz: "Pomidor, bodring, loviya, tuxum, qizil piyoz, krem-fresh."
+        ru: "Томаты, огурцы, фасоль, яйца, красный лук, крем-фреш."
       }
     },
     {
       id: "haehnchenwalnuss",
       image: haehnchenWalnussMenuImage,
       price: "9,50€",
-      names: { de: "Hähnchen mit Walnüssen, Ananas und Trauben", en: "Chicken with Walnuts, Pineapple and Grapes", ru: "Курица с грецким орехом, ананасом и виноградом", uz: "Yong‘oq, ananas va uzumli tovuq" },
+      names: { de: "Hähnchen mit Walnüssen, Ananas und Trauben", en: "Chicken with Walnuts, Pineapple and Grapes", ru: "Курица с грецким орехом, ананасом и виноградом" },
       descs: {
         de: "Hähnchen, Trauben, Ananas, Walnüsse, Käse und Mayonnaise. Allergene: F.",
         en: "Chicken, grapes, pineapple, walnuts, cheese and mayonnaise.",
-        ru: "Курица, виноград, ананас, грецкий орех, сыр и майонез.",
-        uz: "Tovuq, uzum, ananas, yong‘oq, pishloq va mayonez."
+        ru: "Курица, виноград, ананас, грецкий орех, сыр и майонез."
       }
     },
     {
@@ -375,12 +339,11 @@ const silkRoadMenu = {
       image: gemueseTellerMenuImage,
       price: "8,50€",
       dietary: "vegan",
-      names: { de: "Gemüse Teller (Frisch)", en: "Fresh Vegetable Plate", ru: "Овощная тарелка (свежая)", uz: "Yangi sabzavot likopchasi" },
+      names: { de: "Gemüse Teller (Frisch)", en: "Fresh Vegetable Plate", ru: "Овощная тарелка (свежая)" },
       descs: {
         de: "Frische Tomaten, Gurken, Paprika, rote Zwiebeln, Radieschen, Dill und Koriander.",
         en: "Fresh tomatoes, cucumbers, peppers, onion, radish, dill and coriander.",
-        ru: "Свежие томаты, огурцы, перец, лук, редис, укроп и кинза.",
-        uz: "Yangi pomidor, bodring, bulg‘or qalampiri, piyoz, rediska, ukrop va kashnich."
+        ru: "Свежие томаты, огурцы, перец, лук, редис, укроп и кинза."
       }
     },
     {
@@ -388,12 +351,11 @@ const silkRoadMenu = {
       image: eingelegtesGemueseMenuImage,
       price: "8,50€",
       dietary: "vegan",
-      names: { de: "Teller mit eingelegtem Gemüse", en: "Pickled Vegetable Plate", ru: "Тарелка с маринованными овощами", uz: "Tuzlangan sabzavotlar likopchasi" },
+      names: { de: "Teller mit eingelegtem Gemüse", en: "Pickled Vegetable Plate", ru: "Тарелка с маринованными овощами" },
       descs: {
         de: "Eingelegte Tomaten, Gurken, Paprika, Peperoni, Sauerkraut, Oliven. Allergene: F, G, H.",
         en: "Pickled tomatoes, cucumbers, peppers, sauerkraut and olives.",
-        ru: "Маринованные томаты, огурцы, перец, квашеная капуста и оливки.",
-        uz: "Tuzlangan pomidor, bodring, qalampir, karam va zaytun."
+        ru: "Маринованные томаты, огурцы, перец, квашеная капуста и оливки."
       }
     }
   ],
@@ -403,60 +365,58 @@ const silkRoadMenu = {
       image: lepeshkaMenuImage,
       price: "2,50€",
       dietary: "vegetarian",
-      names: { de: "Lepeschka", en: "Lepeshka", ru: "Лепешка", uz: "Lepyoshka" },
+      names: { de: "Lepeschka", en: "Lepeshka", ru: "Лепешка" },
       descs: {
         de: "Traditionelles Fladenbrot aus gemahlenem Getreide und Wasser. Allergene: A, B, E.",
         en: "Traditional flatbread from grain and water.",
-        ru: "Традиционная лепешка из муки и воды.",
-        uz: "Un va suvdan tayyorlangan an’anaviy non."
+        ru: "Традиционная лепешка из муки и воды."
       }
     },
     {
       id: "lazjan",
       image: null,
       price: "1,00€",
-      names: { de: 'Chili Soße "Lazjan"', en: 'Chili Sauce "Lazjan"', ru: 'Соус чили "Лазжан"', uz: 'Lazjan chili sousi' },
+      names: { de: 'Chili Soße "Lazjan"', en: 'Chili Sauce "Lazjan"', ru: 'Соус чили "Лазжан"' },
       descs: {
         de: "Kräftige scharfe Soße. Zusatzstoffe/Allergene: 1,2,3,4,5,7,B,D,E,F,H,J.",
         en: "Spicy chili sauce.",
-        ru: "Острый соус чили.",
-        uz: "Achchiq chili sousi."
+        ru: "Острый соус чили."
       }
     },
     {
       id: "suzma",
       image: null,
       price: "1,00€",
-      names: { de: 'Joghurt Soße "Suzma"', en: 'Yogurt Sauce "Suzma"', ru: 'Йогуртовый соус "Сузьма"', uz: 'Suzma yogurt sousi' },
-      descs: { de: "Milder Joghurt-Dip.", en: "Mild yogurt dip.", ru: "Нежный йогуртовый соус.", uz: "Yumshoq yogurt sousi." }
+      names: { de: 'Joghurt Soße "Suzma"', en: 'Yogurt Sauce "Suzma"', ru: 'Йогуртовый соус "Сузьма"' },
+      descs: { de: "Milder Joghurt-Dip.", en: "Mild yogurt dip.", ru: "Нежный йогуртовый соус." }
     },
     {
       id: "tomatenknoblauch",
       image: null,
       price: "1,00€",
-      names: { de: "Tomaten-Knoblauch Soße", en: "Tomato-Garlic Sauce", ru: "Томатно-чесночный соус", uz: "Pomidor-sarimsoq sousi" },
-      descs: { de: "Hausgemachte Tomaten-Knoblauch-Soße.", en: "House tomato-garlic sauce.", ru: "Домашний томатно-чесночный соус.", uz: "Uy uslubidagi pomidor-sarimsoq sousi." }
+      names: { de: "Tomaten-Knoblauch Soße", en: "Tomato-Garlic Sauce", ru: "Томатно-чесночный соус" },
+      descs: { de: "Hausgemachte Tomaten-Knoblauch-Soße.", en: "House tomato-garlic sauce.", ru: "Домашний томатно-чесночный соус." }
     },
     {
       id: "mayonnaise",
       image: null,
       price: "1,00€",
-      names: { de: "Mayonnaise", en: "Mayonnaise", ru: "Майонез", uz: "Mayonez" },
-      descs: { de: "Klassische Mayonnaise.", en: "Classic mayonnaise.", ru: "Классический майонез.", uz: "Klassik mayonez." }
+      names: { de: "Mayonnaise", en: "Mayonnaise", ru: "Майонез" },
+      descs: { de: "Klassische Mayonnaise.", en: "Classic mayonnaise.", ru: "Классический майонез." }
     },
     {
       id: "ketchup",
       image: null,
       price: "1,00€",
-      names: { de: "Ketchup", en: "Ketchup", ru: "Кетчуп", uz: "Ketchup" },
-      descs: { de: "Tomatenketchup.", en: "Tomato ketchup.", ru: "Томатный кетчуп.", uz: "Pomidor ketchupi." }
+      names: { de: "Ketchup", en: "Ketchup", ru: "Кетчуп" },
+      descs: { de: "Tomatenketchup.", en: "Tomato ketchup.", ru: "Томатный кетчуп." }
     },
     {
       id: "joghurtknoblauch",
       image: null,
       price: "1,00€",
-      names: { de: "Joghurt-Knoblauch", en: "Yogurt-Garlic", ru: "Йогурт-чеснок", uz: "Yogurt-sarimsoq" },
-      descs: { de: "Frischer Joghurt mit Knoblauch.", en: "Fresh yogurt with garlic.", ru: "Свежий йогурт с чесноком.", uz: "Sarimsoqli yogurt sousi." }
+      names: { de: "Joghurt-Knoblauch", en: "Yogurt-Garlic", ru: "Йогурт-чеснок" },
+      descs: { de: "Frischer Joghurt mit Knoblauch.", en: "Fresh yogurt with garlic.", ru: "Свежий йогурт с чесноком." }
     }
   ],
   desserts: [
@@ -464,71 +424,67 @@ const silkRoadMenu = {
       id: "tschaktschak",
       image: tschakTschakMenuImage,
       price: "6,50€",
-      names: { de: "Tschak Tschak", en: "Tchak Tchak", ru: "Чак-чак", uz: "Chak-chak" },
+      names: { de: "Tschak Tschak", en: "Tchak Tchak", ru: "Чак-чак" },
       descs: {
         de: "Teigstäbchen in Honig mit Nüssen und Beeren. Allergene: A, B, E.",
         en: "Honey-coated pastry sticks with nuts and berries.",
-        ru: "Тесто в меду с орехами и ягодами.",
-        uz: "Asal, yong‘oq va mevalar bilan chak-chak."
+        ru: "Тесто в меду с орехами и ягодами."
       }
     },
     {
       id: "schokoladentorte",
       image: schokoladentorteMenuImage,
       price: "6,00€",
-      names: { de: "Schokoladentorte", en: "Chocolate Cake", ru: "Шоколадный торт", uz: "Shokoladli tort" },
+      names: { de: "Schokoladentorte", en: "Chocolate Cake", ru: "Шоколадный торт" },
       descs: {
         de: "Hausgemachte Schokoladentorte. Allergene: A, B, E.",
         en: "Homemade chocolate cake.",
-        ru: "Домашний шоколадный торт.",
-        uz: "Uy uslubidagi shokoladli tort."
+        ru: "Домашний шоколадный торт."
       }
     },
     {
       id: "cheesecake",
       image: cheesecakeMenuImage,
       price: "6,00€",
-      names: { de: "Cheesecake", en: "Cheesecake", ru: "Чизкейк", uz: "Cheesecake" },
+      names: { de: "Cheesecake", en: "Cheesecake", ru: "Чизкейк" },
       descs: {
         de: "Käsekuchen mit Beeren. Allergene: A, B, E.",
         en: "Cheesecake served with berries.",
-        ru: "Чизкейк с ягодами.",
-        uz: "Rezavorlar bilan cheesecake."
+        ru: "Чизкейк с ягодами."
       }
     },
     {
       id: "tiramisu",
       image: tiramisuMenuImage,
       price: "5,50€",
-      names: { de: "Tiramisu / Pistazienmousse", en: "Tiramisu / Pistachio Mousse", ru: "Тирамису / Фисташковый мусс", uz: "Tiramisu / Pista mussi" },
+      names: { de: "Tiramisu / Pistazienmousse", en: "Tiramisu / Pistachio Mousse", ru: "Тирамису / Фисташковый мусс" },
       descs: {
         de: "Serviert im Glas. Allergene: A, B, E.",
         en: "Served in a glass.",
-        ru: "Подается в стакане.",
-        uz: "Stakanda tortiladi."
+        ru: "Подается в стакане."
       }
     }
   ],
   drinks: [
-    { id: "tee-schwarz", image: null, price: "4,00€", names: { de: "Schwarzer Tee (Kanne)", en: "Black Tea (Pot)", ru: "Черный чай (чайник)", uz: "Qora choy (choynak)" }, descs: { de: "Traditionell serviert.", en: "Traditionally served.", ru: "Традиционная подача.", uz: "An’anaviy usulda tortiladi." } },
-    { id: "tee-schwarz-minze", image: null, price: "5,00€", names: { de: "Schwarzer Tee mit Minze und Zitrone", en: "Black Tea with Mint and Lemon", ru: "Черный чай с мятой и лимоном", uz: "Yalpiz va limonli qora choy" }, descs: { de: "Frisch und aromatisch.", en: "Fresh and aromatic.", ru: "Свежий и ароматный.", uz: "Yangi va xushbo‘y." } },
-    { id: "tee-gruen", image: null, price: "4,00€", names: { de: "Grüner Tee", en: "Green Tea", ru: "Зеленый чай", uz: "Ko‘k choy" }, descs: { de: "Klassischer grüner Tee.", en: "Classic green tea.", ru: "Классический зеленый чай.", uz: "Klassik ko‘k choy." } },
-    { id: "kaffee-schwarz", image: null, price: "2,00€", names: { de: "Kaffee Schwarz", en: "Black Coffee", ru: "Черный кофе", uz: "Qora qahva" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } },
-    { id: "milchkaffee", image: null, price: "2,00€", names: { de: "Milchkaffee", en: "Coffee with Milk", ru: "Кофе с молоком", uz: "Sutli qahva" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } },
-    { id: "espresso", image: null, price: "2,00€", names: { de: "Espresso", en: "Espresso", ru: "Эспрессо", uz: "Espresso" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } }
+    { id: "tee-schwarz", image: null, price: "4,00€", names: { de: "Schwarzer Tee (Kanne)", en: "Black Tea (Pot)", ru: "Черный чай (чайник)" }, descs: { de: "Traditionell serviert.", en: "Traditionally served.", ru: "Традиционная подача." } },
+    { id: "tee-schwarz-minze", image: null, price: "5,00€", names: { de: "Schwarzer Tee mit Minze und Zitrone", en: "Black Tea with Mint and Lemon", ru: "Черный чай с мятой и лимоном" }, descs: { de: "Frisch und aromatisch.", en: "Fresh and aromatic.", ru: "Свежий и ароматный." } },
+    { id: "tee-gruen", image: null, price: "4,00€", names: { de: "Grüner Tee", en: "Green Tea", ru: "Зеленый чай" }, descs: { de: "Klassischer grüner Tee.", en: "Classic green tea.", ru: "Классический зеленый чай." } },
+    { id: "kaffee-schwarz", image: null, price: "2,00€", names: { de: "Kaffee Schwarz", en: "Black Coffee", ru: "Черный кофе" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин)." } },
+    { id: "milchkaffee", image: null, price: "2,00€", names: { de: "Milchkaffee", en: "Coffee with Milk", ru: "Кофе с молоком" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин)." } },
+    { id: "espresso", image: null, price: "2,00€", names: { de: "Espresso", en: "Espresso", ru: "Эспрессо" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин)." } }
   ],
   colddrinks: [
-    { id: "coca-cola", image: null, price: "2,50€", names: { de: "Coca-Cola (0.33L)", en: "Coca-Cola (0.33L)", ru: "Coca-Cola (0.33л)", uz: "Coca-Cola (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
-    { id: "fanta", image: null, price: "2,50€", names: { de: "Fanta (0.33L)", en: "Fanta (0.33L)", ru: "Fanta (0.33л)", uz: "Fanta (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
-    { id: "sprite", image: null, price: "2,50€", names: { de: "Sprite (0.33L)", en: "Sprite (0.33L)", ru: "Sprite (0.33л)", uz: "Sprite (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
-    { id: "mezzo-mix", image: null, price: "2,50€", names: { de: "Mezzo Mix (0.33L)", en: "Mezzo Mix (0.33L)", ru: "Mezzo Mix (0.33л)", uz: "Mezzo Mix (0.33L)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7.", uz: "Qo‘shimchalar: 1,2,6,7." } },
-    { id: "wasser", image: null, price: "2,50€", names: { de: "Wasser (0.33L)", en: "Water (0.33L)", ru: "Вода (0.33л)", uz: "Suv (0.33L)" }, descs: { de: "Still oder sprudelnd.", en: "Still or sparkling.", ru: "Негазированная или газированная.", uz: "Gazli yoki gazsiz." } },
-    { id: "apfelschorle", image: null, price: "2,50€", names: { de: "Apfelschorle (0.33L)", en: "Apple Spritzer (0.33L)", ru: "Яблочный шорле (0.33л)", uz: "Olma shorle (0.33L)" }, descs: { de: "Erfrischend.", en: "Refreshing.", ru: "Освежающий напиток.", uz: "Tetiktiruvchi ichimlik." } },
-    { id: "bionade", image: null, price: "2,50€", names: { de: "Bionade (versch. Sorten)", en: "Bionade (various)", ru: "Bionade (разные вкусы)", uz: "Bionade (turli xil)" }, descs: { de: "Je nach Verfügbarkeit.", en: "Subject to availability.", ru: "По наличию.", uz: "Mavjudligiga qarab." } },
-    { id: "vitamaltz", image: null, price: "2,50€", names: { de: "Vita Malz", en: "Vita Malz", ru: "Vita Malz", uz: "Vita Malz" }, descs: { de: "Malzgetränk.", en: "Malt beverage.", ru: "Солодовый напиток.", uz: "Solod ichimligi." } },
-    { id: "fassbrause", image: null, price: "2,50€", names: { de: "Fassbrause", en: "Fassbrause", ru: "Fassbrause", uz: "Fassbrause" }, descs: { de: "Alkoholfreies Erfrischungsgetränk.", en: "Non-alcoholic refreshment.", ru: "Безалкогольный освежающий напиток.", uz: "Alkogolsiz tetik ichimlik." } },
-    { id: "clubmate", image: null, price: "2,50€", names: { de: "Club-Mate", en: "Club-Mate", ru: "Club-Mate", uz: "Club-Mate" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин).", uz: "Qo‘shimcha: 6 (kofein)." } },
-    { id: "fritz", image: null, price: "2,50€", names: { de: "Fritz (versch. Sorten)", en: "Fritz (various)", ru: "Fritz (разные вкусы)", uz: "Fritz (turli xil)" }, descs: { de: "Je nach Verfügbarkeit.", en: "Subject to availability.", ru: "По наличию.", uz: "Mavjudligiga qarab." } }
+    { id: "coca-cola", image: null, price: "2,50€", names: { de: "Coca-Cola (0.33L)", en: "Coca-Cola (0.33L)", ru: "Coca-Cola (0.33л)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7." } },
+    { id: "fanta", image: null, price: "2,50€", names: { de: "Fanta (0.33L)", en: "Fanta (0.33L)", ru: "Fanta (0.33л)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7." } },
+    { id: "sprite", image: null, price: "2,50€", names: { de: "Sprite (0.33L)", en: "Sprite (0.33L)", ru: "Sprite (0.33л)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7." } },
+    { id: "mezzo-mix", image: null, price: "2,50€", names: { de: "Mezzo Mix (0.33L)", en: "Mezzo Mix (0.33L)", ru: "Mezzo Mix (0.33л)" }, descs: { de: "Zusatzstoffe: 1,2,6,7.", en: "Additives: 1,2,6,7.", ru: "Добавки: 1,2,6,7." } },
+    { id: "wasser", image: null, price: "2,50€", names: { de: "Wasser (0.33L)", en: "Water (0.33L)", ru: "Вода (0.33л)" }, descs: { de: "Still oder sprudelnd.", en: "Still or sparkling.", ru: "Негазированная или газированная." } },
+    { id: "apfelschorle", image: null, price: "2,50€", names: { de: "Apfelschorle (0.33L)", en: "Apple Spritzer (0.33L)", ru: "Яблочный шорле (0.33л)" }, descs: { de: "Erfrischend.", en: "Refreshing.", ru: "Освежающий напиток." } },
+    { id: "bionade", image: null, price: "2,50€", names: { de: "Bionade (versch. Sorten)", en: "Bionade (various)", ru: "Bionade (разные вкусы)" }, descs: { de: "Je nach Verfügbarkeit.", en: "Subject to availability.", ru: "По наличию." } },
+    { id: "vitamaltz", image: null, price: "2,50€", names: { de: "Vita Malz", en: "Vita Malz", ru: "Vita Malz" }, descs: { de: "Malzgetränk.", en: "Malt beverage.", ru: "Солодовый напиток." } },
+    { id: "fassbrause", image: null, price: "2,50€", names: { de: "Fassbrause", en: "Fassbrause", ru: "Fassbrause" }, descs: { de: "Alkoholfreies Erfrischungsgetränk.", en: "Non-alcoholic refreshment.", ru: "Безалкогольный освежающий напиток." } },
+    { id: "clubmate", image: null, price: "2,50€", names: { de: "Club-Mate", en: "Club-Mate", ru: "Club-Mate" }, descs: { de: "Zusatzstoff: 6 (koffeinhaltig).", en: "Additive: 6 (caffeine).", ru: "Добавка: 6 (кофеин)." } },
+    { id: "fritz", image: null, price: "2,50€", names: { de: "Fritz (versch. Sorten)", en: "Fritz (various)", ru: "Fritz (разные вкусы)" }, descs: { de: "Je nach Verfügbarkeit.", en: "Subject to availability.", ru: "По наличию." } }
   ],
   grills: [],
   beer: [],
@@ -574,15 +530,13 @@ export default function MenuPage() {
   const seoTitles: Record<Language, string> = {
     de: "Speisekarte - SILK ROAD Restaurant Köln | Zentralasiatische Gerichte & Preise",
     en: "Menu - SILK ROAD Restaurant Köln | Central Asian Dishes & Prices",
-    ru: "Меню - SILK ROAD Restaurant Кёльн | Блюда Центральной Азии и цены",
-    uz: "Menu - SILK ROAD Restaurant Köln"
+    ru: "Меню - SILK ROAD Restaurant Кёльн | Блюда Центральной Азии и цены"
   };
 
   const seoDescriptions: Record<Language, string> = {
     de: "Originale Gerichte der Seidenstraße: Plow, Manty, Kurutob, Lagman, Salate, Desserts und Getränke. SILK ROAD Restaurant Köln, Karl-Berbuer-Platz 7.",
     en: "Original Silk Road dishes: plow, manty, kurutob, lagman, salads, desserts and drinks at SILK ROAD Restaurant Cologne.",
-    ru: "Оригинальные блюда Шелкового пути: плов, манты, курутоб, лагман, салаты, десерты и напитки в SILK ROAD Restaurant Köln.",
-    uz: "Silk Road menu."
+    ru: "Оригинальные блюда Шелкового пути: плов, манты, курутоб, лагман, салаты, десерты и напитки в SILK ROAD Restaurant Köln."
   };
 
   // Dynamic canonical URL based on language path
@@ -941,7 +895,7 @@ export default function MenuPage() {
               {lang === 'de' && 'Nur Barzahlung (Cash only)'}
               {lang === 'en' && 'Cash only payment'}
               {lang === 'ru' && 'Оплата только наличными'}
-              {lang === 'uz' && 'Faqat naqd to‘lov'}
+              
             </p>
           </div>
         </div>

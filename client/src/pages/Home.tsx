@@ -21,20 +21,18 @@ import carpetImage from "@assets/stock_images/persian_carpet.webp";
 import plovImage from "@assets/stock_images/menu/plov.webp";
 import daPanJiImage from "@assets/stock_images/menu/da pan ji.webp";
 import lagmanImage from "@assets/stock_images/menu/lagman.webp";
-import heroLogoImage from "../../../attached_assets/stock_images/ChatGPT Image Feb 4, 2026, 07_43_14 PM.png";
+import heroLogoImage from "../../../attached_assets/stock_images/ChatGPT Image Feb 18, 2026, 06_16_26 PM.png";
 
 const langNames: Record<Language, string> = {
   de: "Deutsch",
   en: "English",
-  ru: "Русский",
-  uz: "O‘zbek"
+  ru: "Русский"
 };
 
 const langFlags: Record<Language, string> = {
   de: "🇩🇪",
   en: "🇬🇧",
-  ru: "🇷🇺",
-  uz: "🇺🇿"
+  ru: "🇷🇺"
 };
 
 export default function Home() {
@@ -52,15 +50,13 @@ export default function Home() {
   const seoTitles: Record<Language, string> = {
     de: "SILK ROAD Restaurant Köln | Authentische zentralasiatische Küche",
     en: "SILK ROAD Restaurant Köln | Authentic Central Asian Cuisine",
-    ru: "Ресторан SILK ROAD Кёльн | Аутентичная кухня Центральной Азии",
-    uz: "SILK ROAD Restoran Köln | Bornheimdagi o‘zbek restorani | Asl Markaziy Osiyo oshxonasi"
+    ru: "Ресторан SILK ROAD Кёльн | Аутентичная кухня Центральной Азии"
   };
 
   const seoDescriptions: Record<Language, string> = {
     de: "Restaurant SILK ROAD Köln-Südstadt - Authentische zentralasiatische Küche seit 2020. Traditioneller Plov, Manty, Samsa. 100% Halal. Karl-Berbuer-Platz 7, 50678 Köln. Tel: 0221 96026707",
     en: "SILK ROAD Restaurant Cologne Suedstadt - Authentic Central Asian cuisine since 2020. Plov, Manty, Samsa and more. 100% Halal. Karl-Berbuer-Platz 7, 50678 Koeln. Tel: 0221 96026707",
-    ru: "Ресторан SILK ROAD Кёльн - Аутентичная кухня Центральной Азии. Аутентичная центральноазиатская кухня с 2020 года. Узбекский Плов, Манты, Самса. 100% Халяль. Karl-Berbuer-Platz 7, 50678 Кёльн. Тел: 0221 96026707",
-    uz: "SILK ROAD Restorani Köln Bornheim - Kölndagi eng yaxshi o'zbek restorani. 2005 yildan beri asl Markaziy Osiyo oshxonasi. O'zbek osh, manti, somsa. 100% halol. Karl-Berbuer-Platz 7, 50678 Köln. Tel: 0221 96026707"
+    ru: "Ресторан SILK ROAD Кёльн - Аутентичная кухня Центральной Азии. Аутентичная центральноазиатская кухня с 2020 года. Узбекский Плов, Манты, Самса. 100% Халяль. Karl-Berbuer-Platz 7, 50678 Кёльн. Тел: 0221 96026707"
   };
 
   // Dynamic canonical URL based on language path
@@ -389,7 +385,7 @@ export default function Home() {
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
             <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2020 • Köln</span>
           </div>
-          <img src={heroLogoImage} alt="SILK ROAD" className="w-64 h-auto" />
+          <img src={heroLogoImage} alt="SILK ROAD" className="w-56 md:w-60 h-auto" />
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight drop-shadow-lg">
             <span className="[font-family:'Quando',_serif]">SILK ROAD</span>{' '}
             <span className="block text-xl  font-heading mt-2">
@@ -499,7 +495,7 @@ export default function Home() {
           <div className="mt-12 text-center">
             <Link href={getLocalizedPath('/menu/')} onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })}>
               <Button variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white font-heading uppercase tracking-wide">
-                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : lang === 'uz' ? "To'liq menyu" : 'View Full Menu'}
+                {lang === 'de' ? 'Vollständige Speisekarte' : lang === 'ru' ? 'Полное меню' : 'View Full Menu'}
               </Button>
             </Link>
           </div>
@@ -636,7 +632,7 @@ export default function Home() {
                   {lang === 'de' && 'Nur Barzahlung (Cash only)'}
                   {lang === 'en' && 'Cash only payment'}
                   {lang === 'ru' && 'Оплата только наличными'}
-                  {lang === 'uz' && 'Faqat naqd to‘lov'}
+                  
                 </p>
               </div>
             </motion.div>

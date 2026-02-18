@@ -96,9 +96,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
       toast({
         title: "Error",
         description: lang === 'de' ? 'Bitte nehmen Sie sich Zeit, das Formular auszufüllen.' :
-                     lang === 'ru' ? 'Пожалуйста, не торопитесь при заполнении формы.' :
-                     lang === 'uz' ? 'Iltimos, formani to‘ldirishda shoshilmang.' :
-                     'Please take your time filling out the form.',
+                     lang === 'ru' ? 'Пожалуйста, не торопитесь при заполнении формы.' : 'Please take your time filling out the form.',
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -213,18 +211,18 @@ export default function BookingForm({ lang }: BookingFormProps) {
           {...register("guests")}
           className={`flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${errors.guests ? "border-destructive" : ""}`}
         >
-          <option value="">{lang === 'de' ? 'Bitte wählen' : lang === 'ru' ? 'Пожалуйста, выберите' : lang === 'uz' ? 'Iltimos, tanlang' : 'Please select'}</option>
-          <option value="1">1 {lang === 'de' ? 'Person' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'person'}</option>
-          <option value="2">2 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="3">3 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="4">4 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="5">5 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="6">6 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="7">7 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="8">8 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="9">9 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="10">10 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' : lang === 'uz' ? 'kishi' : 'people'}</option>
-          <option value="10+">{lang === 'de' ? 'Mehr als 10 Personen' : lang === 'ru' ? 'Более 10 человек' : lang === 'uz' ? '10 kishidan ortiq' : 'More than 10 people'}</option>
+          <option value="">{lang === 'de' ? 'Bitte wählen' : lang === 'ru' ? 'Пожалуйста, выберите' :  'Please select'}</option>
+          <option value="1">1 {lang === 'de' ? 'Person' : lang === 'ru' ? 'человек' :  'person'}</option>
+          <option value="2">2 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' :  'people'}</option>
+          <option value="3">3 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' :  'people'}</option>
+          <option value="4">4 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человека' :  'people'}</option>
+          <option value="5">5 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' :  'people'}</option>
+          <option value="6">6 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' :  'people'}</option>
+          <option value="7">7 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' :  'people'}</option>
+          <option value="8">8 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' :  'people'}</option>
+          <option value="9">9 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' :  'people'}</option>
+          <option value="10">10 {lang === 'de' ? 'Personen' : lang === 'ru' ? 'человек' :  'people'}</option>
+          <option value="10+">{lang === 'de' ? 'Mehr als 10 Personen' : lang === 'ru' ? 'Более 10 человек' :  'More than 10 people'}</option>
         </select>
         {errors.guests && (
           <p className="text-destructive text-sm text-red-700 mt-1">{errors.guests.message}</p>
@@ -275,12 +273,6 @@ export default function BookingForm({ lang }: BookingFormProps) {
                   : availableTimes.length === 0
                   ? "Нет доступного времени"
                   : "Пожалуйста, выберите"
-                : lang === "uz"
-                ? !selectedDate
-                  ? "Avval sanani tanlang"
-                  : availableTimes.length === 0
-                  ? "Mos vaqt mavjud emas"
-                  : "Iltimos, tanlang"
                 : !selectedDate
                 ? "Please select a date first"
                 : availableTimes.length === 0
@@ -313,8 +305,6 @@ export default function BookingForm({ lang }: BookingFormProps) {
               ? "Besondere Wünsche..."
               : lang === "ru"
               ? "Особые пожелания..."
-              : lang === "uz"
-              ? "Maxsus so‘rovlar..."
               : "Special requests..."
           }
           rows={4}
