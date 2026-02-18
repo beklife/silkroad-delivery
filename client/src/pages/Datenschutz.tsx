@@ -336,7 +336,7 @@ export default function Datenschutz() {
                 +49 69 95909158
               </a>
               <br />
-              E-Mail: info.restaurantcaravan@gmail.com
+              E-Mail: info.silkroad@gmail.com
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
@@ -397,7 +397,7 @@ export default function Datenschutz() {
             <p className="text-xs text-white/80 mt-auto">© {currentYear} SILK ROAD Restaurant • Köln</p>
             <p className="text-xs text-white/60 mt-2">
               Made by ❤️{" "}
-              <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
+              <a href="https://codebek.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
                 ASLBEK
               </a>
             </p>

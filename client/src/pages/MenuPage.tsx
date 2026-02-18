@@ -643,7 +643,7 @@ export default function MenuPage() {
           <Link
             href={getLocalizedPath('/')}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="font-heading text-2xl font-bold tracking-wider text-primary"
+            className="font-heading text-xl md:text-2xl font-bold tracking-wide md:tracking-wider leading-none whitespace-nowrap text-primary"
           >
             SILK ROAD
           </Link>
@@ -937,6 +937,12 @@ export default function MenuPage() {
                 </>
               )}
             </p>
+            <p className="mt-2 text-sm font-semibold text-primary">
+              {lang === 'de' && 'Nur Barzahlung (Cash only)'}
+              {lang === 'en' && 'Cash only payment'}
+              {lang === 'ru' && 'Оплата только наличными'}
+              {lang === 'uz' && 'Faqat naqd to‘lov'}
+            </p>
           </div>
         </div>
       </main>
@@ -959,7 +965,7 @@ export default function MenuPage() {
             <p className="text-xs text-white/80 mt-auto">© {currentYear} SILK ROAD Restaurant • Köln</p>
             <p className="text-xs text-white/60 mt-2">
               Made by ❤️{" "}
-              <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
+              <a href="https://codebek.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
                 ASLBEK
               </a>
             </p>
@@ -1058,7 +1064,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                   {item.image ? (
                     <div
                       onClick={() => setLightboxImage({ src: item.image, name })}
-                      className="w-20 h-20 md:w-32 md:h-32 rounded-sm overflow-hidden flex-shrink-0 bg-muted shadow-md relative cursor-zoom-in hover:ring-2 hover:ring-primary transition-all group/image"
+                      className="w-24 md:w-40 aspect-[4/3] rounded-sm overflow-hidden flex-shrink-0 bg-muted shadow-md relative cursor-zoom-in hover:ring-2 hover:ring-primary transition-all group/image"
                     >
                       <img
                         src={item.image}
@@ -1072,7 +1078,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                       </div>
                     </div>
                   ) : !hidePlaceholder ? (
-                    <div className="w-20 h-20 md:w-32 md:h-32 rounded-sm flex-shrink-0 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center border border-border">
+                    <div className="w-24 md:w-40 aspect-[4/3] rounded-sm flex-shrink-0 bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center border border-border">
                       <span className="text-3xl md:text-5xl opacity-40">🍽</span>
                     </div>
                   ) : null}

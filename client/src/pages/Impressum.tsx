@@ -277,7 +277,7 @@ export default function Impressum() {
                 +49 69 95909158
               </a>
               <br />
-              <strong>E-Mail:</strong> info.restaurantcaravan@gmail.com
+              <strong>E-Mail:</strong> info.silkroad@gmail.com
             </p>
 
             <h2 className="text-2xl font-heading font-bold mt-8 mb-4">
@@ -330,7 +330,7 @@ export default function Impressum() {
             <p className="text-xs text-white/80 mt-auto">© {currentYear} SILK ROAD Restaurant • Köln</p>
             <p className="text-xs text-white/60 mt-2">
               Made by ❤️{" "}
-              <a href="https://beklife.github.io/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
+              <a href="https://codebek.com/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">
                 ASLBEK
               </a>
             </p>

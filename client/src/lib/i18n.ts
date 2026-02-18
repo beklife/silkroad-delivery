@@ -10,8 +10,8 @@ export const translations = {
       reserve: "Reservierungsanfrage"
     },
     hero: {
-      title: "SILK ROAD Restaurant Köln – authentische zentralasiatische Küche.",
-      subtitle: "Authentische Aromen der Seidenstraße, warme Gastfreundschaft und gelebte Teekultur in Köln-Südstadt.",
+      title: "authentische zentralasiatische Küche.",
+      subtitle: "Aromen der Seidenstraße, warme Gastfreundschaft und gelebte Teekultur in Köln-Südstadt.",
       cta_reserve: "Tisch anfragen",
       cta_menu: "Highlights ansehen"
     },
@@ -41,7 +41,7 @@ export const translations = {
         warenikiwegetarisch: { name: "Wareniki Vegetarisch", desc: "Kleine Maultaschen Mit Kartoffelfüllung. Frische Gemüsesalat dazu." },
         schaschlikvomlamm: { name: "Schaschlik vom Lamm", desc: "Saftige Lammfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
         schaschlikvomhaehnchen: { name: "Schaschlik vom Hähnchen", desc: "Saftige Hähnchenfleischstückchen mit Tomaten-Yoghurt-Knoblauch-Sauce und frischem Gemüsesalat." },
-        caravandessert: { name: "Silk Road Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
+        silkroaddessert: { name: "Silk Road Dessert", desc: "Gebackene Apetithäppchen aus Blätterteig mit Halwa und Äpfeln. Vanillesauce dazu." },
         honigmedovikkuchen: { name: "Honig Medovik Kuchen", desc: "Honig Medovik Kuchen in zwei Sorten: Nuss / Schokolade" },
         honigmedovikschokolade: { name: "Honig Medovik Schokolade", desc: "Honig Medovik Torte in der Schokoladen-Variante." },
         kannetee06jasmin: { name: "Kanne Jasmin Tee", desc: "Aromatischer Jasmin-Tee, traditionell serviert in einer Teekanne." }
@@ -101,7 +101,7 @@ export const translations = {
       reserve: "Reservation Request"
     },
     hero: {
-      title: "SILK ROAD Restaurant Cologne - authentic Central Asian cuisine.",
+      title: "authentic Central Asian cuisine.",
       subtitle: "Authentic Silk Road flavors, warm hospitality, and vibrant tea culture in Cologne's Suedstadt.",
       notice: "This is the official SILK ROAD website. We are still building it, so photos and texts are examples. Real photos are coming soon. You can still reserve a table or contact us.",
       cta_reserve: "Book a Table",
@@ -133,7 +133,7 @@ export const translations = {
         warenikiwegetarisch: { name: "Wareniki Vegetarian", desc: "Little dumpling filled with potatoes. Served with a fresh vegetable salad." },
         schaschlikvomlamm: { name: "Shashlik from Lamb", desc: "Tenderly marinated lamb filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
         schaschlikvomhaehnchen: { name: "Shashlik from Chicken", desc: "Tenderly marinated chicken filets, served with a fresh vegetable salad, tomato sauce and a side dish of your choice." },
-        caravandessert: { name: "Silk Road Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
+        silkroaddessert: { name: "Silk Road Dessert", desc: "Puff pastry filled with Halva and Apples, served with a vanilla sauce." },
         honigmedovikkuchen: { name: "Honey Medovik Cake", desc: "Honey Medovik Cake in two varieties: Nut / Chocolate" },
         honigmedovikschokolade: { name: "Honey Medovik Chocolate", desc: "Honey Medovik cake in the chocolate variety." },
         kannetee06jasmin: { name: "Pot of Jasmine Tea", desc: "Aromatic jasmine tea, traditionally served in a teapot." }
@@ -193,7 +193,7 @@ export const translations = {
       reserve: "Запрос на бронирование"
     },
     hero: {
-      title: "SILK ROAD Restaurant Кёльн - аутентичная кухня Центральной Азии.",
+      title: "аутентичная кухня Центральной Азии.",
       subtitle: "Аутентичные вкусы Шелкового пути, теплое гостеприимство и культура чаепития в Кёльне.",
       notice: "Это официальный сайт SILK ROAD. Мы еще дорабатываем сайт, поэтому фото и тексты пока примерные. Настоящие фото скоро будут. Вы уже можете бронировать столик или связаться с нами.",
       cta_reserve: "Забронировать стол",
@@ -225,7 +225,7 @@ export const translations = {
         warenikiwegetarisch: { name: "Вареники вегетарианские", desc: "Маленькие вареники с картофельной начинкой. Свежий овощной салат." },
         schaschlikvomlamm: { name: "Шашлык из баранины", desc: "Сочные кусочки баранины с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
         schaschlikvomhaehnchen: { name: "Шашлык из курицы", desc: "Сочные кусочки курицы с томатно-йогуртовым соусом с чесноком и свежим овощным салатом." },
-        caravandessert: { name: "Десерт Караван", desc: "Печеные аппетитные кусочки слоеного теста с халвой и яблоками. Ванильный соус." },
+        silkroaddessert: { name: "Десерт Silk Road", desc: "Печеные аппетитные кусочки слоеного теста с халвой и яблоками. Ванильный соус." },
         honigmedovikkuchen: { name: "Медовый торт Медовик", desc: "Медовый торт Медовик в двух вариантах: Ореховый / Шоколадный" },
         honigmedovikschokolade: { name: "Медовик Шоколадный", desc: "Медовый торт Медовик в шоколадном исполнении." },
         kannetee06jasmin: { name: "Чайник жасминового чая", desc: "Ароматный жасминовый чай, традиционно подается в чайнике." }
@@ -317,7 +317,7 @@ export const translations = {
         warenikiwegetarisch: { name: "Vareniki Vegetarian", desc: "Kartoshkali kichik vareniklar. Yangi sabzavot salati." },
         schaschlikvomlamm: { name: "Qo‘y go‘shtidan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli qo‘y go‘shti bo‘laklari." },
         schaschlikvomhaehnchen: { name: "Tovuqdan shashlik", desc: "Pomidor-yogurt-sarimsoq sousi va yangi sabzavot salati bilan sharbatli tovuq go‘shti bo‘laklari." },
-        caravandessert: { name: "Caravan dessert", desc: "Halva va olma bilan pishirilgan xamir bo‘laklari. Vanil sousi bilan." },
+        silkroaddessert: { name: "Silk Road dessert", desc: "Halva va olma bilan pishirilgan xamir bo‘laklari. Vanil sousi bilan." },
         honigmedovikkuchen: { name: "Asal Medovik torti", desc: "Ikki xil asal Medovik torti: yong'oq / shokolad" },
         honigmedovikschokolade: { name: "Shokoladli Medovik torti", desc: "Shokoladli asal Medovik torti." },
         kannetee06jasmin: { name: "Yasminli choy (choynakda)", desc: "Xushbo‘y yasminli choy, an’anaviy choynak bilan beriladi." }
