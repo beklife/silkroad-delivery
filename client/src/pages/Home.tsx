@@ -380,7 +380,7 @@ export default function Home() {
           initial="hidden"
           animate="visible"
           variants={fadeInUp}
-          className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6"
+          className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-4"
         >
           <div className="inline-block border-y-2 border-primary/60 py-2 mb-4">
             <span className="text-secondary font-bold tracking-[0.2em] uppercase text-sm md:text-base">Seit 2020 • Köln</span>
@@ -395,12 +395,21 @@ export default function Home() {
           <p className="text-lg md:text-xl text-white/90 max-w-2xl font-semibold leading-relaxed">
             {t.hero.subtitle}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Button size="lg" onClick={() => scrollToSection("reservation")} className="bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
+          <div className="flex w-full max-w-4xl flex-col sm:flex-row sm:flex-wrap sm:justify-center gap-3 sm:gap-4 mt-8">
+            <Button size="lg" onClick={() => scrollToSection("reservation")} className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-white font-heading uppercase tracking-wide text-base sm:text-lg px-5 sm:px-8 py-4 sm:py-6 h-auto">
               {t.hero.cta_reserve}
             </Button>
-            <Button size="lg" onClick={() => scrollToSection("menu")} variant="outline" className="border-white text-white hover:bg-white hover:text-primary font-heading uppercase tracking-wide text-lg px-8 py-6 h-auto">
+            <Button size="lg" onClick={() => scrollToSection("menu")} variant="outline" className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-primary font-heading uppercase tracking-wide text-base sm:text-lg px-5 sm:px-8 py-4 sm:py-6 h-auto">
               {t.hero.cta_menu}
+            </Button>
+            <Button
+              size="lg"
+              asChild
+              className="w-full sm:w-auto bg-secondary hover:bg-secondary/90 text-foreground font-heading uppercase tracking-wide text-base sm:text-lg px-5 sm:px-8 py-4 sm:py-6 h-auto"
+            >
+              <a href="https://www.xn--silk-road-kln-smb.de/" target="_blank" rel="noopener noreferrer">
+                {t.hero.cta_order}
+              </a>
             </Button>
           </div>
         </motion.div>

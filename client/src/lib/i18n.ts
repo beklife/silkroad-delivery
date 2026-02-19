@@ -13,7 +13,8 @@ export const translations = {
       title: "authentische zentralasiatische Küche.",
       subtitle: "Aromen der Seidenstraße, warme Gastfreundschaft und gelebte Teekultur in Köln-Südstadt.",
       cta_reserve: "Tisch anfragen",
-      cta_menu: "Highlights ansehen"
+      cta_menu: "Highlights ansehen",
+      cta_order: "Online bestellen"
     },
     about: {
       title: "Unsere Geschichte",
@@ -105,7 +106,8 @@ export const translations = {
       subtitle: "Authentic Silk Road flavors, warm hospitality, and vibrant tea culture in Cologne's Suedstadt.",
       notice: "This is the official SILK ROAD website. We are still building it, so photos and texts are examples. Real photos are coming soon. You can still reserve a table or contact us.",
       cta_reserve: "Book a Table",
-      cta_menu: "View Highlights"
+      cta_menu: "View Highlights",
+      cta_order: "Order Online"
     },
     about: {
       title: "Our Story",
@@ -197,7 +199,8 @@ export const translations = {
       subtitle: "Аутентичные вкусы Шелкового пути, теплое гостеприимство и культура чаепития в Кёльне.",
       notice: "Это официальный сайт SILK ROAD. Мы еще дорабатываем сайт, поэтому фото и тексты пока примерные. Настоящие фото скоро будут. Вы уже можете бронировать столик или связаться с нами.",
       cta_reserve: "Забронировать стол",
-      cta_menu: "Смотреть меню"
+      cta_menu: "Смотреть меню",
+      cta_order: "Заказать онлайн"
     },
     about: {
       title: "Наша история",
