@@ -111,7 +111,7 @@ export default function BookingForm({ lang }: BookingFormProps) {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "1febc7c6-870f-49de-84f8-0551f65741b0", // Replace with your actual key
+          access_key: "",
           name: data.name,
           email: data.email,
           phone: data.phone,

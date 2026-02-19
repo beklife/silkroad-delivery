@@ -6,7 +6,7 @@ export default function GoogleReviewButton() {
   const { lang } = useLanguage();
   const [isVisible, setIsVisible] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
-  const placeId = "ChIJhx2VfmkJvUcRnefb1P5Fxf4";
+  const placeId = "ChIJuzsGdE4lv0cRRrL3KEBKlRQ";
   const reviewUrl = `https://search.google.com/local/writereview?placeid=${placeId}`;
 
   // Translations

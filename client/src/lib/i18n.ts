@@ -7,13 +7,14 @@ export const translations = {
       menu: "Speisekarte",
       location: "Kontakt",
       contact: "Kontakt",
-      reserve: "Reservierungsanfrage"
+      reserve: "Reservierungsanfrage",
+      order: "Online bestellen"
     },
     hero: {
       title: "authentische zentralasiatische Küche.",
       subtitle: "Aromen der Seidenstraße, warme Gastfreundschaft und gelebte Teekultur in Köln-Südstadt.",
       cta_reserve: "Tisch anfragen",
-      cta_menu: "Highlights ansehen",
+      cta_menu: "Zur Speisekarte",
       cta_order: "Online bestellen"
     },
     about: {
@@ -99,7 +100,8 @@ export const translations = {
       menu: "Menu",
       location: "Location",
       contact: "Contact",
-      reserve: "Reservation Request"
+      reserve: "Reservation Request",
+      order: "Order Online"
     },
     hero: {
       title: "authentic Central Asian cuisine.",
@@ -192,7 +194,8 @@ export const translations = {
       menu: "Меню",
       location: "Локация",
       contact: "Контакты",
-      reserve: "Запрос на бронирование"
+      reserve: "Запрос на бронирование",
+      order: "Заказать онлайн"
     },
     hero: {
       title: "аутентичная кухня Центральной Азии.",

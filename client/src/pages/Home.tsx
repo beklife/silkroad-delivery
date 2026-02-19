@@ -165,6 +165,7 @@ export default function Home() {
             <Link href={getLocalizedPath('/menu/')} onClick={() => window.scrollTo({ top: 0, behavior: 'instant' })} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.menu}</Link>
             <button onClick={() => scrollToSection("contact")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.contact}</button>
             <button onClick={() => scrollToSection("reservation")} className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.reserve}</button>
+            <a href="https://www.xn--silk-road-kln-smb.de/" target="_blank" rel="noopener noreferrer" className={`text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif] ${isScrolled ? "text-foreground" : "text-white/90"}`}>{t.nav.order}</a>
 
             <div className="h-4 w-px bg-white/30 mx-2"></div>
 
@@ -356,6 +357,7 @@ export default function Home() {
                 <Link href={getLocalizedPath('/menu/')} className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]" onClick={() => { setMobileMenuOpen(false); window.scrollTo({ top: 0, behavior: 'instant' }); }}>{t.nav.menu}</Link>
                 <button onClick={() => scrollToSection("contact")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.contact}</button>
                 <button onClick={() => scrollToSection("reservation")} className="text-lg font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.reserve}</button>
+                <a href="https://www.xn--silk-road-kln-smb.de/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">{t.nav.order}</a>
               </div>
             </motion.div>
           )}
@@ -665,6 +667,7 @@ export default function Home() {
                <Link href={getLocalizedPath('/menu/')} className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.menu}</Link>
                <a href="#about" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.about}</a>
                <a href="#contact" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.contact}</a>
+               <a href="https://www.xn--silk-road-kln-smb.de/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.nav.order}</a>
                <Link href="/impressum/" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.impressum}</Link>
                <Link href="/datenschutz/" className="hover:text-primary transition-colors text-white/80 uppercase [font-family:'Quando',_serif]">{t.footer.privacy}</Link>
             </div>

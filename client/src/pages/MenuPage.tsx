@@ -603,6 +603,7 @@ export default function MenuPage() {
           </Link>
 
           <div className="hidden md:flex items-center gap-4">
+            <a href="https://www.xn--silk-road-kln-smb.de/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif]">{t.nav.order}</a>
             {/* Music Button */}
             <motion.button
               onClick={toggleMusic}
@@ -780,6 +781,9 @@ export default function MenuPage() {
                 <button onClick={() => { setMobileMenuOpen(false); setLocation(`${getLocalizedPath('/') }#reservation`); }} className="text-lg text-center font-medium py-2 border-b border-dashed border-border text-foreground hover:text-primary uppercase [font-family:'Quando',_serif]">
                   {lang === 'de' ? 'Reservierungsanfrage' : lang === 'ru' ? 'Запрос на бронирование' : 'Reservation Request'}
                 </button>
+                <a href="https://www.xn--silk-road-kln-smb.de/" target="_blank" rel="noopener noreferrer" onClick={() => setMobileMenuOpen(false)} className="text-lg text-center font-medium py-2 border-b border-dashed border-border uppercase [font-family:'Quando',_serif]">
+                  {t.nav.order}
+                </a>
               </div>
             </motion.div>
           )}
