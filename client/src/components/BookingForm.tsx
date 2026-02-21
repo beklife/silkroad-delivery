@@ -51,24 +51,19 @@ export default function BookingForm({ lang }: BookingFormProps) {
   const availableTimes = useMemo(() => {
     if (!selectedDate) return [];
 
-    // Valentine's Day 2026 - special hours only
-    if (selectedDate === "2026-02-14") {
-      return ["21:00"];
-    }
-
     const dayOfWeek = new Date(`${selectedDate}T12:00:00`).getDay();
 
-    // Tuesday (2) to Thursday (4)
-    if (dayOfWeek >= 2 && dayOfWeek <= 4) {
-      return ["17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"];
+    // Fri(5) & Sat(6): open until 22:00
+    if (dayOfWeek === 5 || dayOfWeek === 6) {
+      return ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"];
     }
 
-    // Friday (5), Saturday (6), Sunday (0)
-    if (dayOfWeek === 5 || dayOfWeek === 6 || dayOfWeek === 0) {
-      return ["17:00", "17:30", "19:00", "19:30", "20:30", "21:00", "21:30"];
+    // Wed(3), Thu(4), Sun(0): open until 20:00
+    if (dayOfWeek === 3 || dayOfWeek === 4 || dayOfWeek === 0) {
+      return ["12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00"];
     }
 
-    // Monday closed
+    // Mon(1) & Tue(2): closed
     return [];
   }, [selectedDate]);
 

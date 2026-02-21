@@ -66,6 +66,7 @@ export const CircularTestimonials = ({
   const [hoverPrev, setHoverPrev] = useState(false);
   const [hoverNext, setHoverNext] = useState(false);
   const [containerWidth, setContainerWidth] = useState(1200);
+  const [autoplayKey, setAutoplayKey] = useState(0);
 
   const imageContainerRef = useRef<HTMLDivElement>(null);
   const autoplayIntervalRef = useRef<NodeJS.Timeout | null>(null);
@@ -88,24 +89,23 @@ export const CircularTestimonials = ({
   }, []);
 
   useEffect(() => {
-    if (autoplay) {
-      autoplayIntervalRef.current = setInterval(() => {
-        setActiveIndex((prev) => (prev + 1) % testimonialsLength);
-      }, 5000);
-    }
+    if (!autoplay) return;
+    autoplayIntervalRef.current = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonialsLength);
+    }, 3000);
     return () => {
       if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
     };
-  }, [autoplay, testimonialsLength]);
+  }, [autoplay, testimonialsLength, autoplayKey]);
 
   const handleNext = useCallback(() => {
     setActiveIndex((prev) => (prev + 1) % testimonialsLength);
-    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
+    setAutoplayKey((k) => k + 1);
   }, [testimonialsLength]);
 
   const handlePrev = useCallback(() => {
     setActiveIndex((prev) => (prev - 1 + testimonialsLength) % testimonialsLength);
-    if (autoplayIntervalRef.current) clearInterval(autoplayIntervalRef.current);
+    setAutoplayKey((k) => k + 1);
   }, [testimonialsLength]);
 
   useEffect(() => {
@@ -252,6 +252,11 @@ export const CircularTestimonials = ({
           display: grid;
           gap: 2rem;
         }
+        @media (min-width: 768px) {
+          .testimonial-grid {
+            gap: 5rem;
+          }
+        }
         .image-container {
           position: relative;
           width: 100%;
@@ -277,6 +282,11 @@ export const CircularTestimonials = ({
         }
         .designation {
           margin-bottom: 0.5rem;
+        }
+        @media (min-width: 768px) {
+          .designation {
+            margin-bottom: 2rem;
+          }
         }
         .quote {
           line-height: 1.75;
