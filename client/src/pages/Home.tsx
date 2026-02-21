@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MapPinIcon as MapPin, PhoneIcon as Phone, ClockIcon as Clock, ChevronDownIcon as ChevronDown, MailIcon as Mail, X } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, type CarouselApi } from "@/components/ui/carousel";
 
 // Lazy load BookingForm to reduce initial bundle size
 const BookingForm = lazy(() => import("@/components/BookingForm"));
@@ -41,6 +42,8 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
+  const [menuCarouselApi, setMenuCarouselApi] = useState<CarouselApi>();
+  const [activeMenuSlide, setActiveMenuSlide] = useState(0);
   const { musicPlaying, toggleMusic } = useMusic();
 
   const t = translations[lang];
@@ -124,6 +127,72 @@ export default function Home() {
     hidden: { opacity: 0, y: 20, willChange: 'transform, opacity' },
     visible: { opacity: 1, y: 0, willChange: 'auto', transition: { duration: 0.6 } }
   };
+
+  const menuHighlights = [
+    {
+      image: plovImage,
+      title: lang === 'de' ? 'Plow (Rindfleisch)' : lang === 'ru' ? 'Плов (говядина)' : 'Plow (Beef)',
+      desc: lang === 'de' ? 'Das beliebteste Gericht aus Zentralasien.' : lang === 'ru' ? 'Самое популярное блюдо Центральной Азии.' : 'The most popular Central Asian dish.',
+      price: "13,50€"
+    },
+    {
+      image: mantyImage,
+      title: lang === 'de' ? 'Manty (Rindfleisch)' : lang === 'ru' ? 'Манты (говядина)' : 'Manty (Beef)',
+      desc: lang === 'de' ? 'Gedämpfte Teigtaschen, Portion 5 Stück.' : lang === 'ru' ? 'Паровые манты, порция 5 шт.' : 'Steamed dumplings, portion of 5.',
+      price: "12,50€"
+    },
+    {
+      image: samsaImage,
+      title: "Samsa",
+      desc: lang === 'de' ? 'Gebackene Teigtaschen, Preis pro Stück.' : lang === 'ru' ? 'Запечённые пирожки, цена за штуку.' : 'Baked pastry pockets, price per piece.',
+      price: "4,50€"
+    },
+    {
+      image: daPanJiImage,
+      title: "Da Pan Ji",
+      desc: lang === 'de' ? 'Authentisches Xinjiang-Gericht mit Hähnchen.' : lang === 'ru' ? 'Аутентичное блюдо Синьцзяна с курицей.' : 'Authentic Xinjiang chicken dish.',
+      price: "15,50€"
+    },
+    {
+      image: lagmanImage,
+      title: "Lagman (Rindfleisch)",
+      desc: lang === 'de' ? 'Handgemachte Nudeln mit Fleisch und Gemüse.' : lang === 'ru' ? 'Домашняя лапша с мясом и овощами.' : 'Handmade noodles with beef and vegetables.',
+      price: "14,50€"
+    },
+    {
+      image: dessertImage,
+      title: "Tschak Tschak",
+      desc: lang === 'de' ? 'Teigstäbchen in Honig mit Nüssen und Beeren.' : lang === 'ru' ? 'Тесто в меду с орехами и ягодами.' : 'Honey pastry sticks with nuts and berries.',
+      price: "6,50€"
+    }
+  ];
+
+  useEffect(() => {
+    if (!menuCarouselApi) return;
+
+    const onSelect = () => {
+      setActiveMenuSlide(menuCarouselApi.selectedScrollSnap());
+    };
+
+    onSelect();
+    menuCarouselApi.on("select", onSelect);
+    menuCarouselApi.on("reInit", onSelect);
+
+    const autoplay = window.setInterval(() => {
+      if (!menuCarouselApi) return;
+      if (menuCarouselApi.canScrollNext()) {
+        menuCarouselApi.scrollNext();
+      } else {
+        menuCarouselApi.scrollTo(0);
+      }
+    }, 4500);
+
+    return () => {
+      window.clearInterval(autoplay);
+      menuCarouselApi.off("select", onSelect);
+      menuCarouselApi.off("reInit", onSelect);
+    };
+  }, [menuCarouselApi]);
 
   return (
     <div className="min-h-screen bg-background font-sans text-foreground selection:bg-primary selection:text-white relative overflow-hidden">
@@ -494,13 +563,44 @@ export default function Home() {
             <p className="text-muted-foreground">{t.menu.subtitle}</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <MenuCard image={plovImage} title={lang === 'de' ? 'Plow (Rindfleisch)' : lang === 'ru' ? 'Плов (говядина)' : 'Plow (Beef)'} desc={lang === 'de' ? 'Das beliebteste Gericht aus Zentralasien.' : lang === 'ru' ? 'Самое популярное блюдо Центральной Азии.' : 'The most popular Central Asian dish.'} price="13,50€" />
-            <MenuCard image={mantyImage} title={lang === 'de' ? 'Manty (Rindfleisch)' : lang === 'ru' ? 'Манты (говядина)' : 'Manty (Beef)'} desc={lang === 'de' ? 'Gedämpfte Teigtaschen, Portion 5 Stück.' : lang === 'ru' ? 'Паровые манты, порция 5 шт.' : 'Steamed dumplings, portion of 5.'} price="12,50€" />
-            <MenuCard image={samsaImage} title="Samsa" desc={lang === 'de' ? 'Gebackene Teigtaschen, Preis pro Stück.' : lang === 'ru' ? 'Запечённые пирожки, цена за штуку.' : 'Baked pastry pockets, price per piece.'} price="4,50€" />
-            <MenuCard image={daPanJiImage} title="Da Pan Ji" desc={lang === 'de' ? 'Authentisches Xinjiang-Gericht mit Hähnchen.' : lang === 'ru' ? 'Аутентичное блюдо Синьцзяна с курицей.' : 'Authentic Xinjiang chicken dish.'} price="15,50€" />
-            <MenuCard image={lagmanImage} title="Lagman (Rindfleisch)" desc={lang === 'de' ? 'Handgemachte Nudeln mit Fleisch und Gemüse.' : lang === 'ru' ? 'Домашняя лапша с мясом и овощами.' : 'Handmade noodles with beef and vegetables.'} price="14,50€" />
-            <MenuCard image={dessertImage} title="Tschak Tschak" desc={lang === 'de' ? 'Teigstäbchen in Honig mit Nüssen und Beeren.' : lang === 'ru' ? 'Тесто в меду с орехами и ягодами.' : 'Honey pastry sticks with nuts and berries.'} price="6,50€" />
+          <div className="relative px-2 md:px-14">
+            <Carousel
+              setApi={setMenuCarouselApi}
+              opts={{ align: "center", loop: false }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {menuHighlights.map((item, index) => (
+                  <CarouselItem
+                    key={item.title}
+                    className="pl-2 md:pl-4 basis-[88%] sm:basis-[74%] lg:basis-[42%]"
+                  >
+                    <MenuCard
+                      image={item.image}
+                      title={item.title}
+                      desc={item.desc}
+                      price={item.price}
+                      isActive={index === activeMenuSlide}
+                    />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-0 md:left-3 h-10 w-10 border-primary/40 bg-background/95 hover:bg-primary hover:text-white shadow-md" />
+              <CarouselNext className="right-0 md:right-3 h-10 w-10 border-primary/40 bg-background/95 hover:bg-primary hover:text-white shadow-md" />
+            </Carousel>
+
+            <div className="mt-8 flex items-center justify-center gap-2">
+              {menuHighlights.map((item, index) => (
+                <button
+                  key={`${item.title}-dot`}
+                  onClick={() => menuCarouselApi?.scrollTo(index)}
+                  className={`h-2.5 rounded-full transition-all duration-300 ${
+                    index === activeMenuSlide ? "w-9 bg-primary" : "w-2.5 bg-primary/40 hover:bg-primary/70"
+                  }`}
+                  aria-label={`Go to menu item ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
           
           <div className="mt-12 text-center">
@@ -741,18 +841,24 @@ export default function Home() {
   );
 }
 
-function MenuCard({ image, title, desc, price }: { image: string, title: string, desc: string, price: string }) {
+function MenuCard({ image, title, desc, price, isActive = false }: { image: string, title: string, desc: string, price: string, isActive?: boolean }) {
   return (
-    <div className="group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border border-border shadow-sm hover:shadow-lg transition-all duration-300">
+    <div className={`group bg-background/95 backdrop-blur-sm rounded-sm overflow-hidden border shadow-sm hover:shadow-xl transition-all duration-500 ${
+      isActive
+        ? "border-primary/60 ring-2 ring-primary/20 md:-translate-y-2"
+        : "border-border opacity-95"
+    }`}>
       <div className="aspect-[4/3] bg-muted relative overflow-hidden">
         {image ? (
-          <img src={image} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+          <img src={image} alt={title} className={`w-full h-full object-cover transition-transform duration-700 ${isActive ? "scale-[1.03]" : ""} group-hover:scale-110`} loading="lazy" />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-muted to-muted/50">
             <span className="text-6xl opacity-40">🍽</span>
           </div>
         )}
-        <div className="absolute top-2 right-2 bg-background/90 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm">
+        <div className={`absolute top-2 right-2 backdrop-blur-sm px-3 py-1 rounded-sm text-sm font-bold shadow-sm ${
+          isActive ? "bg-primary text-white" : "bg-background/90"
+        }`}>
           {price}
         </div>
       </div>
