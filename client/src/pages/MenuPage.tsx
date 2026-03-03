@@ -5,9 +5,12 @@ import { useMusic } from "@/lib/MusicContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import { useSeoMeta } from "@/lib/seo";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, X } from "@/components/icons";
+import { ArrowLeftIcon as ArrowLeft, ChevronDownIcon as ChevronDown, X, PlusIcon, MinusIcon } from "@/components/icons";
 import HamburgerButton from "@/components/HamburgerButton";
 import { Button } from "@/components/ui/button";
+import CartButton from "@/components/Cart/CartButton";
+import CartDrawer from "@/components/Cart/CartDrawer";
+import { useCart } from "@/lib/CartContext";
 
 import carpetImage from "@assets/stock_images/persian_carpet.webp";
 import plowMenuImage from "@assets/stock_images/menu/plov.webp";
@@ -492,6 +495,10 @@ const silkRoadMenu = {
   spirits: []
 };
 
+function parsePrice(priceStr: string): number {
+  return parseFloat(priceStr.replace(/[€\s]/g, "").replace(",", "."));
+}
+
 export default function MenuPage() {
   const { lang, setLang, getLocalizedPath } = useLanguage();
   const [, setLocation] = useLocation();
@@ -499,6 +506,26 @@ export default function MenuPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState<{ src: string; name: string } | null>(null);
   const { musicPlaying, toggleMusic } = useMusic();
+  const { addItem, items: cartItems, updateQuantity, removeItem } = useCart();
+
+  const cartQuantities: Record<string, number> = {};
+  cartItems.forEach((i) => { cartQuantities[i.id] = i.quantity; });
+
+  const handleAddToCart = (item: any, name: string) => {
+    if (item._decrease) {
+      const qty = cartQuantities[item.id] ?? 0;
+      if (qty <= 1) removeItem(item.id);
+      else updateQuantity(item.id, qty - 1);
+      return;
+    }
+    addItem({
+      id: item.id,
+      name,
+      price: parsePrice(item.price),
+      priceStr: item.price,
+      image: item.image ?? null,
+    });
+  };
   const t = translations[lang];
   const cats = silkRoadMenuCategories[lang];
   const activeMenu = silkRoadMenu;
@@ -604,6 +631,8 @@ export default function MenuPage() {
 
           <div className="hidden md:flex items-center gap-4">
             <a href="https://www.xn--silk-road-kln-smb.de/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium hover:text-primary transition-colors uppercase [font-family:'Quando',_serif]">{t.nav.order}</a>
+            {/* Cart Button */}
+            <CartButton />
             {/* Music Button */}
             <motion.button
               onClick={toggleMusic}
@@ -696,6 +725,8 @@ export default function MenuPage() {
 
           {/* Mobile Menu Controls */}
           <div className="flex items-center gap-3 md:hidden">
+            {/* Mobile Cart Button */}
+            <CartButton />
             {/* Mobile Music Button */}
             <button
               onClick={toggleMusic}
@@ -820,12 +851,12 @@ export default function MenuPage() {
         </div>
 
         {/* Soups */}
-        {mainCombinedItems.length > 0 && <MenuSection title={cats.mains} items={mainCombinedItems} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
-        {activeMenu.salads.length > 0 && <MenuSection title={cats.salads} items={activeMenu.salads} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
-        {activeMenu.sides.length > 0 && <MenuSection title={cats.sides} items={activeMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />}
-        {activeMenu.desserts.length > 0 && <MenuSection title={cats.desserts} items={activeMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} />}
-        {activeMenu.drinks.length > 0 && <MenuSection title={cats.drinks} items={activeMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} />}
-        {activeMenu.colddrinks.length > 0 && <MenuSection title={cats.colddrinks} items={activeMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} />}
+        {mainCombinedItems.length > 0 && <MenuSection title={cats.mains} items={mainCombinedItems} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
+        {activeMenu.salads.length > 0 && <MenuSection title={cats.salads} items={activeMenu.salads} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
+        {activeMenu.sides.length > 0 && <MenuSection title={cats.sides} items={activeMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
+        {activeMenu.desserts.length > 0 && <MenuSection title={cats.desserts} items={activeMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
+        {activeMenu.drinks.length > 0 && <MenuSection title={cats.drinks} items={activeMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
+        {activeMenu.colddrinks.length > 0 && <MenuSection title={cats.colddrinks} items={activeMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
 
         {/* Footer Note */}
         <div className="mt-12 md:mt-20 text-center bg-card/90 backdrop-blur-sm p-4 md:p-8 rounded-sm border border-border/50">
@@ -975,11 +1006,24 @@ export default function MenuPage() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Cart Drawer */}
+      <CartDrawer />
     </div>
   );
 }
 
-function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder, hideDetails }: { title: string, items: any[], lang: Language, getDishInfo: (d: any) => { name: string, desc: string }, setLightboxImage: (image: { src: string; name: string } | null) => void, hidePlaceholder?: boolean, hideDetails?: boolean }) {
+function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder, hideDetails, onAddToCart, cartQuantities }: {
+  title: string;
+  items: any[];
+  lang: Language;
+  getDishInfo: (d: any) => { name: string; desc: string };
+  setLightboxImage: (image: { src: string; name: string } | null) => void;
+  hidePlaceholder?: boolean;
+  hideDetails?: boolean;
+  onAddToCart?: (item: any, name: string) => void;
+  cartQuantities?: Record<string, number>;
+}) {
   const reduceMotion = useReducedMotion();
 
   return (
@@ -1095,6 +1139,47 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                           )}
                         </div>
                       </>
+                    )}
+
+                    {/* Add to Cart */}
+                    {onAddToCart && (
+                      <div className="mt-3">
+                        {(cartQuantities?.[item.id] ?? 0) === 0 ? (
+                          <button
+                            onClick={() => onAddToCart(item, name)}
+                            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-primary/50 text-primary text-xs font-semibold hover:bg-primary hover:text-primary-foreground transition-all [font-family:'Quando',_serif] uppercase tracking-wide"
+                          >
+                            <PlusIcon className="w-3 h-3" />
+                            {lang === 'de' ? 'Bestellen' : lang === 'ru' ? 'Добавить' : 'Add'}
+                          </button>
+                        ) : (
+                          <div className="inline-flex items-center gap-2">
+                            <button
+                              onClick={() => {
+                                const qty = (cartQuantities?.[item.id] ?? 1) - 1;
+                                if (qty === 0) {
+                                  // remove via adding with qty trick — handled by context
+                                  onAddToCart({ ...item, _remove: true }, name);
+                                } else {
+                                  onAddToCart({ ...item, _decrease: true }, name);
+                                }
+                              }}
+                              className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted hover:border-primary transition-colors text-foreground"
+                            >
+                              <MinusIcon className="w-3 h-3" />
+                            </button>
+                            <span className="text-sm font-bold w-5 text-center tabular-nums text-primary">
+                              {cartQuantities?.[item.id]}
+                            </span>
+                            <button
+                              onClick={() => onAddToCart(item, name)}
+                              className="w-7 h-7 rounded-full border border-border flex items-center justify-center hover:bg-muted hover:border-primary transition-colors text-foreground"
+                            >
+                              <PlusIcon className="w-3 h-3" />
+                            </button>
+                          </div>
+                        )}
+                      </div>
                     )}
                   </div>
                 </div>
