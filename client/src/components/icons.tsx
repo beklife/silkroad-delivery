@@ -211,3 +211,56 @@ export const TrashIcon = ({ className }: IconProps) => (
 export const ShoppingCart = ShoppingCartIcon;
 export const Plus = PlusIcon;
 export const Trash = TrashIcon;
+
+export const TruckIcon = ({ className }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M1 3h15v13H1zM16 8h4l3 3v5h-7V8z" />
+    <circle cx="5.5" cy="18.5" r="2.5" strokeWidth={2} />
+    <circle cx="18.5" cy="18.5" r="2.5" strokeWidth={2} />
+  </svg>
+);
+
+export const BanIcon = ({ className }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10" strokeWidth={2} />
+    <path strokeLinecap="round" strokeWidth={2} d="M4.93 4.93l14.14 14.14" />
+  </svg>
+);
+
+export const RefreshCwIcon = ({ className }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M23 4v6h-6M1 20v-6h6" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15" />
+  </svg>
+);
+
+export const LogOutIcon = ({ className }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 17l5-5-5-5" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12H9" />
+  </svg>
+);
+
+export const CheckCircleIcon = ({ className }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M22 11.08V12a10 10 0 11-5.93-9.14" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M22 4L12 14.01l-3-3" />
+  </svg>
+);
+
+export const UtensilsIcon = ({ className }: IconProps) => (
+  <svg className={className} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 2v20" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 15V2a5 5 0 00-5 5v6h5z" />
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 21v-4" />
+  </svg>
+);
+
+export const Truck = TruckIcon;
+export const Ban = BanIcon;
+export const RefreshCw = RefreshCwIcon;
+export const LogOut = LogOutIcon;
+export const CheckCircle = CheckCircleIcon;
+export const Utensils = UtensilsIcon;

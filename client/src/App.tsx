@@ -14,6 +14,7 @@ import Impressum from "@/pages/Impressum";
 import Datenschutz from "@/pages/Datenschutz";
 import CheckoutPage from "@/pages/CheckoutPage";
 import OrderSuccessPage from "@/pages/OrderSuccessPage";
+import AdminPage from "@/pages/AdminPage";
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
                 {/* Checkout */}
                 <Route path="/checkout" component={CheckoutPage} />
                 <Route path="/order-success/:id" component={OrderSuccessPage} />
+
+                {/* Admin */}
+                <Route path="/admin" component={AdminPage} />
 
                 {/* 404 */}
                 <Route component={NotFound} />
