@@ -1,7 +1,7 @@
 import Database from "better-sqlite3";
 import path from "path";
 
-const db = new Database(path.resolve(process.cwd(), "orders.db"));
+const db = new Database(process.env.DATABASE_PATH || path.resolve(process.cwd(), "orders.db"));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS orders (
