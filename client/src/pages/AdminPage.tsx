@@ -297,6 +297,24 @@ export default function AdminPage() {
   const displayOrders = tab === "active" ? activeOrders : historyOrders;
   const newCount = orders.filter((o) => o.status === "pending").length;
 
+  // ─── Stats ───────────────────────────────────────────────────────────────────
+  const now = new Date();
+  const todayStr = now.toISOString().slice(0, 10);
+  const thisMonthStr = now.toISOString().slice(0, 7);
+
+  const delivered = orders.filter((o) => o.status === "delivered");
+  const todayDelivered = delivered.filter((o) =>
+    o.created_at.startsWith(todayStr)
+  );
+  const monthDelivered = delivered.filter((o) =>
+    o.created_at.startsWith(thisMonthStr)
+  );
+
+  const todayRevenue = todayDelivered.reduce((s, o) => s + o.total, 0);
+  const monthRevenue = monthDelivered.reduce((s, o) => s + o.total, 0);
+  const avgOrder =
+    monthDelivered.length > 0 ? monthRevenue / monthDelivered.length : 0;
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* ─── Header ──────────────────────────────────────────────────────── */}
@@ -332,6 +350,14 @@ export default function AdminPage() {
           </div>
         </div>
       </header>
+
+      {/* ─── Stats ───────────────────────────────────────────────────────── */}
+      <div className="max-w-4xl mx-auto px-4 pt-4 grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <StatCard label="Heute · Umsatz" value={fmt(todayRevenue)} />
+        <StatCard label="Heute · Bestellungen" value={String(todayDelivered.length)} />
+        <StatCard label="Monat · Umsatz" value={fmt(monthRevenue)} highlight />
+        <StatCard label="Monat · Ø Bestellwert" value={avgOrder > 0 ? fmt(avgOrder) : "—"} />
+      </div>
 
       {/* ─── Tabs ────────────────────────────────────────────────────────── */}
       <div className="max-w-4xl mx-auto px-4 pt-4">
@@ -714,5 +740,36 @@ function ActionBtn({
       {icon}
       {children}
     </button>
+  );
+}
+
+// ─── Stat Card ────────────────────────────────────────────────────────────────
+
+function StatCard({
+  label,
+  value,
+  highlight,
+}: {
+  label: string;
+  value: string;
+  highlight?: boolean;
+}) {
+  return (
+    <div
+      className={`rounded-sm border p-3 ${
+        highlight
+          ? "border-primary/30 bg-primary/5"
+          : "border-border bg-card"
+      }`}
+    >
+      <p className="text-xs text-muted-foreground mb-1">{label}</p>
+      <p
+        className={`font-heading font-bold text-lg tabular-nums ${
+          highlight ? "text-primary" : "text-foreground"
+        }`}
+      >
+        {value}
+      </p>
+    </div>
   );
 }

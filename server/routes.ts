@@ -10,7 +10,7 @@ import {
   getAllOrders,
 } from "./db.js";
 
-const DELIVERY_FEE = 2.5;
+const DELIVERY_FEE = 5;
 
 export async function registerRoutes(
   httpServer: Server,

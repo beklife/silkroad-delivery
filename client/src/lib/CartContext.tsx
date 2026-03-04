@@ -22,8 +22,8 @@ interface CartContextType {
   closeCart: () => void;
 }
 
-export const DELIVERY_FEE = 2.5;
-export const MIN_ORDER = 15;
+export const DELIVERY_FEE = 5;
+export const MIN_ORDER = 25;
 
 const CartContext = createContext<CartContextType | null>(null);
 
