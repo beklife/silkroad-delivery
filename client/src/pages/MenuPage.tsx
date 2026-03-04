@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from "react";
+import { useState, useLayoutEffect, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { translations, Language } from "@/lib/i18n";
 import { useMusic } from "@/lib/MusicContext";
@@ -511,6 +511,14 @@ export default function MenuPage() {
   const cartQuantities: Record<string, number> = {};
   cartItems.forEach((i) => { cartQuantities[i.id] = i.quantity; });
 
+  const [soldoutItems, setSoldoutItems] = useState<string[]>([]);
+  useEffect(() => {
+    fetch("/api/settings")
+      .then(r => r.json())
+      .then(s => setSoldoutItems(s.soldoutItems ?? []))
+      .catch(() => {});
+  }, []);
+
   const handleAddToCart = (item: any, name: string) => {
     if (item._decrease) {
       const qty = cartQuantities[item.id] ?? 0;
@@ -851,12 +859,12 @@ export default function MenuPage() {
         </div>
 
         {/* Soups */}
-        {mainCombinedItems.length > 0 && <MenuSection title={cats.mains} items={mainCombinedItems} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
-        {activeMenu.salads.length > 0 && <MenuSection title={cats.salads} items={activeMenu.salads} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
-        {activeMenu.sides.length > 0 && <MenuSection title={cats.sides} items={activeMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
-        {activeMenu.desserts.length > 0 && <MenuSection title={cats.desserts} items={activeMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
-        {activeMenu.drinks.length > 0 && <MenuSection title={cats.drinks} items={activeMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
-        {activeMenu.colddrinks.length > 0 && <MenuSection title={cats.colddrinks} items={activeMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} />}
+        {mainCombinedItems.length > 0 && <MenuSection title={cats.mains} items={mainCombinedItems} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} soldoutItems={soldoutItems} />}
+        {activeMenu.salads.length > 0 && <MenuSection title={cats.salads} items={activeMenu.salads} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} soldoutItems={soldoutItems} />}
+        {activeMenu.sides.length > 0 && <MenuSection title={cats.sides} items={activeMenu.sides} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} soldoutItems={soldoutItems} />}
+        {activeMenu.desserts.length > 0 && <MenuSection title={cats.desserts} items={activeMenu.desserts} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} soldoutItems={soldoutItems} />}
+        {activeMenu.drinks.length > 0 && <MenuSection title={cats.drinks} items={activeMenu.drinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} soldoutItems={soldoutItems} />}
+        {activeMenu.colddrinks.length > 0 && <MenuSection title={cats.colddrinks} items={activeMenu.colddrinks} lang={lang} getDishInfo={getDishInfo} setLightboxImage={setLightboxImage} hidePlaceholder={true} hideDetails={true} onAddToCart={handleAddToCart} cartQuantities={cartQuantities} soldoutItems={soldoutItems} />}
 
         {/* Footer Note */}
         <div className="mt-12 md:mt-20 text-center bg-card/90 backdrop-blur-sm p-4 md:p-8 rounded-sm border border-border/50">
@@ -1013,7 +1021,7 @@ export default function MenuPage() {
   );
 }
 
-function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder, hideDetails, onAddToCart, cartQuantities }: {
+function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePlaceholder, hideDetails, onAddToCart, cartQuantities, soldoutItems }: {
   title: string;
   items: any[];
   lang: Language;
@@ -1023,6 +1031,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
   hideDetails?: boolean;
   onAddToCart?: (item: any, name: string) => void;
   cartQuantities?: Record<string, number>;
+  soldoutItems?: string[];
 }) {
   const reduceMotion = useReducedMotion();
 
@@ -1052,6 +1061,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
         <div className="space-y-6 md:space-y-8">
           {items.map((item, idx) => {
             const { name, desc } = getDishInfo(item);
+            const isSoldout = soldoutItems?.includes(item.id) ?? false;
             return (
               <motion.div
                 key={item.id}
@@ -1059,7 +1069,7 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "0px", amount: 0.4 }}
                 transition={{ delay: reduceMotion ? 0 : idx * 0.04, duration: reduceMotion ? 0 : 0.35 }}
-                className="group relative"
+                className={`group relative ${isSoldout ? "opacity-50" : ""}`}
               >
                 <div className="flex gap-3 md:gap-6 items-start">
                   {/* Image */}
@@ -1144,7 +1154,11 @@ function MenuSection({ title, items, lang, getDishInfo, setLightboxImage, hidePl
                     {/* Add to Cart */}
                     {onAddToCart && (
                       <div className="mt-3">
-                        {(cartQuantities?.[item.id] ?? 0) === 0 ? (
+                        {isSoldout ? (
+                          <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-border text-muted-foreground text-xs font-semibold cursor-not-allowed">
+                            {lang === 'de' ? 'Nicht verfügbar' : lang === 'ru' ? 'Недоступно' : 'Unavailable'}
+                          </span>
+                        ) : (cartQuantities?.[item.id] ?? 0) === 0 ? (
                           <button
                             onClick={() => onAddToCart(item, name)}
                             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-sm border border-primary/50 text-primary text-xs font-semibold hover:bg-primary hover:text-primary-foreground transition-all [font-family:'Quando',_serif] uppercase tracking-wide"

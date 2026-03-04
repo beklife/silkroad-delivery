@@ -8,9 +8,13 @@ import {
   updateOrderStatus,
   cancelOrder,
   getAllOrders,
+  getSetting,
+  setSetting,
+  getAllSettings,
+  setOrderEta,
 } from "./db.js";
 
-const DELIVERY_FEE = 5;
+function getDeliveryFee() { return parseFloat(getSetting("delivery_fee") ?? "5"); }
 
 export async function registerRoutes(
   httpServer: Server,
@@ -27,6 +31,12 @@ export async function registerRoutes(
         return;
       }
 
+      if (getSetting("is_open") === "false") {
+        res.status(400).json({ message: "Restaurant is currently closed" });
+        return;
+      }
+
+      const DELIVERY_FEE = getDeliveryFee();
       const total = subtotal + DELIVERY_FEE;
       const amountInCents = Math.round(total * 100);
 
@@ -78,6 +88,12 @@ export async function registerRoutes(
         return;
       }
 
+      if (getSetting("is_open") === "false") {
+        res.status(400).json({ message: "Restaurant is currently closed" });
+        return;
+      }
+
+      const DELIVERY_FEE = getDeliveryFee();
       const total = subtotal + DELIVERY_FEE;
 
       const order = createOrder({
@@ -200,6 +216,48 @@ export async function registerRoutes(
       items: JSON.parse(o.items),
     }));
     res.json(orders);
+  });
+
+  // ─── Public settings ─────────────────────────────────────────────────────────
+  app.get("/api/settings", (_req: Request, res: Response) => {
+    const s = getAllSettings();
+    res.json({
+      isOpen:        s.is_open !== "false",
+      deliveryFee:   parseFloat(s.delivery_fee ?? "5"),
+      minOrder:      parseFloat(s.min_order ?? "25"),
+      deliveryZones: JSON.parse(s.delivery_zones ?? "[]"),
+      soldoutItems:  JSON.parse(s.soldout_items ?? "[]"),
+    });
+  });
+
+  // ─── Admin — update settings ──────────────────────────────────────────────────
+  app.patch("/api/admin/settings", (req: Request, res: Response) => {
+    const password = req.headers["x-admin-password"];
+    if (password !== process.env.ADMIN_PASSWORD) {
+      res.status(401).json({ message: "Unauthorized" });
+      return;
+    }
+    const { key, value } = req.body;
+    const allowed = ["is_open", "delivery_fee", "min_order", "delivery_zones", "soldout_items"];
+    if (!allowed.includes(key)) {
+      res.status(400).json({ message: "Invalid setting key" });
+      return;
+    }
+    setSetting(key, String(value));
+    res.json({ success: true });
+  });
+
+  // ─── Admin — set order ETA ────────────────────────────────────────────────────
+  app.patch("/api/admin/orders/:id/eta", (req: Request, res: Response) => {
+    const password = req.headers["x-admin-password"];
+    if (password !== process.env.ADMIN_PASSWORD) {
+      res.status(401).json({ message: "Unauthorized" });
+      return;
+    }
+    const id = parseInt(req.params.id);
+    const { etaMinutes } = req.body;
+    setOrderEta(id, etaMinutes);
+    res.json({ success: true });
   });
 
   // ─── Admin — update order status ─────────────────────────────────────────────

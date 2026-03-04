@@ -28,6 +28,54 @@ db.exec(`
   )
 `);
 
+// ─── Settings table ──────────────────────────────────────────────────────────
+
+db.exec(`
+  CREATE TABLE IF NOT EXISTS settings (
+    key   TEXT PRIMARY KEY,
+    value TEXT NOT NULL
+  )
+`);
+
+// Add eta_minutes to orders (no-op if column already exists)
+try { db.exec("ALTER TABLE orders ADD COLUMN eta_minutes INTEGER"); } catch {}
+
+const DEFAULT_SETTINGS: Record<string, string> = {
+  is_open:        "true",
+  delivery_fee:   "5",
+  min_order:      "25",
+  delivery_zones: JSON.stringify([
+    "50667","50668","50670","50672","50674","50676",
+    "50677","50678","50679","50733","50735","50737",
+    "50739","50823","50825","50827","50829",
+  ]),
+  soldout_items: "[]",
+};
+
+for (const [k, v] of Object.entries(DEFAULT_SETTINGS)) {
+  db.prepare("INSERT OR IGNORE INTO settings (key, value) VALUES (?, ?)").run(k, v);
+}
+
+export function getSetting(key: string): string | null {
+  const row = db.prepare("SELECT value FROM settings WHERE key = ?").get(key) as { value: string } | undefined;
+  return row?.value ?? null;
+}
+
+export function setSetting(key: string, value: string): void {
+  db.prepare("INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)").run(key, value);
+}
+
+export function getAllSettings(): Record<string, string> {
+  const rows = db.prepare("SELECT key, value FROM settings").all() as { key: string; value: string }[];
+  return Object.fromEntries(rows.map(r => [r.key, r.value]));
+}
+
+export function setOrderEta(id: number, etaMinutes: number): void {
+  db.prepare("UPDATE orders SET eta_minutes = ? WHERE id = ?").run(etaMinutes, id);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 export interface OrderRow {
   id: number;
   order_number: string;
@@ -49,6 +97,7 @@ export interface OrderRow {
   cancelled_at: string | null;
   refund_id: string | null;
   created_at: string;
+  eta_minutes: number | null;
 }
 
 function generateOrderNumber(): string {

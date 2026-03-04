@@ -132,8 +132,26 @@ export default function CheckoutPage() {
   const { items, subtotal, clearCart } = useCart();
   const t = labels[lang];
 
-  const meetsMinOrder = subtotal >= MIN_ORDER;
-  const total = subtotal + DELIVERY_FEE;
+  // Live settings from backend
+  const [isOpen, setIsOpen] = useState(true);
+  const [deliveryFee, setDeliveryFee] = useState(DELIVERY_FEE);
+  const [minOrder, setMinOrder] = useState(MIN_ORDER);
+  const [deliveryZones, setDeliveryZones] = useState(DELIVERY_ZONES);
+
+  useEffect(() => {
+    fetch("/api/settings")
+      .then(r => r.json())
+      .then(s => {
+        setIsOpen(s.isOpen);
+        setDeliveryFee(s.deliveryFee);
+        setMinOrder(s.minOrder);
+        setDeliveryZones(s.deliveryZones);
+      })
+      .catch(() => {}); // use defaults on failure
+  }, []);
+
+  const meetsMinOrder = subtotal >= minOrder;
+  const total = subtotal + deliveryFee;
 
   // Payment step state (card only)
   const [clientSecret, setClientSecret] = useState<string | null>(null);
@@ -153,7 +171,7 @@ export default function CheckoutPage() {
     phone: z.string().min(6, t.errors.phone),
     street: z.string().min(3, t.errors.street),
     postcode: z.string().refine(
-      (plz) => DELIVERY_ZONES.includes(plz.trim()),
+      (plz) => deliveryZones.includes(plz.trim()),
       t.errors.postcode
     ),
     city: z.string().min(2, t.errors.city),
@@ -249,6 +267,14 @@ export default function CheckoutPage() {
 
       {/* Content */}
       <main className="container mx-auto px-4 md:px-6 py-8 md:py-12 relative z-10 max-w-5xl">
+        {/* Closed banner */}
+        {!isOpen && (
+          <div className="mb-6 bg-red-500/10 border border-red-500/40 rounded-sm px-5 py-4 text-center">
+            <p className="text-red-600 dark:text-red-400 font-semibold text-lg">🔴 Wir haben gerade geschlossen</p>
+            <p className="text-red-500/80 text-sm mt-1">Bestellungen sind derzeit nicht möglich. Bitte versuchen Sie es später erneut.</p>
+          </div>
+        )}
+
         {/* Page title */}
         <div className="text-center mb-8">
           <h1 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-foreground">
@@ -499,7 +525,7 @@ export default function CheckoutPage() {
                 </div>
                 <div className="flex justify-between text-sm text-muted-foreground">
                   <span>{t.delivery}</span>
-                  <span className="tabular-nums">{fmt(DELIVERY_FEE)}</span>
+                  <span className="tabular-nums">{fmt(deliveryFee)}</span>
                 </div>
                 <div className="h-[1px] bg-border my-2" />
                 <div className="flex justify-between font-bold text-foreground">
@@ -517,13 +543,13 @@ export default function CheckoutPage() {
                 {/* Submit button */}
                 <button
                   type="submit"
-                  disabled={isSubmitting || !meetsMinOrder}
+                  disabled={isSubmitting || !meetsMinOrder || !isOpen}
                   className="w-full mt-4 py-3 rounded-sm font-semibold text-sm tracking-wide uppercase transition-all
                     bg-primary text-primary-foreground hover:bg-primary/90
                     disabled:opacity-40 disabled:cursor-not-allowed
                     [font-family:'Quando',_serif]"
                 >
-                  {isSubmitting ? "..." : t.submit}
+                  {isSubmitting ? "..." : !isOpen ? "Restaurant geschlossen" : t.submit}
                 </button>
               </div>
             </motion.div>
